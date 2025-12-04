@@ -1,0 +1,22 @@
+/* Christmas Season Styles */
+.snowflake {
+    position: fixed;
+    top: -20px;
+    z-index: 9999;
+    color: #e0f7fa;
+    /* Light icy blue */
+    text-shadow: 0 0 2px #000000;
+    /* Shadow to make it visible on light backgrounds */
+    font-size: 1em;
+    user-select: none;
+    pointer-events: none;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(105vh);
+    }
+}
