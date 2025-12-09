@@ -245,4 +245,9 @@
 
   window.addEventListener('load', initLenis);
 
+  /**
+   * Initiate Pure Counter
+   */
+  new PureCounter();
+
 })();
