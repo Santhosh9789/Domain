@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Remove snowflake after it falls
         setTimeout(() => {
             snowflake.remove();
-        }, 5000);
+        }, 10000);
     }
 
     // Create a snowflake every 200ms to be lightweight
