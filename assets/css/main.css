@@ -3755,3 +3755,38 @@ section,
   background: #F2F2F2;
   color: #F2F2F2;
 }
+
+/*--------------------------------------------------------------
+# Mobile Optimization (Added for Accessibility & UX)
+--------------------------------------------------------------*/
+@media (max-width: 768px) {
+
+  /* Increase touch targets for buttons and links */
+  .btn-get-started,
+  .cta-btn,
+  .navmenu a,
+  .mobile-nav-toggle,
+  .social-links a,
+  .service-single-main-wrapper-five .rts-btn {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Improve font readability on small screens */
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  /* Ensure spacing elements don't break layout */
+  .section {
+    padding: 40px 0;
+  }
+}
