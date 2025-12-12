@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     snowContainer.style.left = '0';
     snowContainer.style.width = '100%';
     snowContainer.style.height = '100%';
-    snowContainer.style.pointerEvents = 'none';
+    snowContainer.style.pointerEvents = 'none'; // Ensure clicks pass through
     snowContainer.style.zIndex = '9999';
     document.body.appendChild(snowContainer);
 
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         snowflake.innerHTML = '❄';
         snowflake.style.left = Math.random() * 100 + 'vw';
         snowflake.style.animationDuration = Math.random() * 5 + 5 + 's'; // 5-10 seconds
-        snowflake.style.opacity = Math.random();
+        snowflake.style.opacity = Math.random() * 0.5 + 0.3; // 0.3 to 0.8 opacity (softer)
         snowflake.style.fontSize = Math.random() * 10 + 10 + 'px'; // 10-20px
 
         snowContainer.appendChild(snowflake);
@@ -28,6 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 10000);
     }
 
-    // Create a snowflake every 200ms to be lightweight
-    setInterval(createSnowflake, 200);
+    // Create a snowflake every 400ms to be lighter and smoother (was 200ms)
+    setInterval(createSnowflake, 400);
 });
