@@ -53,22 +53,83 @@
 
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/custom_sections.css" rel="stylesheet">
-  <link href="assets/season/christmas.css" rel="stylesheet">
+
 
 
 
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Blueidealteck Software Solution",
-      "url": "https://blueidealteck.com",
-      "logo": "https://blueidealteck.com/assets/img/logo.webp",
-      "sameAs": [
-        "https://x.com/blueidealteck",
-        "https://www.facebook.com/profile.php?id=61576888345818",
-        "https://www.instagram.com/blueidealteck/",
-        "https://linkedin.com/in/blueidealteck-software-solutions-2259b7358"
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://blueidealteck.com/#organization",
+          "name": "Blueidealteck Software Solution",
+          "url": "https://blueidealteck.com",
+          "logo": {
+             "@type": "ImageObject",
+             "url": "https://blueidealteck.com/assets/img/logo.webp",
+             "width": 112,
+             "height": 112
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91 9789836077",
+            "contactType": "customer service",
+            "areaServed": "IN",
+            "availableLanguage": "en"
+          },
+          "sameAs": [
+            "https://x.com/blueidealteck",
+            "https://www.facebook.com/profile.php?id=61576888345818",
+            "https://www.instagram.com/blueidealteck/",
+            "https://linkedin.com/in/blueidealteck-software-solutions-2259b7358"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://blueidealteck.com/#website",
+          "url": "https://blueidealteck.com",
+          "name": "Blueidealteck",
+          "publisher": {
+            "@id": "https://blueidealteck.com/#organization"
+          },
+          "potentialAction": {
+             "@type": "SearchAction",
+             "target": "https://blueidealteck.com/search?q={search_term_string}",
+             "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Home",
+          "url": "https://blueidealteck.com/"
+        },
+        {
+           "@type": "SiteNavigationElement",
+           "name": "About",
+           "url": "https://blueidealteck.com/#about"
+        },
+        {
+           "@type": "SiteNavigationElement",
+           "name": "Services",
+           "url": "https://blueidealteck.com/#services"
+        },
+        {
+           "@type": "SiteNavigationElement",
+           "name": "Blog",
+           "url": "https://blueidealteck.com/blog.html"
+        },
+        {
+           "@type": "SiteNavigationElement",
+           "name": "Careers",
+           "url": "https://blueidealteck.com/careers.html"
+        },
+        {
+           "@type": "SiteNavigationElement",
+           "name": "Contact",
+           "url": "https://blueidealteck.com/#contact"
+        }
       ]
     }
   </script>
@@ -89,12 +150,13 @@
           <li><a href="#Home" class="active">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="careers.html">Careers</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="#about">Get Started</a>
+      <a class="btn-getstarted" href="index.html#contact">Contact</a>
 
     </div>
   </header>
@@ -102,7 +164,7 @@
   <main class="main">
 
     <section id="Home" class="Home section dark-background">
-
+      <!-- ... (content same) ... -->
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
@@ -121,6 +183,10 @@
       </div>
 
     </section>
+
+    <!-- ... (skipping unchanged sections for brevity in replacement if not modifying them, but I need to target specific lines) ... -->
+    <!-- Actually I should use multiple chunks or narrow down. Let's narrow down to Nav first, then Card separately. The tool allows Single contiguous block. I cannot do both in one call unless I replace everything in between. -->
+    <!-- I will use multi_replace_file_content for index.html -->
     <section id="about" class="about section">
 
       <div class="container section-title" data-aos="fade-up">
@@ -500,6 +566,39 @@
         </div>
       </div>
     </section>
+    <!-- Latest Insights / Blog Cards Section -->
+    <section id="insights" class="insights section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Latest Insights & News</h2>
+        <p>Explore our latest thoughts on technology, innovation, and industry trends.</p>
+      </div>
+      <div class="container">
+        <div class="row gy-4 justify-content-center">
+
+
+
+
+
+
+
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-single-main-wrapper-five">
+              <div class="icon">
+                <i class="bi bi-journals"></i>
+              </div>
+              <h5 class="title">Blogs</h5>
+              <p class="disc">
+                Explore our full collection of articles, insights, and news updates.
+              </p>
+              <a href="blog.html" class="read-more" style="color: var(--accent-color); font-weight: 600;">View All <i
+                  class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
     <section id="call-to-action" class="call-to-action section dark-background">
 
       <img src="assets/img/bg-8.jpg" alt="" loading="lazy">
@@ -645,7 +744,7 @@
                   class="d-flex align-items-center justify-content-center me-3"
                   style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.1); color: var(--default-color); transition: 0.3s;"><i
                     class="bi bi-instagram"></i></a>
-                <a href="https://linkedin.com/in/blueidealteck-software-solutions-2259b7358" target="_blank"
+                <a href="https://www.linkedin.com/company/blueidealteck-software-solution/" target="_blank"
                   rel="noopener noreferrer" class="d-flex align-items-center justify-content-center me-3"
                   style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.1); color: var(--default-color); transition: 0.3s;"><i
                     class="bi bi-linkedin"></i></a>
@@ -700,7 +799,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
   <script src="assets/js/main.js"></script>
-  <script src="assets/season/christmas.js"></script>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
