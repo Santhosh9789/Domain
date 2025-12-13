@@ -191,21 +191,22 @@
 
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
+   * HANDLED BY CSS SCROLL-PADDING-TOP NOW
    */
-  window.addEventListener('load', function (e) {
-    if (window.location.hash) {
-      if (document.querySelector(window.location.hash)) {
-        setTimeout(() => {
-          let section = document.querySelector(window.location.hash);
-          let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
-          window.scrollTo({
-            top: section.offsetTop - parseInt(scrollMarginTop),
-            behavior: 'smooth'
-          });
-        }, 100);
-      }
-    }
-  });
+  // window.addEventListener('load', function (e) {
+  //   if (window.location.hash) {
+  //     if (document.querySelector(window.location.hash)) {
+  //       setTimeout(() => {
+  //         let section = document.querySelector(window.location.hash);
+  //         let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
+  //         window.scrollTo({
+  //           top: section.offsetTop - parseInt(scrollMarginTop),
+  //           behavior: 'smooth'
+  //         });
+  //       }, 100);
+  //     }
+  //   }
+  // });
 
   /**
    * Navmenu Scrollspy
