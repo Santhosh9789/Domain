@@ -34,7 +34,17 @@
     <style>
         .careers-intro {
             text-align: center;
-            padding: 60px 20px;
+            padding: 0 20px 60px 20px;
+        }
+
+        section.careers {
+            padding-top: 0; /* Overrides default section padding */
+        }
+
+        /* Force reduce spacing below page title */
+        .page-title {
+            padding-bottom: 0 !important;
+            margin-bottom: 0 !important;
         }
 
         .job-card {
@@ -92,7 +102,7 @@
     </style>
 </head>
 
-<body class="index-page">
+<body class="starter-page-page">
 
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center">
@@ -121,13 +131,12 @@
     <main class="main">
 
         <!-- Page Title -->
-        <div class="page-title dark-background" data-aos="fade">
+        <div class="page-title dark-background">
             <div class="container position-relative">
                 <h1>Join Our Team</h1>
                 <p>Build the future of technology with us. We are always looking for passionate talent.</p>
                 <nav class="breadcrumbs">
                     <ol>
-                        <li><a href="../">Home</a></li>
                         <li class="current">Careers</li>
                     </ol>
                 </nav>
