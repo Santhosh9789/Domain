@@ -158,10 +158,24 @@
             right: 0;
             margin: auto;
         }
+
+        /* Spacing Overrides */
+        section.blog-posts {
+            padding-top: 0;
+        }
+        
+        .page-title {
+            padding-bottom: 0 !important;
+            margin-bottom: 0 !important;
+        }
+        
+        .section-title {
+            padding-top: 20px;
+        }
     </style>
 </head>
 
-<body class="index-page">
+<body class="starter-page-page">
 
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center">
@@ -190,13 +204,12 @@
     <main class="main">
 
         <!-- Page Title -->
-        <div class="page-title dark-background" data-aos="fade">
+        <div class="page-title dark-background">
             <div class="container position-relative">
                 <h1>Insights & News</h1>
                 <p>Expert perspectives on Technology, AI, and Digital Transformation.</p>
                 <nav class="breadcrumbs">
                     <ol>
-                        <li><a href="../">Home</a></li>
                         <li class="current">Blog</li>
                     </ol>
                 </nav>
@@ -581,6 +594,30 @@
                         </div>
                     </div>
                     <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="blog-card p-1 text-center h-100">
+                            <i class="bi bi-phone text-primary fs-3 mb-1"></i>
+                            <h4 class="mb-1 fs-6">Flutter</h4>
+                            <p class="small text-muted mb-2">Cross-Platform Apps</p>
+                            <a href="../tool-flutter.html" class="stretched-link"></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="blog-card p-1 text-center h-100">
+                            <i class="bi bi-database text-success fs-3 mb-1"></i>
+                            <h4 class="mb-1 fs-6">MongoDB</h4>
+                            <p class="small text-muted mb-2">NoSQL Database</p>
+                            <a href="../tool-mongodb.html" class="stretched-link"></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="500">
+                        <div class="blog-card p-1 text-center h-100">
+                            <i class="bi bi-lightning-charge text-warning fs-3 mb-1"></i>
+                            <h4 class="mb-1 fs-6">FastAPI</h4>
+                            <p class="small text-muted mb-2">High Performance API</p>
+                            <a href="../tool-fastapi.html" class="stretched-link"></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="600">
                         <div class="blog-card p-1 text-center h-100">
                             <i class="bi bi-cup-hot-fill text-danger fs-3 mb-1"></i>
                             <h4 class="mb-1 fs-6">Java</h4>
