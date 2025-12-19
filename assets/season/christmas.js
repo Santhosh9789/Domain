@@ -14,11 +14,13 @@ document.addEventListener("DOMContentLoaded", function () {
     function createSnowflake() {
         const snowflake = document.createElement('div');
         snowflake.classList.add('snowflake');
-        snowflake.innerHTML = '❄';
+        // snowflake.innerHTML = '❄'; // Removed for round snow effect
         snowflake.style.left = Math.random() * 100 + 'vw';
-        snowflake.style.animationDuration = Math.random() * 5 + 5 + 's'; // 5-10 seconds
-        snowflake.style.opacity = Math.random() * 0.5 + 0.3; // 0.3 to 0.8 opacity (softer)
-        snowflake.style.fontSize = Math.random() * 10 + 10 + 'px'; // 10-20px
+        snowflake.style.animationDuration = Math.random() * 3 + 2 + 's'; // 2-5 seconds (faster)
+        snowflake.style.opacity = Math.random() * 0.5 + 0.3; 
+        const size = Math.random() * 5 + 3; // 3px to 8px
+        snowflake.style.width = size + 'px';
+        snowflake.style.height = size + 'px';
 
         snowContainer.appendChild(snowflake);
 
