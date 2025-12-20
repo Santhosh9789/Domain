@@ -141,7 +141,7 @@
                     <div class="card">
                         <div style="display:flex; justify-content:space-between; align-items:center;">
                             <h3>${coin.name}</h3>
-                            <img src="${coin.image}" style="width:20px;">
+                            <img src="${coin.image}" style="width:20px;" loading="lazy">
                         </div>
                         <div class="price">$${coin.current_price.toLocaleString()}</div>
                         <span class="change ${isUp ? 'up' : 'down'}">
@@ -159,7 +159,7 @@
                 listContainer.innerHTML += `
                     <div class="coin-row">
                         <div class="coin-info">
-                            <img src="${coin.image}">
+                            <img src="${coin.image}" loading="lazy">
                             <div>
                                 <div style="font-weight:700; font-size:0.9rem;">${coin.symbol.toUpperCase()}</div>
                                 <div style="font-size:0.8rem; color:var(--text-gray);">${coin.name}</div>
@@ -232,5 +232,28 @@
         }, 3000);
 
     </script>
+<script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+
+<script>
+    // Smooth scrolling for demos
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 0.8,
+      smoothTouch: false,
+      touchMultiplier: 2,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+</script>
+
 </body>
 </html>

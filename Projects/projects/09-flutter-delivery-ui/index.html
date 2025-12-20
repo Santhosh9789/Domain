@@ -189,7 +189,7 @@
                 div.className = 'food-card';
                 div.innerHTML = `
                     <div style="position:relative;">
-                        <img src="${item.img}" class="food-img">
+                        <img src="${item.img}" class="food-img" loading="lazy">
                         <div class="category-tag" style="position:absolute; top:10px; left:10px; background:rgba(255,255,255,0.9); padding:4px 8px; border-radius:10px; font-size:0.7rem; font-weight:600;">${item.cat}</div>
                     </div>
                     <div class="food-info">
@@ -217,7 +217,7 @@
             container.innerHTML = '';
             
             foods.filter(f => f.name.toLowerCase().includes(txt)).forEach(item => {
-                container.innerHTML += `<div class="food-card"><img src="${item.img}" class="food-img"><h4>${item.name}</h4><div class="add-btn" onclick="addToCart(this)"><i class="fas fa-plus"></i></div></div>`;
+                container.innerHTML += `<div class="food-card"><img src="${item.img}" class="food-img" loading="lazy"><h4>${item.name}</h4><div class="add-btn" onclick="addToCart(this)"><i class="fas fa-plus"></i></div></div>`;
             });
         }
 
@@ -251,5 +251,28 @@
         // Init
         renderFood();
     </script>
+<script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+
+<script>
+    // Smooth scrolling for demos
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 0.8,
+      smoothTouch: false,
+      touchMultiplier: 2,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+</script>
+
 </body>
 </html>

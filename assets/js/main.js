@@ -235,13 +235,13 @@
    */
   function initLenis() {
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4x87
+      duration: 1.5, // Check this website for easing: https://lenis.darkroom.engineering/
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       direction: 'vertical',
       gestureDirection: 'vertical',
       smooth: true,
-      mouseMultiplier: 1,
-      smoothTouch: false,
+      mouseMultiplier: 0.8, // Reduced for smoother, less jumpy scroll
+      smoothTouch: false, // Keep disabled for better mobile performance
       touchMultiplier: 2,
     });
 

@@ -76,12 +76,12 @@
         <!-- Gallery -->
         <div class="product-gallery">
             <div class="main-image">
-                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1" id="currentInfo">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1" id="currentInfo" loading="lazy">
             </div>
             <div class="thumbnails">
-                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1" class="active" onclick="changeImage(this)">
-                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-1.2.1" onclick="changeImage(this)">
-                <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?ixlib=rb-1.2.1" onclick="changeImage(this)">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1" class="active" onclick="changeImage(this)" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-1.2.1" onclick="changeImage(this)" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?ixlib=rb-1.2.1" onclick="changeImage(this)" loading="lazy">
             </div>
         </div>
 
@@ -208,7 +208,7 @@
                 count += item.qty;
                 container.innerHTML += `
                     <div class="cart-item">
-                        <img src="${item.img}">
+                        <img src="${item.img}" loading="lazy">
                         <div class="item-info">
                             <div class="item-title">${item.title}</div>
                             <div class="item-price">${item.color} | Qty: ${item.qty}</div>
@@ -253,5 +253,28 @@
         document.head.appendChild(style);
 
     </script>
+<script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+
+<script>
+    // Smooth scrolling for demos
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 0.8,
+      smoothTouch: false,
+      touchMultiplier: 2,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+</script>
+
 </body>
 </html>

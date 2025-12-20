@@ -84,7 +84,7 @@
             </div>
             
             <div class="auth-sidebar">
-                <img src="https://cdni.iconscout.com/illustration/premium/thumb/login-3305943-2757111.png" alt="Login">
+                <img src="https://cdni.iconscout.com/illustration/premium/thumb/login-3305943-2757111.png" alt="Login" loading="lazy">
             </div>
         </div>
     </div>
@@ -104,7 +104,7 @@
                 <div style="font-weight:600; font-size:1.2rem;">Good Morning, Admin</div>
                 <div style="display:flex; gap:15px; align-items:center;">
                     <i class="far fa-bell" style="font-size:1.2rem; cursor:pointer;"></i>
-                    <img src="https://ui-avatars.com/api/?name=Admin&background=7367F0&color=fff" style="width:38px; height:38px; border-radius:50%; cursor:pointer;">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=7367F0&color=fff" style="width:38px; height:38px; border-radius:50%; cursor:pointer;" loading="lazy">
                 </div>
             </div>
 
@@ -241,5 +241,28 @@
             });
         }
     </script>
+<script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+
+<script>
+    // Smooth scrolling for demos
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 0.8,
+      smoothTouch: false,
+      touchMultiplier: 2,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+</script>
+
 </body>
 </html>

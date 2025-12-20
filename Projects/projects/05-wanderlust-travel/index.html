@@ -97,7 +97,7 @@
     <div class="article-overlay" id="reader">
         <div class="close-btn" onclick="closeStory()"><i class="fas fa-times"></i></div>
         <div class="article-hero">
-            <img id="overlayImg" src="">
+            <img id="overlayImg" src="" loading="lazy">
         </div>
         <div class="article-content">
             <span class="card-cat" id="overlayCat">Europe</span>
@@ -132,7 +132,7 @@
                 div.className = 'story-card';
                 div.onclick = () => openStory(s.id); // Fixed ID passing
                 div.innerHTML = `
-                    <div class="card-img"><img src="${s.img}"></div>
+                    <div class="card-img"><img src="${s.img}" loading="lazy"></div>
                     <span class="card-cat">${s.cat}</span>
                     <h3>${s.title}</h3>
                     <div class="excerpt">Discovering the soul of the place through its people, food, and hidden corners that only the locals know about...</div>
@@ -166,5 +166,28 @@
 
         renderGrid('all');
     </script>
+<script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+
+<script>
+    // Smooth scrolling for demos
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 0.8,
+      smoothTouch: false,
+      touchMultiplier: 2,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+</script>
+
 </body>
 </html>

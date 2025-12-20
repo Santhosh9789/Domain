@@ -74,7 +74,7 @@
             </div>
             
             <div>
-                <img id="cityImg" src="https://source.unsplash.com/random/300x200?city" class="current-city-img">
+                <img id="cityImg" src="https://source.unsplash.com/random/300x200?city" class="current-city-img" loading="lazy">
                 <h1 class="city-name" id="cityName">New York</h1>
                 <p class="date-time" id="localTime">Monday, 12:00 PM</p>
                 
@@ -259,5 +259,28 @@
         // Init Load
         getWeather();
     </script>
+<script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+
+<script>
+    // Smooth scrolling for demos
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 0.8,
+      smoothTouch: false,
+      touchMultiplier: 2,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+</script>
+
 </body>
 </html>

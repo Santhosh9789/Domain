@@ -81,6 +81,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }, duration * 1000);
     }
 
-    // Smoother generation interval
-    setInterval(createSnowflake, 300);
+    // Limit max snowflakes for performance
+    const MAX_SNOWFLAKES = 40;
+    
+    // Smoother generation interval (increased from 300 to 500 for better performance)
+    setInterval(() => {
+        if (document.querySelectorAll('.snowflake').length < MAX_SNOWFLAKES) {
+            createSnowflake();
+        }
+    }, 500);
 });
