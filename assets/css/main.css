@@ -3958,3 +3958,5 @@ section,
     min-height: auto;
   }
 }
+
+body.starter-page-page { --nav-hover-color: #47b2e4; }
