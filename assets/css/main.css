@@ -221,6 +221,13 @@ h6 {
   text-transform: uppercase;
 }
 
+@media (max-width: 768px) {
+  .header .logo h1 {
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+}
+
 .header .btn-getstarted,
 .header .btn-getstarted:focus {
   color: var(--contrast-color);
@@ -236,6 +243,14 @@ h6 {
 .header .btn-getstarted:focus:hover {
   color: var(--contrast-color);
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
+}
+
+@media (max-width: 768px) {
+  .header .btn-getstarted {
+    font-size: 12px;
+    padding: 6px 15px;
+    margin-left: 10px;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -959,12 +974,14 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-.hero {
+.hero,
+.Home {
   width: 100%;
-  min-height: 80vh;
+  min-height: auto;
+  /* Removed fixed height to fit content exactly */
   position: relative;
-  padding: 240px 0 60px 0;
-  /* Further increased top padding */
+  padding: 120px 0 20px 0;
+  /* Reduced bottom padding to minimize space */
   display: flex;
   align-items: center;
 }
@@ -979,18 +996,37 @@ section,
   /* Reserve space for typing text */
 }
 
-.hero h1 {
+@media (max-width: 768px) {
+  .hero,
+  .Home {
+    padding: 140px 0 60px 0 !important;
+    min-height: auto;
+  }
+}
+
+.hero h1,
+.Home h1 {
   margin: 0;
-  font-size: 48px;
+  font-size: 36px;
   font-weight: 800;
-  line-height: 56px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
+  line-height: 1.2;
+  text-transform: none;
+  letter-spacing: 1px;
   margin-top: 5px;
   /* Reduced top margin */
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   position: relative;
   padding-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .hero h1,
+  .Home h1 {
+    font-size: 24px; /* Even smaller to ensure it fits mobile screens perfectly */
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+  }
 }
 
 .hero h1::after {
@@ -3903,12 +3939,17 @@ section,
   }
 
   /* Ensure spacing elements don't break layout */
-  .section {
-    padding: 40px 0;
-  }
 }
 
 /* Fix header overlap on starter pages */
 .starter-page-page .main {
   margin-top: 100px;
+}
+
+/* Hero Section Mobile Spacing (Final Override) */
+@media (max-width: 768px) {
+  .Home, .hero, .Home.section {
+    padding: 160px 0 60px 0 !important;
+    min-height: auto;
+  }
 }
