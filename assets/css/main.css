@@ -4,10 +4,8 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Jost", sans-serif;
+  --default-font: "Outfit", "Open Sans", system-ui, sans-serif; /* Switched to Outfit for modern feel */
+  --heading-font: "Outfit", "Jost", sans-serif;
   --nav-font: "Poppins", sans-serif;
 }
 
@@ -61,8 +59,7 @@
 
 /* Smooth scroll */
 :root {
-  /* scroll-behavior: smooth; */
-  /* Disable native smooth scroll to avoid conflicts with Lenis */
+  scroll-behavior: smooth;
 }
 
 html {
@@ -99,17 +96,34 @@ body {
   font-family: var(--default-font);
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--accent-color), black 20%);
 }
 
 a {
   color: var(--accent-color);
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 a:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  color: var(--accent-color);
   text-decoration: none;
+  opacity: 0.8;
 }
 
 h1,
@@ -178,17 +192,15 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(61, 77, 106, 0.7);
-  /* Semi-transparent */
-  --heading-color: #ffffff;
+  --background-color: #004472; /* Solid corporate blue to match Home page hero */
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 15px 0;
-  transition: all 0.5s;
+  padding: 12px 0;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 997;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .header .logo {
@@ -204,7 +216,7 @@ h6 {
   font-size: 30px;
   margin: 0;
   font-weight: 500;
-  color: var(--heading-color);
+  color: #ffffff;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -278,10 +290,12 @@ h6 {
 /* Index Page Header on Scroll
 ------------------------------*/
 .index-page.scrolled .header {
-  --background-color: rgba(255, 255, 255, 0.8);
-  /* Glass/White when scrolled */
+  --background-color: rgba(255, 255, 254, 0.85);
+  /* Premium Glass/White */
   --heading-color: #004472;
   --nav-color: #444444;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 68, 114, 0.05);
 }
 
 /*--------------------------------------------------------------
@@ -340,17 +354,20 @@ h6 {
   .navmenu .dropdown ul {
     margin: 0;
     padding: 10px 0;
-    background: var(--nav-dropdown-background-color);
+    background: rgba(255, 255, 255, 0.9);
     display: block;
     position: absolute;
     visibility: hidden;
     left: 14px;
     top: 130%;
     opacity: 0;
-    transition: 0.3s;
-    border-radius: 4px;
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: 8px;
     z-index: 99;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
   }
 
   .navmenu .dropdown ul li {
@@ -574,7 +591,7 @@ h6 {
 --------------------------------------------------------------*/
 .footer {
   color: #ffffff;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background: var(--accent-color);
   font-size: 14px;
   padding-bottom: 50px;
   position: relative;
@@ -1006,11 +1023,35 @@ section,
   padding: 10px 28px 12px 28px;
   border-radius: 50px;
   transition: 0.5s;
+  box-shadow: 0 5px 15px rgba(8, 152, 215, 0.3);
 }
 
 .hero .btn-get-started:hover {
   color: var(--contrast-color);
   background: color-mix(in srgb, var(--accent-color1), transparent 15%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(8, 152, 215, 0.4);
+}
+
+.hero-img img,
+.Home-img img {
+  animation: float 4s ease-in-out infinite;
+  max-width: 60%;
+  margin: 0 auto;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .hero-img,
+  .Home-img {
+    display: none !important;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
 }
 
 .hero .btn-watch-video {
@@ -1319,10 +1360,11 @@ section,
 --------------------------------------------------------------*/
 .services .service-item {
   background-color: var(--surface-color);
-  box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.05); /* Softer shadow */
   padding: 50px 30px;
-  transition: all ease-in-out 0.4s;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   height: 100%;
+  border-radius: 12px;
 }
 
 .services .service-item .icon {
@@ -1353,7 +1395,9 @@ section,
 }
 
 .services .service-item:hover {
-  transform: translateY(-10px);
+  transform: translateY(-12px);
+  box-shadow: 0 20px 50px rgba(0, 68, 114, 0.12);
+  background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
 }
 
 .services .service-item:hover h4 a {
@@ -3462,9 +3506,6 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
 
 /*--------------------------------------------------------------
 # Error 404 Section
