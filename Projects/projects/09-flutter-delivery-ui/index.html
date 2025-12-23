@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flutter Food | Mobile UI</title>
+  <link href="../../../assets/img/favicon.png" rel="icon" type="image/png">
+  <link href="../../../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
@@ -189,7 +191,7 @@
                 div.className = 'food-card';
                 div.innerHTML = `
                     <div style="position:relative;">
-                        <img src="${item.img}" class="food-img" loading="lazy">
+                        <img src="${item.img}" class="food-img" loading="lazy" decoding="async">
                         <div class="category-tag" style="position:absolute; top:10px; left:10px; background:rgba(255,255,255,0.9); padding:4px 8px; border-radius:10px; font-size:0.7rem; font-weight:600;">${item.cat}</div>
                     </div>
                     <div class="food-info">
@@ -217,7 +219,7 @@
             container.innerHTML = '';
             
             foods.filter(f => f.name.toLowerCase().includes(txt)).forEach(item => {
-                container.innerHTML += `<div class="food-card"><img src="${item.img}" class="food-img" loading="lazy"><h4>${item.name}</h4><div class="add-btn" onclick="addToCart(this)"><i class="fas fa-plus"></i></div></div>`;
+                container.innerHTML += `<div class="food-card"><img src="${item.img}" class="food-img" loading="lazy" decoding="async"><h4>${item.name}</h4><div class="add-btn" onclick="addToCart(this)"><i class="fas fa-plus"></i></div></div>`;
             });
         }
 

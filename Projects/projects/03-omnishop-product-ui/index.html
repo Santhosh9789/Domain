@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OmniShop | Wireless Headphones</title>
+  <link href="../../../assets/img/favicon.png" rel="icon" type="image/png">
+  <link href="../../../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -76,12 +78,12 @@
         <!-- Gallery -->
         <div class="product-gallery">
             <div class="main-image">
-                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1" id="currentInfo" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1" id="currentInfo" loading="lazy" decoding="async">
             </div>
             <div class="thumbnails">
-                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1" class="active" onclick="changeImage(this)" loading="lazy">
-                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-1.2.1" onclick="changeImage(this)" loading="lazy">
-                <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?ixlib=rb-1.2.1" onclick="changeImage(this)" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1" class="active" onclick="changeImage(this)" loading="lazy" decoding="async">
+                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-1.2.1" onclick="changeImage(this)" loading="lazy" decoding="async">
+                <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?ixlib=rb-1.2.1" onclick="changeImage(this)" loading="lazy" decoding="async">
             </div>
         </div>
 
@@ -208,7 +210,7 @@
                 count += item.qty;
                 container.innerHTML += `
                     <div class="cart-item">
-                        <img src="${item.img}" loading="lazy">
+                        <img src="${item.img}" loading="lazy" decoding="async">
                         <div class="item-info">
                             <div class="item-title">${item.title}</div>
                             <div class="item-price">${item.color} | Qty: ${item.qty}</div>
