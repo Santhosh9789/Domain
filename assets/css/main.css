@@ -97,33 +97,39 @@ body {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* Premium Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.03);
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--accent-color);
+  background: rgba(0, 68, 114, 0.5);
   border-radius: 10px;
+  border: 2px solid transparent; /* Padding effect */
+  background-clip: content-box;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: color-mix(in srgb, var(--accent-color), black 20%);
+  background-color: var(--accent-color);
 }
 
 a {
   color: var(--accent-color);
   text-decoration: none;
-  transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 a:hover {
   color: var(--accent-color);
   text-decoration: none;
-  opacity: 0.8;
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
 h1,
@@ -134,6 +140,7 @@ h5,
 h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
+  letter-spacing: -0.02em; /* Tighter, modern heading tracking */
 }
 
 /* PHP Email Form Messages
@@ -243,6 +250,29 @@ h6 {
 .header .btn-getstarted:focus:hover {
   color: var(--contrast-color);
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
+  box-shadow: 0 8px 20px rgba(0, 68, 114, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Hardware Acceleration for Smoother Animations */
+.service-item,
+.portfolio-item,
+.icon-box,
+.member,
+.pricing-item,
+.faq-item,
+.btn-getstarted {
+  will-change: transform, box-shadow;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* easeOutQuart */
+}
+
+/* Premium Card Hover Effects */
+.service-item:hover,
+.portfolio-item:hover,
+.member:hover,
+.pricing-item:hover {
+  transform: translateY(-5px) translateZ(0); /* Force GPU */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {

@@ -96,10 +96,12 @@
    */
   function aosInit() {
     AOS.init({
-      duration: 600,
-      easing: 'ease-in-out',
+      duration: 1000,
+      easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)', // Smooth easeOutQuart
       once: true,
-      mirror: false
+      mirror: false,
+      offset: 100, // Trigger sooner for better flow
+      disable: 'mobile' // Disable on mobile for performance preventing jumpiness
     });
   }
   window.addEventListener('load', aosInit);
@@ -235,7 +237,7 @@
    */
   function initLenis() {
     const lenis = new Lenis({
-      duration: 1.5, // Check this website for easing: https://lenis.darkroom.engineering/
+      duration: 1.2, // Check this website for easing: https://lenis.darkroom.engineering/
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       direction: 'vertical',
       gestureDirection: 'vertical',
@@ -253,7 +255,7 @@
     requestAnimationFrame(raf);
   }
 
-  window.addEventListener('load', initLenis);
+  document.addEventListener('DOMContentLoaded', initLenis);
 
   /**
    * Initiate Pure Counter
