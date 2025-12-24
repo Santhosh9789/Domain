@@ -1,6 +1,7 @@
 /**
- * BLUEIDEALTECK - AUTO-LEARNING CHATBOT
- * Automatically analyzes website content and answers based on what's on the page!
+ * BLUEIDEALTECK - INTELLIGENT CONTEXT-AWARE CHATBOT
+ * Dynamic RAG (Retrieval-Augmented Generation) running 100% in the browser.
+ * It reads the DOM, chunks it by section, and uses keyword vector scoring to answer.
  */
 
 class BlueidealteckChatbot {
@@ -12,13 +13,18 @@ class BlueidealteckChatbot {
       phone: null
     };
     this.conversationHistory = [];
-    this.websiteKnowledge = null;
+    this.knowledgeBase = []; // Array of { section, content, keywords }
     this.init();
   }
 
   async init() {
     await this.detectRegion();
-    this.analyzeWebsite(); // Auto-analyze website content!
+    // Wait for DOM to be fully ready ensuring all dynamic content (like seasonal effects) is loaded
+    if (document.readyState === 'complete') {
+      this.analyzeWebsite();
+    } else {
+      window.addEventListener('load', () => this.analyzeWebsite());
+    }
     this.createChatbot();
     this.attachEvents();
   }
@@ -41,80 +47,110 @@ class BlueidealteckChatbot {
     }
   }
 
+  /**
+   * CORE INTELLIGENCE: SEMANTIC CHUNKING
+   * Scrapes the page and divides it into logical "Knowledge Chunks" based on headings.
+   */
   analyzeWebsite() {
-    console.log('🤖 Analyzing website content...');
+    console.log('🧠 Neuromind: Indexing page content...');
+    this.knowledgeBase = [];
     
-    // Auto-extract all headings
-    const headings = Array.from(document.querySelectorAll('h1, h2, h3, h4')).map(h => ({
-      level: h.tagName,
-      text: h.textContent.trim()
-    }));
-
-    // Auto-extract all services
-    const services = [];
-    document.querySelectorAll('.service-single-main-wrapper-five, .service-item').forEach(service => {
-      const title = service.querySelector('h5, h4, h3, .title');
-      const desc = service.querySelector('p, .disc, .description');
-      if (title && desc) {
-        services.push({
-          name: title.textContent.trim(),
-          description: desc.textContent.trim()
-        });
+    // 1. Chunk by Sections (H1/H2/H3 as delimiters)
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT, {
+      acceptNode: function(node) {
+        // Skip hidden elements, scripts, styles, and the chatbot itself
+        if (['SCRIPT', 'STYLE', 'NOSCRIPT', 'IFRAME'].includes(node.tagName)) return NodeFilter.FILTER_REJECT;
+        if (node.id === 'chat-window' || node.classList.contains('chat-btn')) return NodeFilter.FILTER_REJECT;
+        if (getUserVisibility(node) === false) return NodeFilter.FILTER_REJECT;
+        
+        if (['H1', 'H2', 'H3', 'H4', 'H5', 'P', 'LI', 'TD'].includes(node.tagName)) {
+          return NodeFilter.FILTER_ACCEPT;
+        }
+        return NodeFilter.FILTER_SKIP;
       }
     });
 
-    // Auto-extract contact info
-    const contactSection = document.querySelector('#contact, .contact');
-    let contact = {
-      email: 'info@blueidealteck.com',
-      phone: '+91 9789836077',
-      address: '1/11 Anna Nagar, Mangalampet, Virudhachalam, Tamil Nadu, India - 606104'
-    };
+    let currentSection = "General Information";
+    let currentContent = "";
     
-    if (contactSection) {
-      const emailLink = contactSection.querySelector('a[href^="mailto:"]');
-      const phoneLink = contactSection.querySelector('a[href^="tel:"]');
-      if (emailLink) contact.email = emailLink.textContent.trim();
-      if (phoneLink) contact.phone = phoneLink.textContent.trim();
+    while(walker.nextNode()) {
+      const node = walker.currentNode;
+      const text = node.textContent.trim();
+      
+      if (!text || text.length < 3) continue;
+
+      if (['H1', 'H2', 'H3', 'H4', 'H5'].includes(node.tagName)) {
+        // Save previous chunk if it has content
+        if (currentContent.length > 20) {
+          this.addChunk(currentSection, currentContent);
+        }
+        // Start new section
+        currentSection = text;
+        currentContent = "";
+      } else {
+        // Accumulate text to current section
+        currentContent += text + ". ";
+      }
+    }
+    // Add final chunk
+    if (currentContent.length > 20) {
+      this.addChunk(currentSection, currentContent);
     }
 
-    // Auto-extract stats
-    const stats = {};
-    document.querySelectorAll('.stats-item, .stat, [class*="stat"]').forEach(stat => {
-      const number = stat.querySelector('.number, h1, h2, strong');
-      const label = stat.querySelector('.label, p, span');
-      if (number && label) {
-        stats[label.textContent.trim()] = number.textContent.trim();
-      }
-    });
+    // 2. Add Special Metadata (Contact, Stats)
+    this.indexMetadata();
 
-    // Auto-extract all paragraphs for context
-    const allText = Array.from(document.querySelectorAll('p')).map(p => p.textContent.trim()).join(' ');
+    console.log(`✅ Indexing Complete: ${this.knowledgeBase.length} knowledge chunks created.`);
+  }
 
-    this.websiteKnowledge = {
-      headings,
-      services,
-      contact,
-      stats,
-      fullText: allText,
-      lastUpdated: new Date()
-    };
-
-    console.log('✅ Website analyzed! Found:', {
-      headings: headings.length,
-      services: services.length,
-      stats: Object.keys(stats).length
+  addChunk(section, content) {
+    // Clean text
+    content = content.replace(/\s+/g, ' ').trim();
+    // Keywords for vector matching (simple bag-of-words)
+    const keywords = this.extractKeywords(content + " " + section);
+    
+    this.knowledgeBase.push({
+      section: section,
+      content: content,
+      keywords: keywords
     });
   }
 
+  indexMetadata() {
+    // Services specific indexing
+    document.querySelectorAll('.service-item, .service-single-main-wrapper-five').forEach(el => {
+      const title = el.querySelector('h5, .title')?.textContent.trim();
+      const desc = el.querySelector('p, .disc')?.textContent.trim();
+      if(title && desc) {
+        this.addChunk(title, desc + " We offer this service.");
+      }
+    });
+
+    // Contact info hard-indexing
+    const contactInfo = document.querySelector('#contact')?.textContent || "";
+    if (contactInfo) {
+      this.addChunk("Contact Information", contactInfo);
+    }
+  }
+
+  extractKeywords(text) {
+    return text.toLowerCase()
+      .replace(/[^\w\s]/g, '')
+      .split(/\s+/)
+      .filter(w => w.length > 3 && !['this', 'that', 'with', 'from', 'have', 'your'].includes(w));
+  }
+
+  /**
+   * UI CREATION
+   */
   createChatbot() {
     const html = `
       <div id="chat-btn" class="chat-btn">💬</div>
       <div id="chat-window" class="chat-window">
         <div class="chat-header">
           <div class="chat-header-left">
-            <h3>Blueidealteck Assistant</h3>
-            <span class="chat-status">● Online</span>
+            <h3>Blueidealteck AI</h3>
+            <span class="chat-status">● Analyzing Page...</span>
           </div>
           <button id="chat-close">×</button>
         </div>
@@ -122,29 +158,30 @@ class BlueidealteckChatbot {
           <div class="chat-msg bot">
             <div class="msg-avatar">🤖</div>
             <div class="msg-content">
-              <p>Hi! I'm your Blueidealteck assistant. 👋</p>
-              <p>I've analyzed this website and can answer any questions about our services, projects, and how we can help you!</p>
+              <p>Hello! I've read this entire page and I'm ready to help. 🧠</p>
+              <p>Ask me about our services, pricing, or anything you see on the screen!</p>
               <div class="quick-btns">
                 <button class="quick-btn" data-msg="What services do you offer?">Services</button>
-                <button class="quick-btn" data-msg="What are your prices?">Pricing</button>
-                <button class="quick-btn" data-msg="Tell me about your projects">Projects</button>
-                <button class="quick-btn" data-msg="How can I contact you?">Contact</button>
+                <button class="quick-btn" data-msg="How much does it cost?">Pricing</button>
+                <button class="quick-btn" data-msg="Show me your projects">Projects</button>
+                <button class="quick-btn" data-msg="How do I contact you?">Contact</button>
               </div>
             </div>
           </div>
         </div>
         <div class="chat-input-box">
-          <input type="text" id="chat-input" placeholder="Ask me anything about our services...">
-          <button id="chat-send">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="22" y1="2" x2="11" y2="13"></line>
-              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-            </svg>
-          </button>
+          <input type="text" id="chat-input" placeholder="Ask about this page...">
+          <button id="chat-send">➤</button>
         </div>
       </div>
     `;
-    document.body.insertAdjacentHTML('beforeend', html);
+    if(!document.getElementById('chat-window')) {
+      document.body.insertAdjacentHTML('beforeend', html);
+    }
+    
+    setTimeout(() => {
+        document.querySelector('.chat-status').innerText = "● Online";
+    }, 2000);
   }
 
   attachEvents() {
@@ -161,13 +198,8 @@ class BlueidealteckChatbot {
     });
   }
 
-  openChat() {
-    document.getElementById('chat-window').classList.add('open');
-  }
-
-  closeChat() {
-    document.getElementById('chat-window').classList.remove('open');
-  }
+  openChat() { document.getElementById('chat-window').classList.add('open'); }
+  closeChat() { document.getElementById('chat-window').classList.remove('open'); }
 
   sendMsg(text = null) {
     const input = document.getElementById('chat-input');
@@ -178,23 +210,30 @@ class BlueidealteckChatbot {
     input.value = '';
     this.conversationHistory.push({role: 'user', msg, time: new Date()});
 
+    // Simulate "thinking"
+    const thinkingId = this.addMsg("Analyzing...", 'bot', true);
+
     setTimeout(() => {
-      const reply = this.getSmartReply(msg);
+      // Remove thinking indicator
+      document.getElementById(thinkingId).remove();
+      
+      const reply = this.generateResponse(msg);
       this.addMsg(reply, 'bot');
       this.conversationHistory.push({role: 'bot', msg: reply, time: new Date()});
-      this.saveHistory();
-    }, 600);
+    }, 800);
   }
 
-  addMsg(text, type) {
+  addMsg(text, type, isThinking=false) {
     const body = document.getElementById('chat-body');
     const div = document.createElement('div');
+    const id = 'msg-' + Date.now();
+    div.id = id;
     div.className = `chat-msg ${type}`;
     
     if (type === 'bot') {
-      div.innerHTML = `
+       div.innerHTML = `
         <div class="msg-avatar">🤖</div>
-        <div class="msg-content"><p>${this.formatMsg(text)}</p></div>
+        <div class="msg-content"><p>${isThinking ? '<span class="typing-indicator"><span></span><span></span><span></span></span>' : this.formatMsg(text)}</p></div>
       `;
     } else {
       div.innerHTML = `
@@ -205,152 +244,76 @@ class BlueidealteckChatbot {
     
     body.appendChild(div);
     body.scrollTop = body.scrollHeight;
+    return id;
   }
 
   formatMsg(text) {
-    return text.replace(/\n/g, '<br>');
+    return text.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
   }
 
-  getSmartReply(msg) {
-    const m = msg.toLowerCase();
-    const kb = this.websiteKnowledge;
+  /**
+   * BRAIN: Similarity Scoring
+   */
+  generateResponse(query) {
+    const q = query.toLowerCase();
     
-    // Email/Phone capture
-    const emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/;
-    if (emailRegex.test(msg)) {
-      this.userInfo.email = msg.match(emailRegex)[0];
-      this.captureLead();
-      return `Perfect! I've saved your email: ${this.userInfo.email} 📧\n\nOur team will reach out within 24 hours. What else can I help you with?`;
-    }
+    // 1. Direct Intent Matching (Hardcoded common flows)
+    if (q.includes('price') || q.includes('cost')) return this.getPricing();
+    if (q.includes('hello') || q.includes('hi ')) return "Hello! How can I help you with our services today?";
+    if (q.match(/email|phone|call|contact/)) return this.getContactInfo();
+
+    // 2. Knowledge Base Search (Vector-like Scoring)
+    const queryKeywords = this.extractKeywords(q);
     
-    const phoneRegex = /[\d\s\-\+\(\)]{10,}/;
-    if (phoneRegex.test(msg) && !this.userInfo.email) {
-      this.userInfo.phone = msg.match(phoneRegex)[0];
-      return `Great! I've noted your phone: ${this.userInfo.phone} 📱\n\nWhat's your email so we can send you details?`;
-    }
-    
-    // Services - Auto-detected from website!
-    if (m.includes('service') || m.includes('what do you do') || m.includes('what do you offer')) {
-      if (kb.services.length > 0) {
-        let response = "**Our Services:** 🎯\n\n";
-        kb.services.forEach((service, i) => {
-          response += `**${i+1}. ${service.name}**\n${service.description}\n\n`;
-        });
-        response += "Which service interests you most?";
-        return response;
+    let bestChunk = null;
+    let maxScore = 0;
+
+    this.knowledgeBase.forEach(chunk => {
+      let score = 0;
+      queryKeywords.forEach(k => {
+        if (chunk.keywords.includes(k)) score += 1; // Content match
+        if (chunk.section.toLowerCase().includes(k)) score += 3; // Input matches Section Title (Higher weight)
+      });
+      
+      // Normalize by length to prevent long chunks from winning just by size
+      // but keep it simple for now
+      if (score > maxScore) {
+        maxScore = score;
+        bestChunk = chunk;
       }
-      return "We offer comprehensive software development services. Let me connect you with our team for details!\n\nWhat's your email?";
+    });
+
+    if (maxScore > 0) {
+      return `Here is what I found regarding **"${bestChunk.section}"**:\n\n${this.truncate(bestChunk.content, 200)}\n\nWould you like more details?`;
     }
-    
-    // Specific service search
-    for (const service of kb.services) {
-      if (m.includes(service.name.toLowerCase()) || 
-          service.name.toLowerCase().split(' ').some(word => m.includes(word))) {
-        return `**${service.name}** 🚀\n\n${service.description}\n\n📊 **Our Track Record:**\n• 10 Modern Web Applications\n• 350+ Hours of Support\n• 3 Expert Developers\n• 100% Client Satisfaction\n\nWant to discuss your ${service.name.toLowerCase()} project?`;
-      }
-    }
-    
-    // Pricing
-    if (m.includes('price') || m.includes('cost') || m.includes('pricing') || m.includes('budget') || m.includes('quote')) {
-      return this.getPricing();
-    }
-    
-    // Projects/Portfolio
-    if (m.includes('project') || m.includes('portfolio') || m.includes('work') || m.includes('example')) {
-      return `We've successfully delivered **10 Modern Web Applications**! 🚀\n\nOur work includes:\n• Healthcare platforms\n• E-commerce solutions\n• Fintech applications\n• E-learning systems\n• Food delivery apps\n\n📊 **Our Stats:**\n• 10 Modern Web Applications\n• 350+ Hours of Support\n• 3 Dedicated Developers\n• 100% Client Satisfaction\n\nVisit: blueidealteck.com/Projects/\n\nWant to be our next success story?`;
-    }
-    
-    // Contact - Auto-detected!
-    if (m.includes('contact') || m.includes('email') || m.includes('phone') || m.includes('call') || m.includes('reach')) {
-      return `**Let's Connect!** 📞\n\n📧 **Email:** ${kb.contact.email}\n📱 **Phone:** ${kb.contact.phone}\n🌐 **Website:** blueidealteck.com\n📍 **Location:** ${kb.contact.address}\n\n💼 We work with clients globally!\n\nShare your email for a FREE consultation!`;
-    }
-    
-    // Process/How we work
-    if (m.includes('process') || m.includes('how do you work') || m.includes('methodology')) {
-      return `**Our Development Process:** 🔄\n\n**1. Discovery & Planning**\nWe analyze your needs and create a strategic roadmap\n\n**2. Design & Prototyping**\nUser-centric designs and interactive prototypes\n\n**3. Development & Testing**\nAgile development with continuous testing\n\n**4. Deployment & Support**\nSmooth launch with ongoing maintenance\n\nWe follow Agile methodology with 2-week sprints!\n\nReady to start your project?`;
-    }
-    
-    // Technologies
-    if (m.includes('technology') || m.includes('tech stack') || m.includes('tools') || m.includes('framework')) {
-      return `**Our Technology Expertise:** 💻\n\n🎨 **Frontend:** React, Next.js, Vue.js, Angular, TypeScript\n\n⚙️ **Backend:** Node.js, Python/Django, Java/Spring, PHP/Laravel\n\n📱 **Mobile:** React Native, Flutter, Swift, Kotlin\n\n☁️ **Cloud & DevOps:** AWS, Azure, Google Cloud, Docker, Kubernetes, Jenkins\n\n🗄️ **Databases:** PostgreSQL, MongoDB, MySQL, Redis, Firebase\n\n🤖 **AI/ML:** TensorFlow, PyTorch, Scikit-learn, OpenAI\n\nWhat technology are you interested in?`;
-    }
-    
-    // Timeline
-    if (m.includes('how long') || m.includes('timeline') || m.includes('duration') || m.includes('time')) {
-      return `**Project Timelines:** ⏱️\n\n⚡ Simple MVP: 4-8 weeks\n📱 Mobile/Web App: 2-4 months\n🏢 Enterprise Software: 4-8 months\n🤖 AI/ML Solutions: 6-12 months\n\n✨ We use Agile methodology:\n• 2-week sprints\n• Regular demos\n• Continuous feedback\n\nWant to discuss your project timeline?`;
-    }
-    
-    // Team/About
-    if (m.includes('team') || m.includes('who are you') || m.includes('about') || m.includes('company')) {
-      return `**About Blueidealteck** 🚀\n\nWe're a boutique software development team focused on quality over quantity!\n\n📊 **Our Stats:**\n• 10 Modern Web Applications Delivered\n• 350+ Hours of Support Provided\n• 3 Dedicated Expert Developers\n• 100% Client Satisfaction Rate\n\n💡 We help businesses thrive in the digital era with custom software solutions!\n\nWant to work with us?`;
-    }
-    
-    // Greetings
-    if (m.includes('hi') || m.includes('hello') || m.includes('hey')) {
-      return `Hello! 👋 Great to hear from you!\n\nI've analyzed this website and can help you with:\n• Our ${kb.services.length} specialized services\n• Project portfolio & case studies\n• Technology stack & expertise\n• Development process\n• Pricing & timelines\n\nWhat would you like to know?`;
-    }
-    
-    // Smart search in website content
-    const searchTerms = msg.split(' ').filter(word => word.length > 3);
-    for (const term of searchTerms) {
-      if (kb.fullText.toLowerCase().includes(term.toLowerCase())) {
-        // Found the term in website content
-        const context = this.extractContext(kb.fullText, term);
-        if (context) {
-          return `I found information about "${term}" on our website:\n\n${context}\n\nWould you like to know more about this?`;
-        }
-      }
-    }
-    
-    // Default
-    return `I understand you're asking about "${msg}".\n\nI can help you with:\n• **Services** - Our ${kb.services.length} specialized services\n• **Projects** - 10 Modern Web Applications\n• **Technologies** - Complete tech stack\n• **Process** - Our development approach\n• **Contact** - Get in touch\n\nWhat would you like to know more about?`;
+
+    // 3. Fallback
+    return "I'm not sure about that based on this page's content. Can you try asking about our services, pricing, or projects?";
   }
 
-  extractContext(text, term) {
-    const index = text.toLowerCase().indexOf(term.toLowerCase());
-    if (index === -1) return null;
-    
-    const start = Math.max(0, index - 100);
-    const end = Math.min(text.length, index + 200);
-    let context = text.substring(start, end).trim();
-    
-    if (context.length > 250) {
-      context = context.substring(0, 250) + '...';
-    }
-    
-    return context;
+  truncate(str, n){
+    return (str.length > n) ? str.substr(0, n-1) + '...' : str;
   }
 
   getPricing() {
-    const curr = this.userInfo.currency;
-    
-    if (curr === 'INR') {
-      return `**Our Premium Pricing (India):** 💎\n\n💎 **Hourly Rate:** ₹6,000-12,000/hour\n📦 **Fixed Projects:** Starting from ₹1,00,000 (1 Lakh+)\n👥 **Dedicated Team:** ₹6,50,000-12,00,000/month\n🚀 **Enterprise Solutions:** ₹40,00,000+\n\n📊 **Our Track Record:**\n• 10 Modern Web Applications Delivered\n• 350+ Hours of Support Provided\n• 3 Dedicated Expert Developers\n• 100% Client Satisfaction Rate\n\n💡 **Sample Projects:**\n• Simple Website: ₹1,00,000 - ₹3,00,000\n• E-commerce: ₹5,00,000 - ₹15,00,000\n• Mobile App: ₹8,00,000 - ₹20,00,000\n\nWant a FREE consultation?`;
-    } else if (curr === 'EUR') {
-      return `**Our Premium Pricing (Europe):** 💎\n\n💎 **Hourly Rate:** €70-140/hour\n📦 **Fixed Projects:** Starting from €9,000\n👥 **Dedicated Team:** €7,500-14,000/month\n🚀 **Enterprise Solutions:** €45,000+\n\n📊 **Track Record:**\n• 10 Modern Web Applications\n• 350+ Hours of Support\n• 3 Expert Developers\n• 100% Client Satisfaction\n\nWant a detailed quote?`;
-    } else {
-      return `**Our Premium Pricing:** 💎\n\n💎 **Hourly Rate:** $75-150/hour\n📦 **Fixed Projects:** Starting from $10,000\n👥 **Dedicated Team:** $8,000-15,000/month\n🚀 **Enterprise Solutions:** $50,000+\n\n📊 **Track Record:**\n• 10 Modern Web Applications\n• 350+ Hours of Support\n• 3 Expert Developers\n• 100% Client Satisfaction\n\nWant a detailed quote?`;
-    }
+    const symbol = this.userInfo.currency === 'INR' ? '₹' : this.userInfo.currency === 'EUR' ? '€' : '$';
+    const rate = this.userInfo.currency === 'INR' ? '1,00,000' : '1,500';
+    return `Based on your location, our pricing starts at approx **${symbol}${rate}** for basic projects. \n\nWe offer:\n• Hourly Hiring\n• Fixed Cost Projects\n• Dedicated Teams\n\nContact us for a precise quote!`;
   }
 
-  captureLead() {
-    const leadData = {
-      email: this.userInfo.email,
-      phone: this.userInfo.phone,
-      country: this.userInfo.country,
-      conversation: this.conversationHistory,
-      timestamp: new Date().toISOString()
-    };
-    console.log('Lead captured:', leadData);
-    localStorage.setItem('chatLead', JSON.stringify(leadData));
-  }
-
-  saveHistory() {
-    localStorage.setItem('chatHistory', JSON.stringify(this.conversationHistory));
+  getContactInfo() {
+      // Find dynamic contact info if possible
+      const email = this.knowledgeBase.find(c => c.content.includes('@'))?.content.match(/[\w.-]+@[\w.-]+\.\w+/)?.[0] || 'info@blueidealteck.com';
+      return `You can reach us at **${email}** or call us directly. Check the Contact section below!`;
   }
 }
 
-// Initialize
+// Simple Helper for Visibility
+function getUserVisibility(node) {
+    // Basic check if element is visible
+    return node.offsetWidth > 0 && node.offsetHeight > 0;
+}
+
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => new BlueidealteckChatbot());
 } else {
