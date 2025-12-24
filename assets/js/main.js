@@ -236,6 +236,7 @@
    * Init Lenis Smooth Scroll
    */
   function initLenis() {
+    if (typeof Lenis === 'undefined') return;
     const lenis = new Lenis({
       duration: 1.2, // Check this website for easing: https://lenis.darkroom.engineering/
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
