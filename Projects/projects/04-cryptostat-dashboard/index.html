@@ -34,7 +34,12 @@
         @keyframes blinker { 50% { opacity: 0; } }
 
         .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 30px; }
-        .card { background: var(--card-bg); padding: 20px; border-radius: 20px; position: relative; overflow: hidden; }
+        .card { 
+            background: var(--card-bg); padding: 20px; border-radius: 20px; position: relative; overflow: hidden;
+            will-change: transform;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
         .card h3 { font-size: 0.9rem; color: var(--text-gray); margin-bottom: 5px; }
         .card .price { font-size: 1.4rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
         .card .change { font-size: 0.8rem; font-weight: 600; margin-top: 5px; display: inline-block; }

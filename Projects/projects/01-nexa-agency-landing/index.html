@@ -20,7 +20,9 @@
         /* Custom Cursor */
         .cursor {
             width: 20px; height: 20px; border: 2px solid var(--primary); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999;
-            transition: transform 0.1s; transform: translate(-50%, -50%); mixture-blend-mode: difference;
+            transition: transform 0.1s; transform: translate(-50%, -50%); mix-blend-mode: difference;
+            will-change: transform;
+            backface-visibility: hidden;
         }
         .cursor.hovered { transform: translate(-50%, -50%) scale(2.5); background: rgba(212, 244, 100, 0.1); }
 
@@ -123,12 +125,26 @@
     </div>
 
     <script>
-        // Custom Cursor
+        // Optimized Custom Cursor
         const cursor = document.querySelector('.cursor');
+        let mouseX = 0, mouseY = 0;
+        let ballX = 0, ballY = 0;
+        const speed = 0.2;
+
         document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
+            mouseX = e.clientX;
+            mouseY = e.clientY;
         });
+
+        function animateCursor() {
+            let distX = mouseX - ballX;
+            let distY = mouseY - ballY;
+            ballX = ballX + (distX * speed);
+            ballY = ballY + (distY * speed);
+            cursor.style.transform = `translate3d(${ballX}px, ${ballY}px, 0) translate(-50%, -50%)`;
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
 
         function hoverCursor() { cursor.classList.add('hovered'); }
         function leaveCursor() { cursor.classList.remove('hovered'); }

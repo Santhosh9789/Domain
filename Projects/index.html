@@ -92,6 +92,11 @@
         box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
         border-color: var(--accent-color);
     }
+
+    .projects-grid .col-lg-4 {
+        will-change: transform, opacity;
+        backface-visibility: hidden;
+    }
     
     .card-preview {
         height: 200px; 
@@ -187,7 +192,7 @@
         </ul>
       </nav>
 
-      <a class="btn-getstarted" href="/#contact">Contact</a>
+      <a class="btn-getstarted" href="/#contact">Get Started</a>
 
     </div>
   </header>
@@ -206,10 +211,10 @@
     <section id="portfolio" class="section">
         
         <div class="tabs" data-aos="fade-up">
-            <div class="tab-btn active" onclick="filterGrid('all', this)">All Projects</div>
-            <div class="tab-btn" onclick="filterGrid('dashboard', this)">Dashboards/SaaS</div>
-            <div class="tab-btn" onclick="filterGrid('creative', this)">Creative/Web</div>
-            <div class="tab-btn" onclick="filterGrid('app', this)">Functional Apps</div>
+            <button class="tab-btn active" onclick="filterGrid('all', this)" aria-pressed="true">All Projects</button>
+            <button class="tab-btn" onclick="filterGrid('dashboard', this)" aria-pressed="false">Dashboards/SaaS</button>
+            <button class="tab-btn" onclick="filterGrid('creative', this)" aria-pressed="false">Creative/Web</button>
+            <button class="tab-btn" onclick="filterGrid('app', this)" aria-pressed="false">Functional Apps</button>
         </div>
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -247,6 +252,8 @@
             <li><i class="bi bi-chevron-right"></i> <a href="/blog/">Blogs</a></li>
             <li><i class="bi bi-chevron-right"></i> <a href="/careers/">Careers</a></li>
             <li><i class="bi bi-chevron-right"></i> <a href="/Projects/">Projects</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="/privacy-policy">Privacy Policy</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="/terms-conditions">Terms & Conditions</a></li>
           </ul>
         </div>
 
@@ -254,7 +261,7 @@
           <h4>Follow Us</h4>
           <div class="social-links d-flex mt-4">
             <a href="https://x.com/blueidealteck" target="_blank"><i class="bi bi-twitter-x"></i></a>
-            <a href="https://www.facebook.com/profile.php?" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61576888345818" target="_blank"><i class="bi bi-facebook"></i></a>
             <a href="https://www.instagram.com/blueidealteck/" target="_blank"><i class="bi bi-instagram"></i></a>
             <a href="https://linkedin.com/in/blueidealteck-software-solutions-2259b7358" target="_blank"><i class="bi bi-linkedin"></i></a>
           </div>
@@ -311,26 +318,28 @@
     const grid = document.getElementById('projectGrid');
 
     function renderGrid(filter = 'all') {
-        grid.innerHTML = '';
-        const filtered = projects.filter(p => filter === 'all' || p.type === filter || (filter === 'dashboard' && p.type === 'dashboard') || (filter === 'app' && p.type === 'app'));
+        const filtered = projects.filter(p => filter === 'all' || p.type === filter);
+        
+        // Use DocumentFragment for batch DOM insertion
+        const fragment = document.createDocumentFragment();
         
         filtered.forEach((p, index) => {
             const col = document.createElement('div');
-            col.className = 'col-lg-4 col-md-6';
-            col.setAttribute('data-aos', 'fade-up');
-            col.setAttribute('data-aos-delay', (index * 100).toString());
+            col.className = 'col-lg-4 col-md-6 mb-4';
+            col.setAttribute('data-aos', 'zoom-in');
+            col.setAttribute('data-aos-delay', (index * 50).toString());
 
             const techHTML = p.tech.map(t => `<span class="tech-tag">${t}</span>`).join('');
             
             col.innerHTML = `
-                <div class="project-card">
+                <div class="project-card" style="height: 100%;">
                     <div class="card-preview">
                         <i class="${p.icon}"></i>
                     </div>
                     <div class="card-content">
                         <div class="header-row">
                             <span class="category">${p.type}</span>
-                            <i class="fas fa-ellipsis-h" style="color:#cbd5e1;"></i>
+                            <i class="fas fa-ellipsis-h" style="color:#cbd5e1;" role="img" aria-label="More options"></i>
                         </div>
                         <h3>${p.title}</h3>
                         <p class="desc">${p.desc}</p>
@@ -342,8 +351,16 @@
                     </div>
                 </div>
             `;
-            grid.appendChild(col);
+            fragment.appendChild(col);
         });
+
+        grid.innerHTML = '';
+        grid.appendChild(fragment);
+        
+        // Refresh AOS to handle new elements
+        if (typeof AOS !== 'undefined') {
+            AOS.refresh();
+        }
     }
 
     function filterGrid(type, btn) {

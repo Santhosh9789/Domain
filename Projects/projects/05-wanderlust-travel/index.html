@@ -9,6 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        /* Lenis Recommended CSS */
+        html.lenis, html.lenis body { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto !important; }
+        .lenis.lenis-stopped { overflow: hidden; }
+        
+        /* Optimized Performance: Only hint transform on active/hover elements to save memory */
+        .story-card:hover { will-change: transform; }
+        .article-overlay { will-change: transform; }
+        .card-img img { will-change: transform; }
+
         :root { --primary: #2C3E50; --accent: #D35400; --text: #333; --bg: #FDFBF7; }
         * { margin:0; padding:0; box-sizing:border-box; }
         
@@ -73,6 +83,7 @@
         .article-body p::first-letter { font-size: 3.5rem; float: left; margin-right: 15px; line-height: 0.8; font-family: 'Playfair Display'; font-weight: 700; color: var(--primary); }
 
         @media(max-width: 900px) { .stories-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 3rem; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
@@ -103,7 +114,7 @@
     <div class="article-overlay" id="reader">
         <div class="close-btn" onclick="closeStory()"><i class="fas fa-times"></i></div>
         <div class="article-hero">
-            <img id="overlayImg" src="" loading="lazy" decoding="async">
+            <img id="overlayImg" src="" loading="lazy" decoding="async" alt="Story Hero">
         </div>
         <div class="article-content">
             <span class="card-cat" id="overlayCat">Europe</span>
@@ -133,18 +144,24 @@
             const grid = document.getElementById('grid');
             grid.innerHTML = '';
             
+            const fragment = document.createDocumentFragment();
+            
             stories.filter(s => filter === 'all' || s.cat === filter).forEach((s, index) => {
                 const div = document.createElement('div');
                 div.className = 'story-card';
                 div.onclick = () => openStory(s.id); 
+                // Add slight stagger for visual smoothness without blocking thread
+                div.style.animation = `fadeInUp 0.5s ease backwards ${index * 0.1}s`;
                 div.innerHTML = `
-                    <div class="card-img"><img src="${s.img}&w=600&q=80" loading="lazy" decoding="async"></div>
+                    <div class="card-img"><img src="${s.img}&w=600&q=80" loading="lazy" decoding="async" alt="${s.title}"></div>
                     <span class="card-cat">${s.cat}</span>
                     <h3>${s.title}</h3>
                     <div class="excerpt">Discovering the soul of the place through its people, food, and hidden corners that only the locals know about...</div>
                 `;
-                grid.appendChild(div);
+                fragment.appendChild(div);
             });
+            
+            grid.appendChild(fragment);
         }
 
         function filterStories(cat, btn) {
@@ -184,22 +201,23 @@
 
 <script>
     // Smooth scrolling for demos
+    // Optimized Smooth Scrolling
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       direction: 'vertical',
       gestureDirection: 'vertical',
       smooth: true,
-      mouseMultiplier: 0.8,
-      smoothTouch: false,
+      mouseMultiplier: 1,
+      smoothTouch: false, // Keep false to use native touch scroll on mobile (smoother/native feel)
       touchMultiplier: 2,
     });
 
+    // Bind Lenis to the window to ensure it catches all events
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-
     requestAnimationFrame(raf);
     
     window.onload = function() {
