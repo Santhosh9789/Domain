@@ -99,7 +99,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+  text-rendering: auto; /* optimizeLegibility is too heavy for scroll */
 }
 
 /* Smooth Scrolling Performance Optimizations */
@@ -123,7 +123,7 @@ body {
 
 /* Optimize rendering performance */
 section {
-  contain: layout style paint;
+  contain: content; /* Better than 'layout style paint' */
 }
 
 /* Reduce animation complexity on scroll */
@@ -148,6 +148,7 @@ a {
 img {
   height: auto;
   max-width: 100%;
+  will-change: transform; /* Hint for decoding */
 }
 
 /* Optimize scroll behavior */
@@ -260,9 +261,11 @@ h6 {
   padding: 12px 0;
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 9999;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px); /* Reduced from 20px for performance */
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  will-change: transform; /* Performance: Promotes header to its own layer */
+  transform: translateZ(0); /* Hack for older browsers */
 }
 
 .header .logo {

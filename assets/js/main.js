@@ -19,7 +19,7 @@
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   }
 
-  document.addEventListener('scroll', toggleScrolled);
+  // document.addEventListener('scroll', toggleScrolled); // Handled by optimizedScroll
   window.addEventListener('load', toggleScrolled);
 
   /**
@@ -89,7 +89,7 @@
   });
 
   window.addEventListener('load', toggleScrollTop);
-  document.addEventListener('scroll', toggleScrollTop);
+  // document.addEventListener('scroll', toggleScrollTop); // Handled by optimizedScroll
 
   /**
    * Animation on scroll function and init
@@ -229,8 +229,43 @@
       }
     })
   }
-  window.addEventListener('load', navmenuScrollspy);
-  document.addEventListener('scroll', navmenuScrollspy);
+  /**
+   * Performance Utils: Debounce & Throttle
+   */
+  function throttle(func, limit) {
+    let lastFunc;
+    let lastRan;
+    return function() {
+      const context = this;
+      const args = arguments;
+      if (!lastRan) {
+        func.apply(context, args);
+        lastRan = Date.now();
+      } else {
+        clearTimeout(lastFunc);
+        lastFunc = setTimeout(function() {
+          if ((Date.now() - lastRan) >= limit) {
+            func.apply(context, args);
+            lastRan = Date.now();
+          }
+        }, limit - (Date.now() - lastRan));
+      }
+    }
+  }
+
+  // Optimize Scroll Handler
+  const optimizedScroll = throttle(() => {
+    toggleScrolled();
+    navmenuScrollspy();
+    toggleScrollTop();
+  }, 20); // 20ms = 50 FPS cap for logic, CSS handles smoothness (60/90fps)
+
+  document.addEventListener('scroll', optimizedScroll, { passive: true });
+  window.addEventListener('load', () => {
+     toggleScrolled();
+     navmenuScrollspy();
+     toggleScrollTop();
+  });
 
   /**
    * Init Lenis Smooth Scroll
