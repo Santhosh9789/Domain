@@ -49,22 +49,33 @@ class BlueidealteckChatbot {
 
   /**
    * CORE INTELLIGENCE: SEMANTIC CHUNKING
-   * Scrapes the page and divides it into logical "Knowledge Chunks" based on headings.
+   * Scrapes the page and divides it into logical "Knowledge Chunks".
    */
   analyzeWebsite() {
     console.log('🧠 Neuromind: Indexing page content...');
     this.knowledgeBase = [];
     
-    // 1. Chunk by Sections (H1/H2/H3 as delimiters)
+    // 0. Global Context (Meta Description & Title)
+    const metaDesc = document.querySelector('meta[name="description"]')?.content || "";
+    const pageTitle = document.title || "";
+    this.addChunk("Overview", `${pageTitle}. ${metaDesc}`);
+
+    // 1. Chunk by Sections (H1-H6 as delimiters)
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT, {
       acceptNode: function(node) {
-        // Skip hidden elements, scripts, styles, and the chatbot itself
-        if (['SCRIPT', 'STYLE', 'NOSCRIPT', 'IFRAME'].includes(node.tagName)) return NodeFilter.FILTER_REJECT;
-        if (node.id === 'chat-window' || node.classList.contains('chat-btn')) return NodeFilter.FILTER_REJECT;
-        if (getUserVisibility(node) === false) return NodeFilter.FILTER_REJECT;
+        // Skip hidden/technical elements
+        if (['SCRIPT', 'STYLE', 'NOSCRIPT', 'IFRAME', 'SVG', 'PATH'].includes(node.tagName)) return NodeFilter.FILTER_REJECT;
+        if (node.id === 'chat-window' || node.closest('.chat-window') || node.closest('.mobile-nav-toggle')) return NodeFilter.FILTER_REJECT;
+        if (!getUserVisibility(node)) return NodeFilter.FILTER_REJECT;
         
-        if (['H1', 'H2', 'H3', 'H4', 'H5', 'P', 'LI', 'TD'].includes(node.tagName)) {
-          return NodeFilter.FILTER_ACCEPT;
+        // Accepted text headers and containers
+        if (['H1', 'H2', 'H3', 'H4', 'H5', 'H6'].includes(node.tagName)) return NodeFilter.FILTER_ACCEPT;
+        // Text blocks
+        if (['P', 'LI', 'TD', 'SPAN', 'DIV'].includes(node.tagName)) {
+             // Only accept if it has direct text content (not just a container of other elements)
+             if (node.childNodes.length === 1 && node.childNodes[0].nodeType === Node.TEXT_NODE && node.textContent.trim().length > 10) {
+                 return NodeFilter.FILTER_ACCEPT;
+             }
         }
         return NodeFilter.FILTER_SKIP;
       }
@@ -75,220 +86,107 @@ class BlueidealteckChatbot {
     
     while(walker.nextNode()) {
       const node = walker.currentNode;
-      const text = node.textContent.trim();
+      const text = node.textContent.replace(/\s+/g, ' ').trim();
       
-      if (!text || text.length < 3) continue;
+      if (!text || text.length < 5) continue;
 
-      if (['H1', 'H2', 'H3', 'H4', 'H5'].includes(node.tagName)) {
-        // Save previous chunk if it has content
-        if (currentContent.length > 20) {
+      if (['H1', 'H2', 'H3', 'H4', 'H5', 'H6'].includes(node.tagName)) {
+        // Save previous
+        if (currentContent.length > 50) {
           this.addChunk(currentSection, currentContent);
         }
-        // Start new section
         currentSection = text;
         currentContent = "";
       } else {
-        // Accumulate text to current section
-        currentContent += text + ". ";
+        currentContent += text + " ";
       }
     }
-    // Add final chunk
-    if (currentContent.length > 20) {
+    // Final chunk
+    if (currentContent.length > 30) {
       this.addChunk(currentSection, currentContent);
     }
 
-    // 2. Add Special Metadata (Contact, Stats)
+    // 2. Specific Metadata Extraction
     this.indexMetadata();
 
-    console.log(`✅ Indexing Complete: ${this.knowledgeBase.length} knowledge chunks created.`);
+    console.log(`✅ Indexing Complete: ${this.knowledgeBase.length} chunks.`);
   }
 
   addChunk(section, content) {
-    // Clean text
+    // Normalize
     content = content.replace(/\s+/g, ' ').trim();
-    // Keywords for vector matching (simple bag-of-words)
-    const keywords = this.extractKeywords(content + " " + section);
-    
+    if(this.knowledgeBase.some(c => c.content === content)) return; // Avoid exact dupes
+
     this.knowledgeBase.push({
       section: section,
       content: content,
-      keywords: keywords
+      // We don't need pre-extracted keywords anymore, we'll search raw text for better accuracy
+      raw: (section + " " + content).toLowerCase()
     });
   }
 
   indexMetadata() {
-    // Services specific indexing
-    document.querySelectorAll('.service-item, .service-single-main-wrapper-five').forEach(el => {
-      const title = el.querySelector('h5, .title')?.textContent.trim();
-      const desc = el.querySelector('p, .disc')?.textContent.trim();
-      if(title && desc) {
-        this.addChunk(title, desc + " We offer this service.");
-      }
+    // Hard-coded crucial info that might be missed by walker
+    const services = document.querySelectorAll('.service-item h5, .service-item .title, .service-single-main-wrapper-five .title');
+    services.forEach(s => {
+        const desc = s.closest('div')?.querySelector('p')?.textContent || "";
+        this.addChunk("Service: " + s.textContent, desc);
     });
-
-    // Contact info hard-indexing
-    const contactInfo = document.querySelector('#contact')?.textContent || "";
-    if (contactInfo) {
-      this.addChunk("Contact Information", contactInfo);
-    }
-  }
-
-  extractKeywords(text) {
-    return text.toLowerCase()
-      .replace(/[^\w\s]/g, '')
-      .split(/\s+/)
-      .filter(w => w.length > 3 && !['this', 'that', 'with', 'from', 'have', 'your'].includes(w));
+    
+    const contact = document.querySelector('#contact');
+    if(contact) this.addChunk("Contact Us", contact.innerText);
   }
 
   /**
-   * UI CREATION
-   */
-  createChatbot() {
-    const html = `
-      <div id="chat-btn" class="chat-btn">💬</div>
-      <div id="chat-window" class="chat-window">
-        <div class="chat-header">
-          <div class="chat-header-left">
-            <h3>Blueidealteck AI</h3>
-            <span class="chat-status">● Analyzing Page...</span>
-          </div>
-          <button id="chat-close">×</button>
-        </div>
-        <div id="chat-body" class="chat-body" data-lenis-prevent>
-          <div class="chat-msg bot">
-            <div class="msg-avatar">🤖</div>
-            <div class="msg-content">
-              <p>Hello! I've read this entire page and I'm ready to help. 🧠</p>
-              <p>Ask me about our services, pricing, or anything you see on the screen!</p>
-              <div class="quick-btns">
-                <button class="quick-btn" data-msg="What services do you offer?">Services</button>
-                <button class="quick-btn" data-msg="How much does it cost?">Pricing</button>
-                <button class="quick-btn" data-msg="Show me your projects">Projects</button>
-                <button class="quick-btn" data-msg="How do I contact you?">Contact</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="chat-input-box">
-          <input type="text" id="chat-input" placeholder="Ask about this page...">
-          <button id="chat-send">➤</button>
-        </div>
-      </div>
-    `;
-    if(!document.getElementById('chat-window')) {
-      document.body.insertAdjacentHTML('beforeend', html);
-    }
-    
-    setTimeout(() => {
-        document.querySelector('.chat-status').innerText = "● Online";
-    }, 2000);
-  }
-
-  attachEvents() {
-    document.getElementById('chat-btn').onclick = () => this.openChat();
-    document.getElementById('chat-close').onclick = () => this.closeChat();
-    document.getElementById('chat-send').onclick = () => this.sendMsg();
-    document.getElementById('chat-input').onkeypress = (e) => {
-      if (e.key === 'Enter') this.sendMsg();
-    };
-    document.addEventListener('click', (e) => {
-      if (e.target.classList.contains('quick-btn')) {
-        this.sendMsg(e.target.dataset.msg);
-      }
-    });
-  }
-
-  openChat() { document.getElementById('chat-window').classList.add('open'); }
-  closeChat() { document.getElementById('chat-window').classList.remove('open'); }
-
-  sendMsg(text = null) {
-    const input = document.getElementById('chat-input');
-    const msg = text || input.value.trim();
-    if (!msg) return;
-
-    this.addMsg(msg, 'user');
-    input.value = '';
-    this.conversationHistory.push({role: 'user', msg, time: new Date()});
-
-    // Simulate "thinking"
-    const thinkingId = this.addMsg("Analyzing...", 'bot', true);
-
-    setTimeout(() => {
-      // Remove thinking indicator
-      document.getElementById(thinkingId).remove();
-      
-      const reply = this.generateResponse(msg);
-      this.addMsg(reply, 'bot');
-      this.conversationHistory.push({role: 'bot', msg: reply, time: new Date()});
-    }, 800);
-  }
-
-  addMsg(text, type, isThinking=false) {
-    const body = document.getElementById('chat-body');
-    const div = document.createElement('div');
-    const id = 'msg-' + Date.now();
-    div.id = id;
-    div.className = `chat-msg ${type}`;
-    
-    if (type === 'bot') {
-       div.innerHTML = `
-        <div class="msg-avatar">🤖</div>
-        <div class="msg-content"><p>${isThinking ? '<span class="typing-indicator"><span></span><span></span><span></span></span>' : this.formatMsg(text)}</p></div>
-      `;
-    } else {
-      div.innerHTML = `
-        <div class="msg-content"><p>${this.formatMsg(text)}</p></div>
-        <div class="msg-avatar">👤</div>
-      `;
-    }
-    
-    body.appendChild(div);
-    body.scrollTop = body.scrollHeight;
-    return id;
-  }
-
-  formatMsg(text) {
-    return text.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
-  }
-
-  /**
-   * BRAIN: Similarity Scoring
+   * BRAIN: Similarity Scoring v2 (Substring Search)
    */
   generateResponse(query) {
-    const q = query.toLowerCase();
+    const q = query.toLowerCase().trim();
     
-    // 1. Direct Intent Matching (Hardcoded common flows)
-    if (q.includes('price') || q.includes('cost')) return this.getPricing();
-    if (q.includes('hello') || q.includes('hi ')) return "Hello! How can I help you with our services today?";
-    if (q.match(/email|phone|call|contact/)) return this.getContactInfo();
+    // 1. Direct Intents
+    if (q.match(/price|cost|rate/)) return this.getPricing();
+    if (q.match(/hello|hi |hey/)) return "Hello! I can explain anything on this page. Try asking about 'Services', 'Process', or specific technologies.";
+    if (q.match(/contact|mail|phone|reach/)) return this.getContactInfo();
 
-    // 2. Knowledge Base Search (Vector-like Scoring)
-    const queryKeywords = this.extractKeywords(q);
+    // 2. Search Intelligence
+    // Break query into significant terms (longer than 2 chars)
+    const terms = q.split(/\s+/).filter(w => w.length > 2 && !['what', 'how', 'who', 'the', 'and', 'for', 'are', 'you'].includes(w));
     
     let bestChunk = null;
     let maxScore = 0;
 
     this.knowledgeBase.forEach(chunk => {
       let score = 0;
-      queryKeywords.forEach(k => {
-        if (chunk.keywords.includes(k)) score += 1; // Content match
-        if (chunk.section.toLowerCase().includes(k)) score += 3; // Input matches Section Title (Higher weight)
-      });
+      const sectionMatch = chunk.section.toLowerCase();
+      const contentMatch = chunk.raw;
       
-      // Normalize by length to prevent long chunks from winning just by size
-      // but keep it simple for now
+      terms.forEach(term => {
+         // Header match is very important (5x)
+         if (sectionMatch.includes(term)) score += 15;
+         // Content match (1x)
+         const regex = new RegExp(term, 'g');
+         const matches = (contentMatch.match(regex) || []).length;
+         score += matches; 
+      });
+
       if (score > maxScore) {
         maxScore = score;
         bestChunk = chunk;
       }
     });
 
-    if (maxScore > 0) {
-      return `Here is what I found regarding **"${bestChunk.section}"**:\n\n${this.truncate(bestChunk.content, 200)}\n\nWould you like more details?`;
+    // Threshold logic
+    if (maxScore > 2) { // At least some relevance found
+       return `**Regarding ${bestChunk.section}:**\n\n${bestChunk.content}\n\n*Is this what you were looking for?*`;
     }
 
-    // 3. Fallback
-    return "I'm not sure about that based on this page's content. Can you try asking about our services, pricing, or projects?";
+    // 3. Last Resort: Fuzzy Match of entire query
+    const fallbackChunk = this.knowledgeBase.find(c => c.raw.includes(q));
+    if(fallbackChunk) {
+        return `I found this reference: \n\n"...${fallbackChunk.content.substring(0, 150)}..."`; 
+    }
+
+    return "I'm reading the page, but I couldn't find a direct answer to that specific question. Try using keywords like 'Services', 'Stack', or 'About'.";
   }
 
   truncate(str, n){
@@ -314,8 +212,15 @@ function getUserVisibility(node) {
     return node.offsetWidth > 0 && node.offsetHeight > 0;
 }
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => new BlueidealteckChatbot());
+// Initialize - DEFERRED FOR PERFORMANCE
+// Wait until the main thread is idle so we don't block page load
+if ('requestIdleCallback' in window) {
+  requestIdleCallback(() => {
+    new BlueidealteckChatbot();
+  }, { timeout: 5000 });
 } else {
-  new BlueidealteckChatbot();
+  // Fallback for Safari/Older browsers
+  setTimeout(() => {
+    new BlueidealteckChatbot();
+  }, 2000);
 }

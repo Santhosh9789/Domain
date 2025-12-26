@@ -583,7 +583,9 @@ h6 {
   }
 
   .navmenu ul {
-    display: none;
+    display: block; /* Fixed: was none */
+    opacity: 0;
+    visibility: hidden;
     list-style: none;
     position: absolute;
     inset: 80px 15px 20px 15px;
