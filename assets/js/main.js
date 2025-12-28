@@ -60,15 +60,7 @@
     });
   });
 
-  /**
-   * Preloader
-   */
-  const preloader = document.querySelector('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove();
-    });
-  }
+
 
   /**
    * Scroll top button
@@ -96,15 +88,16 @@
    */
   function aosInit() {
     AOS.init({
-      duration: 1000,
-      easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)', // Smooth easeOutQuart
+      duration: 800, // Slightly faster for snappier feel
+      easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
       once: true,
       mirror: false,
-      offset: 100, // Trigger sooner for better flow
-      disable: 'mobile' // Disable on mobile for performance preventing jumpiness
+      offset: 50, // Trigger sooner
+      disable: 'mobile'
     });
   }
-  window.addEventListener('load', aosInit);
+  // Run immediately (script is deferred, so DOM is ready)
+  aosInit();
 
   /**
    * Initiate glightbox

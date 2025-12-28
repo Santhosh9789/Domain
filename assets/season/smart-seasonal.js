@@ -12,17 +12,33 @@ class SmartSeasonalEffects {
     this.userLocation = null;
     this.currentDate = new Date();
     this.activeTheme = null;
+    this.basePath = 'assets/season/'; // Default fallback
+
+    // Detect base path reliably
+    const currentScript = document.currentScript || document.querySelector('script[src*="smart-seasonal.js"]');
+    if (currentScript) {
+      const src = currentScript.getAttribute('src');
+      this.basePath = src.substring(0, src.lastIndexOf('/') + 1);
+    }
     
     this.init();
   }
 
   async init() {
-    // Get user's location
-    await this.getUserLocation();
-    
-    // Determine and apply appropriate theme
-    const theme = this.determineTheme();
-    this.applyTheme(theme);
+    // Priority 1: Apply probable theme immediately based on current date (Northern Hemisphere default)
+    // This makes the site "romba fast" by showing effects without waiting for API
+    const initialTheme = this.determineTheme();
+    this.applyTheme(initialTheme);
+
+    // Priority 2: Refine location in background
+    this.getUserLocation().then(() => {
+      // Re-determine theme once location is known
+      const refinedTheme = this.determineTheme();
+      if (refinedTheme !== this.activeTheme) {
+        console.log(`Refining theme based on location: ${refinedTheme}`);
+        this.applyTheme(refinedTheme);
+      }
+    });
     
     // Check for theme changes every hour
     setInterval(() => {
@@ -209,7 +225,7 @@ class SmartSeasonalEffects {
     // Load new theme CSS
     const cssLink = document.createElement('link');
     cssLink.rel = 'stylesheet';
-    cssLink.href = `assets/season/${themeName}.css`;
+    cssLink.href = `${this.basePath}${themeName}.css`;
     cssLink.setAttribute('data-theme-css', '');
     cssLink.onerror = () => {
       console.log(`Theme CSS not found: ${themeName}.css, using default`);
@@ -218,7 +234,7 @@ class SmartSeasonalEffects {
 
     // Load new theme JS
     const script = document.createElement('script');
-    script.src = `assets/season/${themeName}.js`;
+    script.src = `${this.basePath}${themeName}.js`;
     script.setAttribute('data-theme-js', '');
     script.onerror = () => {
       console.log(`Theme JS not found: ${themeName}.js, using default`);
@@ -243,7 +259,8 @@ class SmartSeasonalEffects {
     };
 
     if (effects[theme]) {
-      setTimeout(() => effects[theme](), 500);
+      // Delay effects slightly longer to ensure smooth page entry (no stutter)
+      setTimeout(() => effects[theme](), 2000);
     }
   }
 
@@ -323,15 +340,8 @@ class SmartSeasonalEffects {
   }
 
   createDiyas() {
-    // Diya (oil lamp) decorations
-    const header = document.querySelector('.header');
-    if (header) {
-      const diya = document.createElement('div');
-      diya.innerHTML = '🪔';
-      diya.style.cssText = 'position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:24px;animation:flicker 2s infinite;';
-      header.style.position = 'relative';
-      header.appendChild(diya);
-    }
+    // Diya (oil lamp) decorations - DISABLED to protect header layout
+    console.log('🪔 Diyas disabled for design consistency');
   }
 
   createColorSplashes() {
@@ -403,15 +413,8 @@ class SmartSeasonalEffects {
   }
 
   createFlowers() {
-    // Spring flowers
-    const flowers = ['🌸', '🌺', '🌻', '🌷', '🌹'];
-    const footer = document.querySelector('.footer');
-    if (footer) {
-      const flowerDecor = document.createElement('div');
-      flowerDecor.innerHTML = flowers.map(f => `<span style="margin:0 10px;font-size:24px;">${f}</span>`).join('');
-      flowerDecor.style.cssText = 'text-align:center;padding:20px 0;';
-      footer.prepend(flowerDecor);
-    }
+    // Spring flowers - DISABLED to protect footer layout
+    console.log('🌸 Flowers disabled for design consistency');
   }
 
   createButterflies() {
