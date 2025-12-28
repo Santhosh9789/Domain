@@ -1,357 +1,293 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- CORE PAGES (High Priority) -->
   <url>
     <loc>https://blueidealteck.com/</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-12-28</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/Projects/</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://blueidealteck.com/index.html</loc>
+    <lastmod>2025-12-28</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- MAIN SECTIONS -->
+  <url>
+    <loc>https://blueidealteck.com/Projects/index.html</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/Projects/projects/01-nexa-agency-landing/</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://blueidealteck.com/careers/index.html</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/Projects/projects/02-devfolio-portfolio/</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://blueidealteck.com/Projects/projects/03-omnishop-product-ui/</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://blueidealteck.com/Projects/projects/04-cryptostat-dashboard/</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://blueidealteck.com/Projects/projects/05-wanderlust-travel/</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://blueidealteck.com/Projects/projects/06-taskmaster-react/</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://blueidealteck.com/Projects/projects/07-skycast-weather/</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://blueidealteck.com/Projects/projects/08-secureauth-login/</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://blueidealteck.com/Projects/projects/09-flutter-delivery-ui/</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://blueidealteck.com/Projects/projects/10-ai-chatbot-ui/</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://blueidealteck.com/blog</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://blueidealteck.com/blog/index.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/blog-details</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://blueidealteck.com/blog-details/index.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/blog-details-cloud/index.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/blog-details-software/index.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- SERVICE PAGES -->
+  <url>
+    <loc>https://blueidealteck.com/service-ai-ml/index.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/blog-details-cloud</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://blueidealteck.com/service-web-app/index.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/blog-details-software</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://blueidealteck.com/service-ui-ux/index.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/blog/</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://blueidealteck.com/career-bde</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://blueidealteck.com/service-devops/index.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/careers</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://blueidealteck.com/service-custom-software/index.html</loc>
     <priority>0.8</priority>
   </url>
+
+  <!-- TOOL PAGES (Comprehensive) -->
   <url>
-    <loc>https://blueidealteck.com/careers/</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://blueidealteck.com/tool-react/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/future-blockchain</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-python/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/future-cyber-security</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-flutter/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/future-game-design</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-aws/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/process-design</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-docker/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/process-development</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-nodejs/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/process-discovery</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-nextjs/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/process-launch</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-kubernetes/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/service-ai-ml</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-terraform/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/service-custom-software</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-jenkins/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/service-devops</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-figma/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/service-ui-ux</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-adobe-xd/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/service-web-app</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-mongodb/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-adobe-xd</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-tensorflow/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-aws</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-pytorch/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-azure</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-azure/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-docker</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-gcp/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-dotnet</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-fastapi/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-fastapi</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-dotnet/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-figma</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-java/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-flutter</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-grafana/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-gcp</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-prometheus/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-grafana</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-jest/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-java</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-selenium/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-jenkins</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-zapier/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-jest</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-n8n/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-kubernetes</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-make/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-make</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/tool-cloud-migration/index.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- PROCESS & FUTURE PAGES -->
+  <url>
+    <loc>https://blueidealteck.com/process-discovery/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-mongodb</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/process-design/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-n8n</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/process-development/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-nextjs</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/process-launch/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-nodejs</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/future-blockchain/index.html</loc>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-prometheus</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/future-cyber-security/index.html</loc>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-python</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/future-game-design/index.html</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- CAREER PAGES -->
+  <url>
+    <loc>https://blueidealteck.com/career-fsd/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-pytorch</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/career-uiux/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-react</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/career-devops/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-selenium</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/career-dm/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-tensorflow</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/career-bde/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-terraform</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/career-qa/index.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/tool-zapier</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://blueidealteck.com/career-social/index.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/career-writer/index.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/career-get/index.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- INDIVIDUAL PROJECTS -->
+  <url>
+    <loc>https://blueidealteck.com/Projects/projects/01-nexa-agency-landing/index.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/Projects/projects/02-devfolio-portfolio/index.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/Projects/projects/03-omnishop-product-ui/index.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/Projects/projects/04-cryptostat-dashboard/index.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/Projects/projects/06-taskmaster-react/index.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/Projects/projects/07-skycast-weather/index.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/Projects/projects/08-secureauth-login/index.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/Projects/projects/09-flutter-delivery-ui/index.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/Projects/projects/10-ai-chatbot-ui/index.html</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- LEGAL -->
+  <url>
+    <loc>https://blueidealteck.com/privacy-policy.html</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/terms-conditions.html</loc>
+    <priority>0.3</priority>
   </url>
 </urlset>
