@@ -142,6 +142,9 @@ class BlueidealteckChatbot {
    */
   createChatbot() {
     // 1. Create Floating Button
+    // HARD GUARD: Do not render on mobile/tablet (< 992px)
+    if (window.innerWidth < 992) return;
+
     const btn = document.createElement('div');
     btn.className = 'chat-btn';
     // Use the new image
@@ -200,6 +203,29 @@ class BlueidealteckChatbot {
     this.ui.body.addEventListener('touchmove', (e) => {
        e.stopPropagation();
     }, { passive: false });
+
+    // 3. Mobile/Tablet Visibility Handler (Dynamic Resize)
+    this.handleResize();
+    window.addEventListener('resize', () => this.handleResize());
+  }
+
+  handleResize() {
+     if (window.innerWidth < 992) {
+         // Force Hide
+         this.ui.btn.style.setProperty('display', 'none', 'important');
+         this.ui.window.style.setProperty('display', 'none', 'important');
+         this.ui.window.classList.remove('open'); // Close if open
+         this.isOpen = false;
+     } else {
+         // Show (restore default display)
+         this.ui.btn.style.display = 'flex';
+         // Window stays closed unless it was open, but for now just hide/show btn
+         if (!this.isOpen) {
+             this.ui.window.style.display = 'none';
+         } else {
+            this.ui.window.style.display = 'flex';
+         }
+     }
   }
 
   attachEvents() {

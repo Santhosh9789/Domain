@@ -4095,3 +4095,6 @@ section,
 body.starter-page-page {
   --nav-hover-color: #47b2e4;
 }
+
+/* Global Mobile Bot Hide Rule */
+@media (max-width: 991px) { .chat-btn, .chat-window { display: none !important; } }
