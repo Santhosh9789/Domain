@@ -1,55 +1,44 @@
-# Blueidealteck Robots.txt - Optimized for SEO
-# Allow all search engines to crawl the entire site
+# Blueidealteck Robots.txt - Optimized for SEO & Security
+# Allow all search engines to crawl the main site content
 
 User-agent: *
 Allow: /
-Crawl-delay: 0
-
-# Sitemap location
+Allow: /assets/
+# Sitemap location (Critical for Google)
 Sitemap: https://blueidealteck.com/sitemap.xml
 
-# Block specific paths (if any)
-# Disallow: /admin/
-# Disallow: /private/
+# --- SECURITY & CLEANUP RULES ---
+# Prevent indexing of internal scripts & sensitive folders
+Disallow: /forms/
+Disallow: /.github/
+Disallow: /.git/
+Disallow: /admin/
+Disallow: /private/
 
-# Allow specific bots
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 0
+# Prevent indexing of raw source files (documentation, config, scripts)
+Disallow: /*.md$
+Disallow: /*.bat$
+Disallow: /*.json$
+Disallow: /*.php$
+Disallow: /CNAME
 
-User-agent: Googlebot-Image
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 0
-
-User-agent: Slurp
-Allow: /
-
-# Social Media Crawlers
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-# Allow all image indexing
-User-agent: *
-Allow: /assets/img/
+# --- RESOURCE RULES ---
+# Explicitly allow all media & styles to ensure the site looks good in Google Images/Previews
+Allow: /*.css$
+Allow: /*.js$
 Allow: /*.jpg$
-Allow: /*.jpeg$
 Allow: /*.png$
-Allow: /*.gif$
 Allow: /*.webp$
 Allow: /*.svg$
 
-# Allow all CSS and JS
-Allow: /*.css$
-Allow: /*.js$
+# --- BOT SPECIFIC RULES ---
+# Ensure Social Media bots can see everything for sharing previews
+User-agent: facebookexternalhit
+Allow: /
+User-agent: Twitterbot
+Allow: /
+User-agent: LinkedInBot
+Allow: /
 
 # Host specification
 Host: https://blueidealteck.com
