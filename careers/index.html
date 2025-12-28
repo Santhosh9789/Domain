@@ -28,7 +28,7 @@
     <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Main CSS File -->
-    <link href="../assets/css/main.css" rel="stylesheet">
+    <link href="../assets/css/main.css?v=1766914716" rel="stylesheet">
     <link href="../assets/css/custom_sections.css" rel="stylesheet">
 
     <style>
@@ -140,19 +140,52 @@
             </div>
         </div><!-- End Page Title -->
 
+        <style>
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            border: 2px solid #eef0f3;
+            background: #f8f9fa;
+            color: #444;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        </style>
+
         <section id="careers" class="careers section">
             <div class="container">
 
                 <div class="row">
                     <div class="col-lg-12 careers-intro" data-aos="fade-up">
                         <h2>Current Openings</h2>
-                        <p>We are currently looking for talented individuals to join our growing team.</p>
+                        <p>Join our team. Choose the work model that fits you best.</p>
+                        
+                        <div class="filter-container mt-4">
+                            <button class="filter-btn active" onclick="filterJobs('onprem')">On-Premises Openings</button>
+                            <button class="filter-btn" onclick="filterJobs('freelance')">Freelancing Openings</button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="row gy-4">
-
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="row gy-4 job-list">
+                    <!-- On-Premises Jobs -->
+                    <div class="col-lg-6 job-item filter-onprem" data-aos="fade-up">
                         <div class="job-card">
                             <h3>Business Development Executive</h3>
                             <div class="job-meta">
@@ -160,18 +193,133 @@
                                 <span><i class="bi bi-clock"></i> Commission Based</span>
                                 <span><i class="bi bi-briefcase"></i> 3-6 Years Exp</span>
                             </div>
-                            <p>Drive growth and build lasting relationships. We need a dynamic BDE to identify new
-                                business opportunities and manage client partnerships.</p>
-                            <a href="../career-bde/" class="btn-apply"
-                                style="background-color: var(--accent-color);">View
-                                Details</a>
+                            <p>Drive growth and build lasting relationships. We need a dynamic BDE to identify new business opportunities.</p>
+                            <a href="../career-bde/" class="btn-apply" style="background-color: var(--accent-color);">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 job-item filter-onprem" data-aos="fade-up">
+                        <div class="job-card">
+                            <h3>Graduate Engineer Trainee (Freshers)</h3>
+                            <div class="job-meta">
+                                <span><i class="bi bi-geo-alt"></i> Remote</span>
+                                <span><i class="bi bi-clock"></i> Performance Incentive</span>
+                                <span><i class="bi bi-calendar"></i> 2022-2025 Pass-outs</span>
+                            </div>
+                            <p>Kickstart your career, work on live projects, and earn as you learn. Strong fundamentals required.</p>
+                            <a href="../career-get/" class="btn-apply" style="background-color: var(--accent-color);">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 job-item filter-onprem" data-aos="fade-up">
+                        <div class="job-card">
+                            <h3>Senior Full Stack Developer</h3>
+                            <div class="job-meta">
+                                <span><i class="bi bi-geo-alt"></i> Remote</span>
+                                <span><i class="bi bi-briefcase"></i> 3-6 Years Exp</span>
+                            </div>
+                            <p>Lead architecture and development of scalable web applications. MERN/Python & System Design expert.</p>
+                            <a href="../career-fsd/" class="btn-apply text-center d-block" style="background-color: var(--accent-color);">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 job-item filter-onprem" data-aos="fade-up">
+                        <div class="job-card">
+                            <h3>Digital Marketing & Growth Lead</h3>
+                            <div class="job-meta">
+                                <span><i class="bi bi-geo-alt"></i> Remote</span>
+                                <span><i class="bi bi-briefcase"></i> 3-6 Years Exp</span>
+                            </div>
+                            <p>Spearhead growth strategies, SEO, PPC, and B2B lead generation to drive customer acquisition.</p>
+                            <a href="../career-dm/" class="btn-apply text-center d-block" style="background-color: var(--accent-color);">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 job-item filter-onprem" data-aos="fade-up">
+                        <div class="job-card">
+                            <h3>Cloud & DevOps Engineer</h3>
+                            <div class="job-meta">
+                                <span><i class="bi bi-geo-alt"></i> Remote</span>
+                                <span><i class="bi bi-briefcase"></i> 3-6 Years Exp</span>
+                            </div>
+                            <p>Manage cloud infrastructure (AWS/Azure), CI/CD pipelines, and ensure system reliability.</p>
+                            <a href="../career-devops/" class="btn-apply text-center d-block" style="background-color: var(--accent-color);">View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Freelancing Jobs -->
+                    <div class="col-lg-6 job-item filter-freelance" data-aos="fade-up" style="display: none;">
+                        <div class="job-card">
+                            <h3>UI/UX Designer</h3>
+                            <div class="job-meta">
+                                <span><i class="bi bi-briefcase"></i> 1-4 Years Exp</span>
+                                <span><i class="bi bi-cash-stack"></i> Per Design/Project</span>
+                            </div>
+                            <p>Create intuitive and stunning user experiences for web and mobile applications.</p>
+                            <a href="../career-uiux/" class="btn-apply text-center d-block" style="background-color: var(--accent-color);">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 job-item filter-freelance" data-aos="fade-up" style="display: none;">
+                        <div class="job-card">
+                            <h3>Tech Content Writer</h3>
+                            <div class="job-meta">
+                                <span><i class="bi bi-briefcase"></i> 0-3 Years Exp</span>
+                                <span><i class="bi bi-file-text"></i> Per Article</span>
+                            </div>
+                            <p>Write engaging technical blogs, case studies, and documentation.</p>
+                            <a href="../career-writer/" class="btn-apply text-center d-block" style="background-color: var(--accent-color);">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 job-item filter-freelance" data-aos="fade-up" style="display: none;">
+                        <div class="job-card">
+                            <h3>Social Media Intern</h3>
+                            <div class="job-meta">
+                                <span><i class="bi bi-mortarboard"></i> Fresher (2023-25)</span>
+                                <span><i class="bi bi-gift"></i> Stipend + Lead Bonus</span>
+                            </div>
+                            <p>Manage social media channels, engage with audiences, and drive brand awareness.</p>
+                            <a href="../career-social/" class="btn-apply text-center d-block" style="background-color: var(--accent-color);">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 job-item filter-freelance" data-aos="fade-up" style="display: none;">
+                        <div class="job-card">
+                            <h3>QA Tester</h3>
+                            <div class="job-meta">
+                                <span><i class="bi bi-briefcase"></i> 0-2 Years Exp</span>
+                                <span><i class="bi bi-check-circle"></i> Per Project Milestone</span>
+                            </div>
+                            <p>Ensure software quality by identifying bugs and ensuring a seamless user experience.</p>
+                            <a href="../career-qa/" class="btn-apply text-center d-block" style="background-color: var(--accent-color);">View Details</a>
                         </div>
                     </div>
 
                 </div>
-
             </div>
         </section>
+
+        <script>
+        function filterJobs(category) {
+            // Update Buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter Jobs
+            const jobs = document.querySelectorAll('.job-item');
+            jobs.forEach(job => {
+                if (job.classList.contains('filter-' + category)) {
+                    job.style.display = 'block';
+                    // Re-trigger AOS animation
+                    job.classList.remove('aos-animate');
+                    setTimeout(() => job.classList.add('aos-animate'), 50);
+                } else {
+                    job.style.display = 'none';
+                }
+            });
+        }
+        </script>
 
     </main>
 
@@ -236,10 +384,11 @@
     <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
     <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
 
-    <script src="../assets/js/main.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+    <script src="../assets/js/main.js?v=1766914716" defer></script>
 
   <script src="../assets/season/smart-seasonal.js" defer></script>
+<script src="../assets/js/chatbot-simple.js"></script>
 </body>
 
 </html>
-
