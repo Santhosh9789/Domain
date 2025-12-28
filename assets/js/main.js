@@ -267,15 +267,16 @@
     if (typeof Lenis === 'undefined') return;
     
     // Premium "iPhone-like" Smooth Scroll Configuration
+    // Premium High-Performance "120 FPS" Smooth Scroll Configuration
     const lenis = new Lenis({
-      duration: 1.5,                 // Longer duration for weightier, smoother feel
+      duration: 1.0,                 // Reduced from 1.5 for faster, snappier feel
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Exponential Out
       direction: 'vertical',
       gestureDirection: 'vertical',
       smooth: true,
-      mouseMultiplier: 1,            // Standard 1:1 feel
-      smoothTouch: true,             // Enable smooth scroll on touch devices (iPhone feel)
-      touchMultiplier: 2,            // Sensitivity for touch
+      mouseMultiplier: 1.2,          // Slightly more responsive mouse scroll
+      smoothTouch: false,            // DISABLE JS scroll on touch -> Use native 120Hz scrolling for max speed/smoothness on mobile
+      touchMultiplier: 2,
       infinite: false,
     });
 
