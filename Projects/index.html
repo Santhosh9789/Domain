@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Blueidealteck | Premium Project Showcase ☑️</title>
+  <title>Blueidealteck | Premium Project Showcase </title>
   <link href="../assets/img/favicon.png" rel="icon" type="image/png">
   <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   
@@ -90,7 +90,6 @@
     .project-card:hover { 
         transform: translateY(-8px); 
         box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
-        border-color: var(--accent-color);
     }
 
     .projects-grid .col-lg-4 {
@@ -169,7 +168,7 @@
     }
 
   </style>
-  <link href="../assets/season/christmas.css" rel="stylesheet">
+
 </head>
 
 <body class="starter-page-page">
@@ -177,17 +176,17 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="/" class="logo d-flex align-items-center me-auto">
+      <a href="../" class="logo d-flex align-items-center me-auto">
         <h1 class="sitename">Blueidealteck</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="/#Home">Home</a></li>
-          <li><a href="/#about">About</a></li>
-          <li><a href="/#services">Services</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/careers/">Careers</a></li>
+          <li><a href="../#about">About</a></li>
+          <li><a href="../#services">Services</a></li>
+          <li><a href="../blog/">Blog</a></li>
+          <li><a href="../careers/">Careers</a></li>
           <li><a href="./" class="active">Projects</a></li>
         </ul>
       </nav>
@@ -232,7 +231,7 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
-          <a href="/" class="logo d-flex align-items-center">
+          <a href="../" class="logo d-flex align-items-center">
             <span class="sitename">Blueidealteck</span>
           </a>
           <div class="footer-contact pt-3">
@@ -246,14 +245,14 @@
         <div class="col-lg-3 col-md-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="/">Home</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="/#about">About us</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="/#services">Services</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="/blog/">Blogs</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="/careers/">Careers</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="/Projects/">Projects</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="/privacy-policy.html">Privacy Policy</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="/terms-conditions.html">Terms & Conditions</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../#about">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../#services">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../blog/">Blogs</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../careers/">Careers</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../Projects/">Projects</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../privacy-policy">Privacy Policy</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../terms-conditions">Terms & Conditions</a></li>
           </ul>
         </div>
 
@@ -271,7 +270,7 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>2025 Copyright</span> <strong class="px-1 sitename">Blueidealteck</strong> <span>All Rights Reserved</span></p>
+      <p>&copy; <span>2025 Copyright</span> <strong class="px-1 sitename">Blueidealteck</strong> <span>All Rights Reserved</span></p>
     </div>
 
   </footer>
@@ -294,99 +293,101 @@
     </div>
   </div>
 
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/aos/aos.js"></script>
-  <script src="../assets/js/main.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="../assets/vendor/aos/aos.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
 
   <script>
-    // Initialize AOS
-    AOS.init();
-
-    const projects = [
-        { id: 1, title: 'Vortex Agency', type: 'creative', desc: 'Brutalist design agency site with custom cursor logic and modal interactions.', tech: ['GSAP', 'CSS3'], icon: 'fas fa-vector-square', path: 'projects/01-nexa-agency-landing/index.html' },
-        { id: 2, title: 'DevFolio', type: 'creative', desc: 'Premium portfolio with typing effect, dark mode, and download CV logic.', tech: ['Tailwind', 'JS'], icon: 'fas fa-user-circle', path: 'projects/02-devfolio-portfolio/index.html' },
-        { id: 3, title: 'OmniShop', type: 'app', desc: 'E-commerce interface with side-cart drawer and dynamic state management.', tech: ['State', 'DOM'], icon: 'fas fa-shopping-bag', path: 'projects/03-omnishop-product-ui/index.html' },
-        { id: 4, title: 'CryptoStat', type: 'dashboard', desc: 'Live crypto dashboard fetching real Bitcoin prices via CoinGecko API.', tech: ['API', 'Chart.js'], icon: 'fab fa-bitcoin', path: 'projects/04-cryptostat-dashboard/index.html' },
-        { id: 5, title: 'WanderLust', type: 'creative', desc: 'Interactive travel magazine acting as a Single Page Application (SPA).', tech: ['SPA', 'Grid'], icon: 'fas fa-plane-departure', path: 'projects/05-wanderlust-travel/index.html' },
-        { id: 6, title: 'FocusFlow', type: 'dashboard', desc: 'Productivity SaaS app with task filtering, priorities, and local storage.', tech: ['SaaS', 'React-like'], icon: 'fas fa-check-double', path: 'projects/06-taskmaster-react/index.html' },
-        { id: 7, title: 'SkyCast', type: 'app', desc: 'Global Weather Dashboard using Open-Meteo for real-time forecast data.', tech: ['API', 'Fetch'], icon: 'fas fa-cloud-sun', path: 'projects/07-skycast-weather/index.html' },
-        { id: 8, title: 'SecureAuth', type: 'dashboard', desc: 'Full authentication admin console with sidebar navigation and data charts.', tech: ['Admin', 'Charts'], icon: 'fas fa-shield-alt', path: 'projects/08-secureauth-login/index.html' },
-        { id: 9, title: 'Flutter Food', type: 'app', desc: 'Mobile app simulation with food filtering and additive cart animations.', tech: ['Mobile', 'Sim'], icon: 'fas fa-utensils', path: 'projects/09-flutter-delivery-ui/index.html' },
-        { id: 10, title: 'Neuromind AI', type: 'app', desc: 'ChatGPT clone with streaming text response simulation and chat history.', tech: ['AI', 'Sim'], icon: 'fas fa-robot', path: 'projects/10-ai-chatbot-ui/index.html' }
-    ];
-
-    const grid = document.getElementById('projectGrid');
-
-    function renderGrid(filter = 'all') {
-        const filtered = projects.filter(p => filter === 'all' || p.type === filter);
-        
-        // Use DocumentFragment for batch DOM insertion
-        const fragment = document.createDocumentFragment();
-        
-        filtered.forEach((p, index) => {
-            const col = document.createElement('div');
-            col.className = 'col-lg-4 col-md-6 mb-4';
-            col.setAttribute('data-aos', 'zoom-in');
-            col.setAttribute('data-aos-delay', (index * 50).toString());
-
-            const techHTML = p.tech.map(t => `<span class="tech-tag">${t}</span>`).join('');
-            
-            col.innerHTML = `
-                <div class="project-card" style="height: 100%;">
-                    <div class="card-preview">
-                        <i class="${p.icon}"></i>
-                    </div>
-                    <div class="card-content">
-                        <div class="header-row">
-                            <span class="category">${p.type}</span>
-                            <i class="fas fa-ellipsis-h" style="color:#cbd5e1;" role="img" aria-label="More options"></i>
-                        </div>
-                        <h3>${p.title}</h3>
-                        <p class="desc">${p.desc}</p>
-                        <div class="tech-stack">${techHTML}</div>
-                        <div class="actions">
-                            <button class="card-btn btn-secondary-custom" onclick="showCode('${p.title}')"><i class="fas fa-code"></i> Code</button>
-                            <a href="${p.path}" target="_blank" class="card-btn btn-primary-custom">Live Demo <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            `;
-            fragment.appendChild(col);
+    // Initialize logic within a safer environment
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize AOS when everything is ready
+      if (typeof AOS !== 'undefined') {
+        AOS.init({
+          duration: 800,
+          once: true
         });
+      }
 
-        grid.innerHTML = '';
-        grid.appendChild(fragment);
-        
-        // Refresh AOS to handle new elements
-        if (typeof AOS !== 'undefined') {
-            AOS.refresh();
-        }
-    }
+      const projects = [
+          { id: 1, title: 'Vortex Agency', type: 'creative', desc: 'Brutalist design agency site with custom cursor logic and modal interactions.', tech: ['GSAP', 'CSS3'], icon: 'fas fa-vector-square', path: 'projects/01-nexa-agency-landing/index.html' },
+          { id: 2, title: 'DevFolio', type: 'creative', desc: 'Premium portfolio with typing effect, dark mode, and download CV logic.', tech: ['Tailwind', 'JS'], icon: 'fas fa-user-circle', path: 'projects/02-devfolio-portfolio/index.html' },
+          { id: 3, title: 'OmniShop', type: 'app', desc: 'E-commerce interface with side-cart drawer and dynamic state management.', tech: ['State', 'DOM'], icon: 'fas fa-shopping-bag', path: 'projects/03-omnishop-product-ui/index.html' },
+          { id: 4, title: 'CryptoStat', type: 'dashboard', desc: 'Live crypto dashboard fetching real Bitcoin prices via CoinGecko API.', tech: ['API', 'Chart.js'], icon: 'fab fa-bitcoin', path: 'projects/04-cryptostat-dashboard/index.html' },
+          { id: 5, title: 'WanderLust', type: 'creative', desc: 'Interactive travel magazine acting as a Single Page Application (SPA).', tech: ['SPA', 'Grid'], icon: 'fas fa-plane-departure', path: 'projects/05-wanderlust-travel/index.html' },
+          { id: 6, title: 'FocusFlow', type: 'dashboard', desc: 'Productivity SaaS app with task filtering, priorities, and local storage.', tech: ['SaaS', 'React-like'], icon: 'fas fa-check-double', path: 'projects/06-taskmaster-react/index.html' },
+          { id: 7, title: 'SkyCast', type: 'app', desc: 'Global Weather Dashboard using Open-Meteo for real-time forecast data.', tech: ['API', 'Fetch'], icon: 'fas fa-cloud-sun', path: 'projects/07-skycast-weather/index.html' },
+          { id: 10, title: 'Neuromind AI', type: 'app', desc: 'ChatGPT clone with streaming text response simulation and chat history.', tech: ['AI', 'Sim'], icon: 'fas fa-robot', path: 'projects/10-ai-chatbot-ui/index.html' },
+          { id: 8, title: 'SecureAuth', type: 'dashboard', desc: 'Full authentication admin console with sidebar navigation and data charts.', tech: ['Admin', 'Charts'], icon: 'fas fa-shield-alt', path: 'projects/08-secureauth-login/index.html' },
+          { id: 9, title: 'Flutter Food', type: 'app', desc: 'Mobile app simulation with food filtering and additive cart animations.', tech: ['Mobile', 'Sim'], icon: 'fas fa-utensils', path: 'projects/09-flutter-delivery-ui/index.html' }
+      ];
 
-    function filterGrid(type, btn) {
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        renderGrid(type);
-    }
+      const grid = document.getElementById('projectGrid');
 
-    // Mock Code Modal
-    function showCode(title) {
-        const modal = document.getElementById('codeModal');
-        const content = document.getElementById('codeContent');
-        
-        content.innerText = `// ${title} - Blueidealteck Source Snippet\n\nfunction initApp() {\n    const data = await fetchData();\n    renderUI(data);\n}\n\n// Full source code available via Blueidealteck Licensing...`;
-        
-        modal.classList.add('active');
-    }
+      window.renderGrid = function(filter = 'all') {
+          const filtered = projects.filter(p => filter === 'all' || p.type === filter);
+          const fragment = document.createDocumentFragment();
+          
+          filtered.forEach((p, index) => {
+              const col = document.createElement('div');
+              col.className = 'col-lg-4 col-md-6 mb-4';
+              col.setAttribute('data-aos', 'zoom-in');
+              col.setAttribute('data-aos-delay', (index * 50).toString());
 
-    function closeModal() {
-        document.getElementById('codeModal').classList.remove('active');
-    }
+              const techHTML = p.tech.map(t => `<span class="tech-tag">${t}</span>`).join('');
+              
+              col.innerHTML = `
+                  <div class="project-card" style="height: 100%;">
+                      <div class="card-preview">
+                          <i class="${p.icon}"></i>
+                      </div>
+                      <div class="card-content">
+                          <div class="header-row">
+                              <span class="category">${p.type}</span>
+                              <i class="fas fa-ellipsis-h" style="color:#cbd5e1;" role="img" aria-label="More options"></i>
+                          </div>
+                          <h3>${p.title}</h3>
+                          <p class="desc">${p.desc}</p>
+                          <div class="tech-stack">${techHTML}</div>
+                          <div class="actions">
+                              <button class="card-btn btn-secondary-custom" onclick="showCode('${p.title}')"><i class="fas fa-code"></i> Code</button>
+                              <a href="${p.path}" target="_blank" class="card-btn btn-primary-custom">Live Demo <i class="fas fa-arrow-right"></i></a>
+                          </div>
+                      </div>
+                  </div>
+              `;
+              fragment.appendChild(col);
+          });
 
-    // Init
-    renderGrid();
+          grid.innerHTML = '';
+          grid.appendChild(fragment);
+          
+          if (typeof AOS !== 'undefined') {
+              AOS.refresh();
+          }
+      };
+
+      window.filterGrid = function(type, btn) {
+          document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          renderGrid(type);
+      };
+
+      window.showCode = function(title) {
+          const modal = document.getElementById('codeModal');
+          const content = document.getElementById('codeContent');
+          content.innerText = `// ${title} - Blueidealteck Source Snippet\n\nfunction initApp() {\n    const data = await fetchData();\n    renderUI(data);\n}\n\n// Source available on request...`;
+          modal.classList.add('active');
+      };
+
+      window.closeModal = function() {
+          document.getElementById('codeModal').classList.remove('active');
+      };
+
+      // Initial render
+      renderGrid();
+    });
   </script>
 
-  <script src="../assets/season/christmas.js"></script>
+  <script src="../assets/season/smart-seasonal.js" defer></script>
 </body>
 </html>
