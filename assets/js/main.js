@@ -265,15 +265,18 @@
    */
   function initLenis() {
     if (typeof Lenis === 'undefined') return;
+    
+    // Premium "iPhone-like" Smooth Scroll Configuration
     const lenis = new Lenis({
-      duration: 1.2, // Check this website for easing: https://lenis.darkroom.engineering/
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      duration: 1.5,                 // Longer duration for weightier, smoother feel
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Exponential Out
       direction: 'vertical',
       gestureDirection: 'vertical',
       smooth: true,
-      mouseMultiplier: 0.8, // Reduced for smoother, less jumpy scroll
-      smoothTouch: false, // Keep disabled for better mobile performance
-      touchMultiplier: 2,
+      mouseMultiplier: 1,            // Standard 1:1 feel
+      smoothTouch: true,             // Enable smooth scroll on touch devices (iPhone feel)
+      touchMultiplier: 2,            // Sensitivity for touch
+      infinite: false,
     });
 
     function raf(time) {
@@ -282,6 +285,9 @@
     }
 
     requestAnimationFrame(raf);
+    
+    // Expose lenis to window for other scripts (like chatbot) to control it if needed
+    window.lenis = lenis;
   }
 
   document.addEventListener('DOMContentLoaded', initLenis);

@@ -14,12 +14,13 @@ class BlueidealteckChatbot {
     };
     this.conversationHistory = [];
     this.knowledgeBase = []; // Array of { section, content, keywords }
+    this.isOpen = false;
     this.init();
   }
 
   async init() {
     await this.detectRegion();
-    // Wait for DOM to be fully ready ensuring all dynamic content (like seasonal effects) is loaded
+    // Wait for DOM to be fully ready ensuring all dynamic content is loaded
     if (document.readyState === 'complete') {
       this.analyzeWebsite();
     } else {
@@ -120,7 +121,6 @@ class BlueidealteckChatbot {
     this.knowledgeBase.push({
       section: section,
       content: content,
-      // We don't need pre-extracted keywords anymore, we'll search raw text for better accuracy
       raw: (section + " " + content).toLowerCase()
     });
   }
@@ -138,6 +138,164 @@ class BlueidealteckChatbot {
   }
 
   /**
+   * UI CREATION
+   */
+  createChatbot() {
+    // 1. Create Floating Button
+    const btn = document.createElement('div');
+    btn.className = 'chat-btn';
+    // Use the new image
+    btn.innerHTML = '<img src="/assets/img/bot-logo.jpg" alt="AI" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">'; 
+    btn.title = 'Chat with Blueidealteck AI';
+    document.body.appendChild(btn);
+
+    // 2. Create Chat Window
+    const win = document.createElement('div');
+    win.className = 'chat-window';
+    // Add data-lenis-prevent to the scrollable container to stop Lenis from hijacking scroll
+    win.innerHTML = `
+      <div class="chat-header">
+        <div class="chat-header-left">
+          <h3>Blueidealteck AI</h3>
+          <div class="chat-status"><span style="color:#00ff88">●</span> Online</div>
+        </div>
+        <button id="chat-close">×</button>
+      </div>
+      <div class="chat-body" id="chat-body" data-lenis-prevent>
+        <div class="chat-msg">
+          <div class="msg-avatar">
+            <img src="/assets/img/bot-logo.jpg" alt="Bot" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+          </div>
+          <div class="msg-content">
+            <p>Hello! I'm your AI assistant. I can answer questions about our <strong>services</strong>, <strong>pricing</strong>, and <strong>technology</strong>. How can I help you today?</p>
+            <div class="quick-btns">
+               <button class="quick-btn">Services?</button>
+               <button class="quick-btn">Pricing?</button>
+               <button class="quick-btn">Contact Sales</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chat-input-box">
+        <input type="text" id="chat-input" placeholder="Ask me anything..." autocomplete="off">
+        <button id="chat-send">➤</button>
+      </div>
+    `;
+    document.body.appendChild(win);
+
+    this.ui = {
+      btn: btn,
+      window: win,
+      body: win.querySelector('#chat-body'),
+      input: win.querySelector('#chat-input'),
+      send: win.querySelector('#chat-send'),
+      close: win.querySelector('#chat-close')
+    };
+
+    // FIX SCROLLING: Stop propagation of scroll events to preventing parent scrolling
+    this.ui.body.addEventListener('wheel', (e) => {
+      e.stopPropagation(); 
+    }, { passive: false });
+    
+    this.ui.body.addEventListener('touchmove', (e) => {
+       e.stopPropagation();
+    }, { passive: false });
+  }
+
+  attachEvents() {
+    // Toggle Window
+    const toggle = () => {
+      this.isOpen = !this.isOpen;
+      if (this.isOpen) {
+        this.ui.window.classList.add('open');
+        this.ui.input.focus();
+      } else {
+        this.ui.window.classList.remove('open');
+      }
+    };
+
+    this.ui.btn.addEventListener('click', toggle);
+    this.ui.close.addEventListener('click', toggle);
+
+    // Send Message
+    const sendMessage = async () => {
+      const text = this.ui.input.value.trim();
+      if (!text) return;
+
+      this.appendMessage('user', text);
+      this.ui.input.value = '';
+      
+      this.showTyping();
+      
+      // Simulate think time
+      setTimeout(() => {
+        this.hideTyping();
+        const response = this.generateResponse(text);
+        this.appendMessage('bot', response);
+      }, 600 + Math.random() * 800);
+    };
+
+    this.ui.send.addEventListener('click', sendMessage);
+    this.ui.input.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') sendMessage();
+    });
+
+    // Quick Buttons
+    this.ui.body.addEventListener('click', (e) => {
+      if (e.target.classList.contains('quick-btn')) {
+        this.ui.input.value = e.target.textContent;
+        sendMessage();
+      }
+    });
+  }
+
+  appendMessage(sender, text) {
+    const div = document.createElement('div');
+    div.className = `chat-msg ${sender}`;
+    // Use proper avatar for bot
+    const avatarHTML = sender === 'user' 
+        ? '👤' 
+        : '<img src="/assets/img/bot-logo.jpg" alt="Bot" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">';
+        
+    div.innerHTML = `
+      <div class="msg-avatar">${avatarHTML}</div>
+      <div class="msg-content"><p>${this.formatText(text)}</p></div>
+    `;
+    this.ui.body.appendChild(div);
+    this.ui.body.scrollTop = this.ui.body.scrollHeight;
+  }
+
+  showTyping() {
+    const div = document.createElement('div');
+    div.className = 'chat-msg bot typing';
+    div.id = 'typing-indicator';
+    div.innerHTML = `
+      <div class="msg-avatar">
+        <img src="/assets/img/bot-logo.jpg" alt="Bot" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+      </div>
+      <div class="msg-content" style="padding: 12px 16px;">
+        <div class="typing-indicator">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    `;
+    this.ui.body.appendChild(div);
+    this.ui.body.scrollTop = this.ui.body.scrollHeight;
+  }
+
+  hideTyping() {
+    const el = document.getElementById('typing-indicator');
+    if (el) el.remove();
+  }
+
+  formatText(text) {
+    // Basic Markdown support
+    return text
+      .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>')
+      .replace(/\n/g, '<br>');
+  }
+
+  /**
    * BRAIN: Similarity Scoring v2 (Substring Search)
    */
   generateResponse(query) {
@@ -149,9 +307,11 @@ class BlueidealteckChatbot {
     if (q.match(/contact|mail|phone|reach/)) return this.getContactInfo();
 
     // 2. Search Intelligence
-    // Break query into significant terms (longer than 2 chars)
-    const terms = q.split(/\s+/).filter(w => w.length > 2 && !['what', 'how', 'who', 'the', 'and', 'for', 'are', 'you'].includes(w));
+    // Break query into significant terms
+    const terms = q.split(/\s+/).filter(w => w.length > 2 && !['what', 'how', 'who', 'the', 'and', 'for', 'are', 'you', 'can', 'please'].includes(w));
     
+    if (terms.length === 0) return "I'm not sure what you mean. Could you ask about our services, pricing, or stack?";
+
     let bestChunk = null;
     let maxScore = 0;
 
@@ -176,17 +336,17 @@ class BlueidealteckChatbot {
     });
 
     // Threshold logic
-    if (maxScore > 2) { // At least some relevance found
-       return `**Regarding ${bestChunk.section}:**\n\n${bestChunk.content}\n\n*Is this what you were looking for?*`;
+    if (maxScore > 1) { // At least some relevance found
+       return `**Regarding ${bestChunk.section}:**\n${this.truncate(bestChunk.content, 300)}`;
     }
 
     // 3. Last Resort: Fuzzy Match of entire query
-    const fallbackChunk = this.knowledgeBase.find(c => c.raw.includes(q));
+    const fallbackChunk = this.knowledgeBase.find(c => c.raw.includes(q.substring(0, 5))); // Weak match
     if(fallbackChunk) {
-        return `I found this reference: \n\n"...${fallbackChunk.content.substring(0, 150)}..."`; 
+        return `I found this reference in **${fallbackChunk.section}**: \n\n"...${this.truncate(fallbackChunk.content, 150)}..."`; 
     }
 
-    return "I'm reading the page, but I couldn't find a direct answer to that specific question. Try using keywords like 'Services', 'Stack', or 'About'.";
+    return "I'm reading the page, but I couldn't find a direct answer to that. Try using keywords like 'Services', 'Stack', or 'About'.";
   }
 
   truncate(str, n){
