@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -49,54 +49,71 @@
 
         .job-card {
             background: #fff;
-            border-radius: 10px;
+            border-radius: 8px; /* Slightly sharper corners */
             padding: 30px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
-            transition: transform 0.3s;
-            border: 1px solid #eee;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Softer shadow */
+            margin-bottom: 0; /* Let grid handle spacing */
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #eaeaea; /* Light border */
+            height: 100%; /* Fill column height */
+            display: flex;
+            flex-direction: column;
         }
 
         .job-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
         .job-card h3 {
-            color: var(--heading-color);
+            color: #0d3c61; /* Dark Blue Title */
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
         }
 
         .job-card .job-meta {
-            color: #777;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .job-card .job-meta i {
-            color: var(--accent-color);
+            color: #0d3c61; /* Dark Blue Icon */
             margin-right: 5px;
         }
 
         .job-card .job-meta span {
-            margin-right: 15px;
+            margin-right: 0; /* Handled by gap */
+        }
+
+        .job-card p {
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            flex-grow: 1; /* Push button to bottom */
         }
 
         .btn-apply {
             display: inline-block;
-            padding: 10px 25px;
-            background: var(--accent-color);
+            padding: 12px 30px;
+            background: #00406b; /* Dark Blue Button */
             color: #fff;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
-            margin-top: 15px;
             transition: 0.3s;
+            font-size: 1rem;
+            margin-top: auto; /* Align to bottom */
+            align-self: flex-start; /* Ensure left alignment */
         }
 
         .btn-apply:hover {
-            background: color-mix(in srgb, var(--accent-color), black 15%);
+            background: #002a47; /* Darker Blue on Hover */
             color: #fff;
         }
     </style>
@@ -161,9 +178,9 @@
         }
 
         .filter-btn.active, .filter-btn:hover {
-            background: var(--accent-color);
+            background: #00406b; /* Matched Dark Blue */
             color: white;
-            border-color: var(--accent-color);
+            border-color: #00406b;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         </style>
@@ -185,7 +202,7 @@
 
                 <div class="row gy-4 job-list">
                     <!-- On-Premises Jobs -->
-                    <div class="col-lg-6 job-item filter-onprem" data-aos="fade-up">
+                    <div class="col-lg-4 col-md-6 job-item filter-onprem" data-aos="fade-up">
                         <div class="job-card">
                             <h3>Business Development Executive</h3>
                             <div class="job-meta">
@@ -194,11 +211,11 @@
                                 <span><i class="bi bi-briefcase"></i> 3-6 Years Exp</span>
                             </div>
                             <p>Drive growth and build lasting relationships. We need a dynamic BDE to identify new business opportunities.</p>
-                            <a href="../career-bde/" class="btn-apply" style="background-color: var(--accent-color);">View Details</a>
+                            <a href="../career-bde/" class="btn-apply">View Details</a>
                         </div>
                     </div>
 
-                    <div class="col-lg-6 job-item filter-onprem" data-aos="fade-up">
+                    <div class="col-lg-4 col-md-6 job-item filter-onprem" data-aos="fade-up">
                         <div class="job-card">
                             <h3>Graduate Engineer Trainee (Freshers)</h3>
                             <div class="job-meta">
@@ -207,11 +224,11 @@
                                 <span><i class="bi bi-calendar"></i> 2022-2025 Pass-outs</span>
                             </div>
                             <p>Kickstart your career, work on live projects, and earn as you learn. Strong fundamentals required.</p>
-                            <a href="../career-get/" class="btn-apply" style="background-color: var(--accent-color);">View Details</a>
+                            <a href="../career-get/" class="btn-apply">View Details</a>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 job-item filter-onprem" data-aos="fade-up">
+                    <div class="col-lg-4 col-md-6 job-item filter-onprem" data-aos="fade-up">
                         <div class="job-card">
                             <h3>Senior Full Stack Developer</h3>
                             <div class="job-meta">
@@ -219,11 +236,11 @@
                                 <span><i class="bi bi-briefcase"></i> 3-6 Years Exp</span>
                             </div>
                             <p>Lead architecture and development of scalable web applications. MERN/Python & System Design expert.</p>
-                            <a href="../career-fsd/" class="btn-apply text-center d-block" style="background-color: var(--accent-color);">View Details</a>
+                            <a href="../career-fsd/" class="btn-apply">View Details</a>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 job-item filter-onprem" data-aos="fade-up">
+                    <div class="col-lg-4 col-md-6 job-item filter-onprem" data-aos="fade-up">
                         <div class="job-card">
                             <h3>Digital Marketing & Growth Lead</h3>
                             <div class="job-meta">
@@ -231,7 +248,7 @@
                                 <span><i class="bi bi-briefcase"></i> 3-6 Years Exp</span>
                             </div>
                             <p>Spearhead growth strategies, SEO, PPC, and B2B lead generation to drive customer acquisition.</p>
-                            <a href="../career-dm/" class="btn-apply text-center d-block" style="background-color: var(--accent-color);">View Details</a>
+                            <a href="../career-dm/" class="btn-apply">View Details</a>
                         </div>
                     </div>
 
@@ -243,12 +260,12 @@
                                 <span><i class="bi bi-briefcase"></i> 3-6 Years Exp</span>
                             </div>
                             <p>Manage cloud infrastructure (AWS/Azure), CI/CD pipelines, and ensure system reliability.</p>
-                            <a href="../career-devops/" class="btn-apply text-center d-block" style="background-color: var(--accent-color);">View Details</a>
+                            <a href="../career-devops/" class="btn-apply">View Details</a>
                         </div>
                     </div>
 
                     <!-- Freelancing Jobs -->
-                    <div class="col-lg-6 job-item filter-freelance" data-aos="fade-up" style="display: none;">
+                    <div class="col-lg-4 col-md-6 job-item filter-freelance" data-aos="fade-up" style="display: none;">
                         <div class="job-card">
                             <h3>UI/UX Designer</h3>
                             <div class="job-meta">
@@ -256,11 +273,11 @@
                                 <span><i class="bi bi-cash-stack"></i> Per Design/Project</span>
                             </div>
                             <p>Create intuitive and stunning user experiences for web and mobile applications.</p>
-                            <a href="../career-uiux/" class="btn-apply text-center d-block" style="background-color: var(--accent-color);">View Details</a>
+                            <a href="../career-uiux/" class="btn-apply">View Details</a>
                         </div>
                     </div>
 
-                    <div class="col-lg-6 job-item filter-freelance" data-aos="fade-up" style="display: none;">
+                    <div class="col-lg-4 col-md-6 job-item filter-freelance" data-aos="fade-up" style="display: none;">
                         <div class="job-card">
                             <h3>Tech Content Writer</h3>
                             <div class="job-meta">
@@ -268,11 +285,11 @@
                                 <span><i class="bi bi-file-text"></i> Per Article</span>
                             </div>
                             <p>Write engaging technical blogs, case studies, and documentation.</p>
-                            <a href="../career-writer/" class="btn-apply text-center d-block" style="background-color: var(--accent-color);">View Details</a>
+                            <a href="../career-writer/" class="btn-apply">View Details</a>
                         </div>
                     </div>
 
-                    <div class="col-lg-6 job-item filter-freelance" data-aos="fade-up" style="display: none;">
+                    <div class="col-lg-4 col-md-6 job-item filter-freelance" data-aos="fade-up" style="display: none;">
                         <div class="job-card">
                             <h3>Social Media Intern</h3>
                             <div class="job-meta">
@@ -280,11 +297,11 @@
                                 <span><i class="bi bi-gift"></i> Stipend + Lead Bonus</span>
                             </div>
                             <p>Manage social media channels, engage with audiences, and drive brand awareness.</p>
-                            <a href="../career-social/" class="btn-apply text-center d-block" style="background-color: var(--accent-color);">View Details</a>
+                            <a href="../career-social/" class="btn-apply">View Details</a>
                         </div>
                     </div>
 
-                    <div class="col-lg-6 job-item filter-freelance" data-aos="fade-up" style="display: none;">
+                    <div class="col-lg-4 col-md-6 job-item filter-freelance" data-aos="fade-up" style="display: none;">
                         <div class="job-card">
                             <h3>QA Tester</h3>
                             <div class="job-meta">
@@ -292,7 +309,7 @@
                                 <span><i class="bi bi-check-circle"></i> Per Project Milestone</span>
                             </div>
                             <p>Ensure software quality by identifying bugs and ensuring a seamless user experience.</p>
-                            <a href="../career-qa/" class="btn-apply text-center d-block" style="background-color: var(--accent-color);">View Details</a>
+                            <a href="../career-qa/" class="btn-apply">View Details</a>
                         </div>
                     </div>
 
@@ -359,7 +376,7 @@
             <a href="https://x.com/blueidealteck" target="_blank"><i class="bi bi-twitter-x"></i></a>
             <a href="https://www.facebook.com/profile.php?id=61576888345818" target="_blank"><i class="bi bi-facebook"></i></a>
             <a href="https://www.instagram.com/blueidealteck/" target="_blank"><i class="bi bi-instagram"></i></a>
-            <a href="https://linkedin.com/in/blueidealteck-software-solutions-2259b7358" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.linkedin.com/company/blueidealteck-software-solution" target="_blank"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
 
