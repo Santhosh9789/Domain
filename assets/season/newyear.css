@@ -35,7 +35,7 @@ body.theme-new-year-eve {
 /* Countdown timer */
 .theme-new-year::before,
 .theme-new-year-eve::before {
-  content: '🎊 HAPPY NEW YEAR 2025! 🎉';
+  content: '🎊 HAPPY NEW YEAR 2026! 🎉';
   position: fixed;
   top: 80px;
   left: 50%;
@@ -84,3 +84,4 @@ body.theme-new-year-eve {
   0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
   50% { opacity: 0.5; transform: scale(1.2) rotate(180deg); }
 }
+
