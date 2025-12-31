@@ -88,7 +88,7 @@
    */
   function aosInit() {
     AOS.init({
-      duration: 800, // Slightly faster for snappier feel
+      duration: 1000, // Slower, smoother animations (1s)
       easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
       once: true,
       mirror: false,
@@ -204,24 +204,33 @@
   // });
 
   /**
-   * Navmenu Scrollspy
+   * Navmenu Scrollspy - Optimized
    */
   let navmenulinks = document.querySelectorAll('.navmenu a');
+  
+  // Cache sections to avoid querySelector in loop
+  const scrollSpySections = [];
+  navmenulinks.forEach(link => {
+    if (!link.hash) return;
+    const section = document.querySelector(link.hash);
+    if (section) {
+        scrollSpySections.push({ link, section });
+    }
+  });
 
   function navmenuScrollspy() {
-    navmenulinks.forEach(navmenulink => {
-      if (!navmenulink.hash) return;
-      let section = document.querySelector(navmenulink.hash);
-      if (!section) return;
-      let position = window.scrollY + 200;
+    let position = window.scrollY + 200;
+    
+    scrollSpySections.forEach(({ link, section }) => {
       if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
-        navmenulink.classList.add('active');
+        document.querySelectorAll('.navmenu a.active').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
       } else {
-        navmenulink.classList.remove('active');
+        link.classList.remove('active');
       }
-    })
+    });
   }
+
   /**
    * Performance Utils: Debounce & Throttle
    */
@@ -267,14 +276,14 @@
     if (typeof Lenis === 'undefined') return;
     
     // Premium "iPhone-like" Smooth Scroll Configuration
-    // Premium High-Performance "120 FPS" Smooth Scroll Configuration
+    // Balanced for Performance vs Smoothness
     const lenis = new Lenis({
-      duration: 1.0,                 // Reduced from 1.5 for faster, snappier feel
+      duration: 1.2,                 // Adjusted to 1.2 for balance (was 1.6)
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Exponential Out
       direction: 'vertical',
       gestureDirection: 'vertical',
       smooth: true,
-      mouseMultiplier: 1.2,          // Slightly more responsive mouse scroll
+      mouseMultiplier: 1.0,          // Standard weight
       smoothTouch: false,            // DISABLE JS scroll on touch -> Use native 120Hz scrolling for max speed/smoothness on mobile
       touchMultiplier: 2,
       infinite: false,
