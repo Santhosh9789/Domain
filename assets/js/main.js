@@ -300,4 +300,17 @@
 
 
 
+  /**
+   * Automatic Copyright Year
+   */
+  const yearSpan = document.querySelector('.auto-year');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  } else {
+    // Fallback for multiple spans or if targeted differently
+    document.querySelectorAll('.auto-year').forEach(span => {
+      span.textContent = new Date().getFullYear();
+    });
+  }
+
 })();
