@@ -272,19 +272,20 @@ class SmartSeasonalEffects {
 
   diwaliEffects() {
     console.log('🪔 Diwali effects activated!');
-    this.createFireworks();
+    this.createFireworks(['#FFD700', '#FF8C00', '#FF4500', '#FFFF00']); // Gold, Orange, Red-Orange, Yellow
     this.createDiyas();
   }
 
   holiEffects() {
     console.log('🎨 Holi effects activated!');
-    this.createColorSplashes();
+    this.createColorSplashes(['#FF0080', '#00FF80', '#8000FF', '#FF8000', '#00FFFF', '#FFFF00']); // Vibrant Pink, Green, Purple, Orange, Cyan, Yellow
   }
 
   newYearEffects() {
     console.log('🎉 New Year effects activated!');
-    this.createConfetti();
-    this.createFireworks();
+    const newYearColors = ['#FFD700', '#C0C0C0', '#FF0000', '#0000FF', '#00FF00', '#800080']; // Gold, Silver, Red, Blue, Green, Purple
+    this.createConfetti(newYearColors);
+    this.createFireworks(newYearColors);
   }
 
   halloweenEffects() {
@@ -314,7 +315,7 @@ class SmartSeasonalEffects {
   }
 
   // Helper methods for effects
-  createFireworks() {
+  createFireworks(colors = ['#ff0', '#f0f', '#0ff', '#f00', '#0f0']) {
     // Fireworks animation
     const container = document.createElement('div');
     container.className = 'fireworks-container';
@@ -330,7 +331,7 @@ class SmartSeasonalEffects {
         top:${Math.random() * 50}%;
         width:5px;
         height:5px;
-        background:${['#ff0', '#f0f', '#0ff', '#f00', '#0f0'][Math.floor(Math.random() * 5)]};
+        background:${colors[Math.floor(Math.random() * colors.length)]};
         border-radius:50%;
         animation:firework-burst 1s ease-out;
       `;
@@ -344,7 +345,7 @@ class SmartSeasonalEffects {
     console.log('🪔 Diyas disabled for design consistency');
   }
 
-  createColorSplashes() {
+  createColorSplashes(colors = ['#ff0080', '#00ff80', '#8000ff', '#ff8000', '#00ffff']) {
     // Holi color splashes
     document.addEventListener('click', (e) => {
       const splash = document.createElement('div');
@@ -354,7 +355,7 @@ class SmartSeasonalEffects {
         top:${e.clientY}px;
         width:50px;
         height:50px;
-        background:${['#ff0080', '#00ff80', '#8000ff', '#ff8000', '#00ffff'][Math.floor(Math.random() * 5)]};
+        background:${colors[Math.floor(Math.random() * colors.length)]};
         border-radius:50%;
         opacity:0.7;
         pointer-events:none;
@@ -366,7 +367,7 @@ class SmartSeasonalEffects {
     });
   }
 
-  createConfetti() {
+  createConfetti(colors = ['#ff0', '#f0f', '#0ff', '#f00', '#0f0']) {
     // Confetti animation
     for (let i = 0; i < 50; i++) {
       setTimeout(() => {
@@ -377,7 +378,7 @@ class SmartSeasonalEffects {
           top:-10px;
           width:10px;
           height:10px;
-          background:${['#ff0', '#f0f', '#0ff', '#f00', '#0f0'][Math.floor(Math.random() * 5)]};
+          background:${colors[Math.floor(Math.random() * colors.length)]};
           animation:confetti-fall ${3 + Math.random() * 2}s linear;
           z-index:9999;
           pointer-events:none;
