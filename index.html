@@ -492,7 +492,7 @@
   <main class="main">
 
     <section id="Home" class="Home section dark-background">
-      <!-- ... (content same) ... -->
+
       <div class="container-fluid px-5">
         <div class="row gy-4">
           <div class="col-lg-12 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
@@ -509,9 +509,7 @@
 
     </section>
 
-    <!-- ... (skipping unchanged sections for brevity in replacement if not modifying them, but I need to target specific lines) ... -->
-    <!-- Actually I should use multiple chunks or narrow down. Let's narrow down to Nav first, then Card separately. The tool allows Single contiguous block. I cannot do both in one call unless I replace everything in between. -->
-    <!-- I will use multi_replace_file_content for index.html -->
+
     <section id="about" class="about section">
 
       <div class="container section-title" data-aos="fade-up">
@@ -1091,6 +1089,15 @@
                   rel="noopener noreferrer" class="d-flex align-items-center justify-content-center me-3"
                   style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.1); color: var(--default-color); transition: 0.3s;"><i
                     class="bi bi-linkedin"></i></a>
+              </div>
+              <div class="mt-4" id="free-audit-form">
+                <h4 class="mb-2">Free Audit</h4>
+                <form onsubmit="event.preventDefault(); var email = this.querySelector('input[type=email]').value; var subject = 'Thank you for reaching out to Blueidealteck!'; var body = 'Hi,\n\nThank you for contacting Blueidealteck Software Solutions Private Limited. We are excited to learn more about your business and explore how our team can support your goals.\n\nTo provide you with the most accurate solution and assign the right subject matter experts from our team, we would love to hear more about your specific needs.\n\nCould you please share a brief overview of what you are looking for? For example:\n\nWhat is the primary challenge you are looking to solve right now?\n\nWhich service area are you most interested in? (Custom Software, Cloud/DevOps, UI/UX, AI, or IT Staffing)\n\nAre there any specific technical requirements or deadlines we should be aware of?\n\nOnce we have these details, our experts—specializing in scalable digital ecosystems and cloud optimization—will review them and get back to you within 4 business hours with a tailored plan.\n\nWe look forward to hearing from you and building something great together.\n\nBest Regards,\nThe Blueidealteck Team\nwww.blueidealteck.com\ninfo@blueidealteck.com\n\n(Client Email: ' + email + ')'; window.location.href = 'mailto:info@blueidealteck.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);">
+                  <div class="input-group">
+                    <input type="email" class="form-control" name="email" placeholder="name@company.com" aria-label="Email" required style="border-radius: 4px 0 0 4px; height: 45px;">
+                    <button class="btn btn-primary" type="submit" style="background-color: var(--accent-color); border: none; border-radius: 0 4px 4px 0; height: 45px;">Submit</button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
