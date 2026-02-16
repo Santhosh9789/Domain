@@ -153,8 +153,57 @@ Header unset ETag
 </IfModule>
 FileETag None
 
-# Redirect old URLs (if any)
-# Redirect 301 /old-page.html https://blueidealteck.com/new-page
+# Redirect old URLs - Folder Reorganization
+# Location and Industry pages moved into parent folders (2026-02-16)
+
+# Location redirects (25)
+Redirect 301 /location-virudhachalam/ /location/virudhachalam/
+Redirect 301 /location-cuddalore/ /location/cuddalore/
+Redirect 301 /location-neyveli/ /location/neyveli/
+Redirect 301 /location-villupuram/ /location/villupuram/
+Redirect 301 /location-pondicherry/ /location/pondicherry/
+Redirect 301 /location-chennai/ /location/chennai/
+Redirect 301 /location-bangalore/ /location/bangalore/
+Redirect 301 /location-mumbai/ /location/mumbai/
+Redirect 301 /location-delhi/ /location/delhi/
+Redirect 301 /location-hyderabad/ /location/hyderabad/
+Redirect 301 /location-pune/ /location/pune/
+Redirect 301 /location-kolkata/ /location/kolkata/
+Redirect 301 /location-ahmedabad/ /location/ahmedabad/
+Redirect 301 /location-surat/ /location/surat/
+Redirect 301 /location-jaipur/ /location/jaipur/
+Redirect 301 /location-lucknow/ /location/lucknow/
+Redirect 301 /location-kanpur/ /location/kanpur/
+Redirect 301 /location-nagpur/ /location/nagpur/
+Redirect 301 /location-indore/ /location/indore/
+Redirect 301 /location-thane/ /location/thane/
+Redirect 301 /location-bhopal/ /location/bhopal/
+Redirect 301 /location-visakhapatnam/ /location/visakhapatnam/
+Redirect 301 /location-patna/ /location/patna/
+Redirect 301 /location-vadodara/ /location/vadodara/
+Redirect 301 /location-ghaziabad/ /location/ghaziabad/
+
+# Industry redirects (20)
+Redirect 301 /industry-healthcare/ /industry/healthcare/
+Redirect 301 /industry-fintech/ /industry/fintech/
+Redirect 301 /industry-ecommerce/ /industry/ecommerce/
+Redirect 301 /industry-real-estate/ /industry/real-estate/
+Redirect 301 /industry-logistics/ /industry/logistics/
+Redirect 301 /industry-manufacturing/ /industry/manufacturing/
+Redirect 301 /industry-agritech/ /industry/agritech/
+Redirect 301 /industry-edtech/ /industry/edtech/
+Redirect 301 /industry-fitness/ /industry/fitness/
+Redirect 301 /industry-media/ /industry/media/
+Redirect 301 /industry-automotive/ /industry/automotive/
+Redirect 301 /industry-food-delivery/ /industry/food-delivery/
+Redirect 301 /industry-gaming/ /industry/gaming/
+Redirect 301 /industry-energy/ /industry/energy/
+Redirect 301 /industry-government/ /industry/government/
+Redirect 301 /industry-retail/ /industry/retail/
+Redirect 301 /industry-social-media/ /industry/social-media/
+Redirect 301 /industry-sports/ /industry/sports/
+Redirect 301 /industry-travel/ /industry/travel/
+Redirect 301 /industry-dating/ /industry/dating/
 
 # Canonical URL enforcement
 # RewriteCond %{HTTP_HOST} !^blueidealteck\.com$ [NC]
