@@ -11,17 +11,28 @@
         content="Tech Blog, AI News, Software Development Trends, Cloud Computing Insights, Blueidealteck Blog">
     <meta name="author" content="Blueidealteck">
     <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tech Insights & AI News | Blueidealteck Blog">
+    <meta property="og:description" content="Stay updated with the latest trends in AI, Cloud Computing, and Software Development. Read expert insights from Blueidealteck.">
+    <meta property="og:image" content="https://blueidealteck.com/assets/img/hero-img.png">
+    <meta property="og:url" content="https://blueidealteck.com/blog/">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Tech Insights & AI News | Blueidealteck Blog">
+    <meta property="twitter:description" content="Stay updated with the latest trends in AI, Cloud Computing, and Software Development.">
+    <meta property="twitter:image" content="https://blueidealteck.com/assets/img/hero-img.png">
 
-    <!-- Facivon -->
+    <!-- Favicon -->
   <link href="../assets/img/favicon.png" rel="icon" type="image/png">
   <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <!-- Fonts -->
+    <!-- Fonts (Optimized) -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -32,146 +43,11 @@
 
     <!-- Main CSS File -->
     <link href="../assets/css/main.css?v=1766914716" rel="stylesheet">
+  <link href="../assets/css/microanimations.css" rel="stylesheet">
+  <link href="../assets/css/blog-enhancements.css" rel="stylesheet">
     <link href="../assets/css/custom_sections.css" rel="stylesheet">
 
-    <style>
-        /* Blog Specific Styles */
-        /* Blog Specific Styles */
-        .blog-card {
-            background: #fff;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: all 0.4s ease;
-            height: 100%;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            position: relative;
-        }
-
-        .blog-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 68, 114, 0.15);
-        }
-
-        /* Colorful top borders for cards */
-        .blog-card.service-card {
-            border-top: 5px solid #3b82f6;
-        }
-
-        .blog-card.future-card {
-            border-top: 5px solid #f59e0b;
-        }
-
-        .blog-card.tool-card {
-            border-top: 5px solid #10b981;
-        }
-
-        .blog-img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-            position: relative;
-        }
-
-        .blog-img::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 50%;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
-        }
-
-        .blog-content {
-            padding: 25px;
-        }
-
-        .blog-date {
-            font-size: 0.85rem;
-            color: #64748b;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-
-        .blog-title {
-            font-size: 1.35rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--heading-color);
-            line-height: 1.4;
-        }
-
-        .blog-excerpt {
-            font-size: 0.95rem;
-            color: var(--default-color);
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-
-        .read-more {
-            color: var(--accent-color);
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            font-size: 0.95rem;
-            transition: 0.3s;
-        }
-
-        .read-more i {
-            margin-left: 8px;
-            transition: 0.3s;
-        }
-
-        .read-more:hover {
-            color: #3b82f6;
-        }
-
-        .read-more:hover i {
-            transform: translateX(5px);
-        }
-
-        /* Section styling updates */
-        .section-title h2 {
-            color: var(--heading-color);
-            position: relative;
-            padding-bottom: 20px;
-        }
-
-        .section-title h2:before {
-            display: none;
-        }
-
-        .section-title h2:after {
-            content: "";
-            position: absolute;
-            display: block;
-            width: 50px;
-            height: 3px;
-            background: var(--accent-color);
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-        }
-
-        /* Spacing Overrides */
-        section.blog-posts {
-            padding-top: 0;
-        }
-        
-        .page-title {
-            padding-bottom: 0 !important;
-            margin-bottom: 0 !important;
-        }
-        
-        .section-title {
-            padding-top: 20px;
-        }
-    </style>
+    <!-- Inline CSS removed - now in blog-enhancements.css -->
 
 </head>
 
@@ -207,6 +83,12 @@
         <!-- Page Title -->
         <div class="page-title dark-background">
             <div class="container position-relative">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="../">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                    </ol>
+                </nav>
                 <h1>Insights & News</h1>
                 <p>Expert perspectives on Technology, AI, and Digital Transformation.</p>
             </div>
@@ -222,8 +104,161 @@
                     <p>Expert insights into the technologies shaping our world.</p>
                 </div>
                 <div class="row gy-4 mb-5">
-                    <!-- Blog Post 1 -->
+                    <!-- Blog Post 1 (New) -->
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <article class="blog-card">
+                            <div class="blog-img"
+                                style="background: linear-gradient(135deg, #0f172a, #64748b); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                                <i class="bi bi-rocket-takeoff"></i>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-date">February 16, 2026</div>
+                                <h2 class="blog-title">Top 5 Custom Software Trends in 2026</h2>
+                                <p class="blog-excerpt">
+                                    From AI-First Engineering to Green Computing, discover the 5 critical trends defining the
+                                    future of digital transformation.
+                                </p>
+                                <a href="../blog-details-trends-2026/" class="read-more-btn">Read More <i
+                                        class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- New Blog Post 2 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <article class="blog-card">
+                            <div class="blog-img"
+                                style="background: linear-gradient(135deg, #6366f1, #8b5cf6); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                                <i class="bi bi-code-slash"></i>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-date">February 20, 2026</div>
+                                <h2 class="blog-title">React vs Vue vs Angular: 2026 Comparison</h2>
+                                <p class="blog-excerpt">
+                                    The battle of the frontend frameworks continues. Which one offers the best performance and scalability for your next project?
+                                </p>
+                                <a href="../blog-details-react-vs-vue-angular/" class="read-more-btn">Read More <i
+                                        class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- New Blog Post 3 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <article class="blog-card">
+                            <div class="blog-img"
+                                style="background: linear-gradient(135deg, #0ea5e9, #38bdf8); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                                <i class="bi bi-cloud-arrow-up"></i>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-date">March 05, 2026</div>
+                                <h2 class="blog-title">5 Strategies for Seamless Cloud Migration</h2>
+                                <p class="blog-excerpt">
+                                    Move to AWS or Azure without downtime. Learn the "Rehost, Replatform, Refactor" strategies used by top enterprises.
+                                </p>
+                                <a href="../blog-details-cloud-migration-strategies/" class="read-more-btn">Read More <i
+                                        class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- New Blog Post 4 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                        <article class="blog-card">
+                            <div class="blog-img"
+                                style="background: linear-gradient(135deg, #10b981, #34d399); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                                <i class="bi bi-phone"></i>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-date">March 15, 2026</div>
+                                <h2 class="blog-title">Why Your Business Needs a Native Mobile App</h2>
+                                <p class="blog-excerpt">
+                                    Boost customer retention and sales with a dedicated iOS and Android app. Unlock the power of push notifications.
+                                </p>
+                                <a href="../blog-details-mobile-app-guide/" class="read-more-btn">Read More <i
+                                        class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- New Blog Post 5 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                        <article class="blog-card">
+                            <div class="blog-img"
+                                style="background: linear-gradient(135deg, #f59e0b, #fbbf24); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                                <i class="bi bi-chat-dots-fill"></i>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-date">March 20, 2026</div>
+                                <h2 class="blog-title">How AI Chatbots Are Revolutionizing Customer Service</h2>
+                                <p class="blog-excerpt">
+                                    Automate 70% of support queries and provide 24/7 instant responses with custom AI-powered chatbots.
+                                </p>
+                                <a href="../blog-details-ai-chatbots/" class="read-more-btn">Read More <i
+                                        class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- New Blog Post 6 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <article class="blog-card">
+                            <div class="blog-img"
+                                style="background: linear-gradient(135deg, #ec4899, #f472b6); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                                <i class="bi bi-palette-fill"></i>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-date">March 25, 2026</div>
+                                <h2 class="blog-title">The Importance of UI/UX Design in Modern App Development</h2>
+                                <p class="blog-excerpt">
+                                    Great code fails with bad design. Learn how superior UI/UX drives retention and increases conversion rates.
+                                </p>
+                                <a href="../blog-details-ui-ux-design/" class="read-more-btn">Read More <i
+                                        class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- New Blog Post 7 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <article class="blog-card">
+                            <div class="blog-img"
+                                style="background: linear-gradient(135deg, #dc2626, #ef4444); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                                <i class="bi bi-shield-lock-fill"></i>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-date">March 30, 2026</div>
+                                <h2 class="blog-title">Cybersecurity Essentials for Small Businesses in 2026</h2>
+                                <p class="blog-excerpt">
+                                    43% of cyberattacks target small businesses. Discover the essential steps to protect your data and reputation.
+                                </p>
+                                <a href="../blog-details-cybersecurity-essentials/" class="read-more-btn">Read More <i
+                                        class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- New Blog Post 8 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <article class="blog-card">
+                            <div class="blog-img"
+                                style="background: linear-gradient(135deg, #8b5cf6, #a78bfa); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                                <i class="bi bi-megaphone-fill"></i>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-date">April 05, 2026</div>
+                                <h2 class="blog-title">Digital Marketing vs Traditional Marketing: What Works Best?</h2>
+                                <p class="blog-excerpt">
+                                    Stop wasting money on billboards. Learn why Digital Marketing offers superior targeting, ROI, and engagement.
+                                </p>
+                                <a href="../blog-details-digital-marketing/" class="read-more-btn">Read More <i
+                                        class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Blog Post 2 (Was 1) -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                         <article class="blog-card">
                             <div class="blog-img"
                                 style="background: linear-gradient(45deg, #1e3a8a, #3b82f6); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
@@ -236,7 +271,7 @@
                                     Artificial Intelligence isn't just a buzzword; it's the engine of modern growth.
                                     Discover how automated workflows and predictive analytics can 10x your efficiency.
                                 </p>
-                                <a href="../blog-details/" class="read-more">Read More <i
+                                <a href="../blog-details/" class="read-more-btn">Read More <i
                                         class="bi bi-arrow-right"></i></a>
                             </div>
                         </article>
@@ -255,7 +290,7 @@
                                     Moving legacy systems to the cloud reduces costs and improves security. Learn the
                                     top 5 strategies for a seamless transition to AWS or Azure.
                                 </p>
-                                <a href="../blog-details-cloud/" class="read-more">Read More <i
+                                <a href="../blog-details-cloud/" class="read-more-btn">Read More <i
                                         class="bi bi-arrow-right"></i></a>
                             </div>
                         </article>
@@ -274,7 +309,7 @@
                                     From low-code platforms to microservices architecture, stay ahead of the curve with
                                     these critical software development trends dominating the industry.
                                 </p>
-                                <a href="../blog-details-software/" class="read-more">Read More <i
+                                <a href="../blog-details-software/" class="read-more-btn">Read More <i
                                         class="bi bi-arrow-right"></i></a>
                             </div>
                         </article>
@@ -781,6 +816,8 @@
 
             </div>
         </section>
+
+
 
     </main>
 
