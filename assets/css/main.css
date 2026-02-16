@@ -4098,3 +4098,12 @@ body.starter-page-page {
 
 /* Global Mobile Bot Hide Rule */
 @media (max-width: 991px) { .chat-btn, .chat-window { display: none !important; } }
+
+/* Social Share Buttons */
+.social-share-buttons { display: flex; gap: 10px; margin-top: 2rem; flex-wrap: wrap; }
+.share-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; color: white; font-size: 1.2rem; transition: transform 0.3s; text-decoration: none; }
+.share-btn:hover { transform: translateY(-3px); color: white; }
+.share-linkedin { background: #0077b5; }
+.share-twitter { background: #000000; }
+.share-facebook { background: #1877f2; }
+.share-whatsapp { background: #25d366; }

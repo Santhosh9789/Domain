@@ -1,0 +1,424 @@
+/* 
+ * Premium Microanimations for Blueidealteck
+ * Adds modern, subtle animations to enhance UX
+ */
+
+/* ============================================
+   1. SMOOTH BUTTON ANIMATIONS
+   ============================================ */
+
+.btn, .btn-getstarted, .read-more-btn, .cta-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:hover, .btn-getstarted:hover, .read-more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Ripple effect on buttons */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* ============================================
+   2. NAVIGATION LINK ANIMATIONS
+   ============================================ */
+
+.navmenu a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* DISABLED - Underline animation hidden as per user request
+.navmenu a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #4154f1, #2937cc);
+  transform: translateX(-50%);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navmenu a:hover::after,
+.navmenu a.active::after {
+  width: 100%;
+}
+*/
+
+/* ============================================
+   3. CARD HOVER EFFECTS
+   ============================================ */
+
+.service-item, .features-item, .stats-item, .blog-post-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.service-item:hover, .features-item:hover, .blog-post-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(65, 84, 241, 0.15);
+}
+
+.service-item .icon, .features-item .icon {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-item:hover .icon, .features-item:hover .icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* ============================================
+   4. ANIMATED GRADIENT BACKGROUNDS
+   ============================================ */
+
+.gradient-bg {
+  background: linear-gradient(-45deg, #4154f1, #2937cc, #6366f1, #4f46e5);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ============================================
+   5. ICON ANIMATIONS
+   ============================================ */
+
+.bi, .icon {
+  transition: all 0.3s ease;
+}
+
+.pulse-icon {
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Social media icons */
+.social-links a {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-links a:hover {
+  transform: translateY(-5px) rotate(10deg);
+  box-shadow: 0 8px 15px rgba(65, 84, 241, 0.3);
+}
+
+/* ============================================
+   6. SCROLL ANIMATIONS ENHANCEMENT
+   ============================================ */
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   7. LOADING SPINNER
+   ============================================ */
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #4154f1;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ============================================
+   8. FLOATING ANIMATION
+   ============================================ */
+
+.float-animation {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* ============================================
+   9. SMOOTH PAGE TRANSITIONS
+   ============================================ */
+
+.page-transition {
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   10. HERO SECTION SPECIAL EFFECTS
+   ============================================ */
+
+.hero-title {
+  animation: titleSlideIn 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes titleSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-subtitle {
+  animation: subtitleFadeIn 1s 0.3s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes subtitleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   11. STATS COUNTER ANIMATION
+   ============================================ */
+
+.stats-item .number {
+  animation: countUp 2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================
+   12. FORM INPUT FOCUS ANIMATIONS
+   ============================================ */
+
+.form-control, input, textarea {
+  transition: all 0.3s ease;
+}
+
+.form-control:focus, input:focus, textarea:focus {
+  transform: scale(1.02);
+  box-shadow: 0 5px 20px rgba(65, 84, 241, 0.2);
+}
+
+/* ============================================
+   13. FOOTER LINK HOVER
+   ============================================ */
+
+.footer-links a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.footer-links a::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-10px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover::before {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.footer-links a:hover {
+  padding-left: 10px;
+  color: #4154f1;
+}
+
+/* ============================================
+   14. SCROLL-TO-TOP BUTTON ANIMATION
+   ============================================ */
+
+#scroll-top {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#scroll-top:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 10px 25px rgba(65, 84, 241, 0.3);
+}
+
+/* ============================================
+   15. BADGE ANIMATIONS
+   ============================================ */
+
+.badge {
+  animation: badgePop 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes badgePop {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ============================================
+   16. IMAGE HOVER ZOOM
+   ============================================ */
+
+.img-zoom-container {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.img-zoom-container img {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.img-zoom-container:hover img {
+  transform: scale(1.1);
+}
+
+/* ============================================
+   17. GLASSMORPHISM HOVER EFFECT
+   ============================================ */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transform: translateY(-5px);
+}
+
+/* ============================================
+   18. TEXT SHIMMER EFFECT
+   ============================================ */
+
+.shimmer-text {
+  background: linear-gradient(90deg, #4154f1, #6366f1, #4154f1);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* ============================================
+   19. TYPING CURSOR EFFECT
+   ============================================ */
+
+.typing-cursor::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ============================================
+   20. SMOOTH TRANSITIONS FOR ALL
+   ============================================ */
+
+* {
+  scroll-behavior: smooth;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
