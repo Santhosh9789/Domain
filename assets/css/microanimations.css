@@ -98,15 +98,10 @@
 
 .gradient-bg {
   background: linear-gradient(-45deg, #4154f1, #2937cc, #6366f1, #4f46e5);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+  background-size: 200% 200%;
+  /* Removed expensive infinite background-position animation for performance */
 }
 
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
 
 /* ============================================
    5. ICON ANIMATIONS
@@ -380,14 +375,14 @@
   background: linear-gradient(90deg, #4154f1, #6366f1, #4154f1);
   background-size: 200% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shimmer 3s linear infinite;
+  /* Animate only on hover for better performance */
+  transition: background-position 0.5s ease;
 }
 
-@keyframes shimmer {
-  to {
-    background-position: 200% center;
-  }
+.shimmer-text:hover {
+  background-position: right center;
 }
 
 /* ============================================
