@@ -12,6 +12,8 @@
     height: 100%;
     border: 1px solid rgba(0, 0, 0, 0.05);
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .blog-card:hover {
@@ -69,6 +71,9 @@
 /* Blog Content */
 .blog-content {
     padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .blog-date {
@@ -109,6 +114,8 @@
 .read-more-btn,
 .read-more {
     display: inline-flex;
+    margin-top: auto !important;
+    align-self: flex-start;
     align-items: center;
     padding: 10px 20px;
     background: linear-gradient(135deg, var(--accent-color), #3b82f6);
