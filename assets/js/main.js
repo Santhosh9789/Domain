@@ -8,4 +8,29 @@ window.addEventListener("load",initSwiper);document.querySelectorAll('.faq-item 
 function throttle(func,limit){let lastFunc;let lastRan;return function(){const context=this;const args=arguments;if(!lastRan){func.apply(context,args);lastRan=Date.now();}else{clearTimeout(lastFunc);lastFunc=setTimeout(function(){if((Date.now()-lastRan)>=limit){func.apply(context,args);lastRan=Date.now();}},limit-(Date.now()-lastRan));}}}
 const optimizedScroll=throttle(()=>{toggleScrolled();navmenuScrollspy();toggleScrollTop();},20);document.addEventListener('scroll',optimizedScroll,{passive:true});window.addEventListener('load',()=>{toggleScrolled();navmenuScrollspy();toggleScrollTop();});function initLenis(){if(typeof Lenis==='undefined')return;const lenis=new Lenis({duration:1.2,easing:(t)=>Math.min(1,1.001-Math.pow(2,-10*t)),direction:'vertical',gestureDirection:'vertical',smooth:true,mouseMultiplier:1.0,smoothTouch:false,touchMultiplier:2,infinite:false,});function raf(time){lenis.raf(time);requestAnimationFrame(raf);}
 requestAnimationFrame(raf);window.lenis=lenis;}
-document.addEventListener('DOMContentLoaded',initLenis);new PureCounter();const yearSpan=document.querySelector('.auto-year');if(yearSpan){yearSpan.textContent=new Date().getFullYear();}else{document.querySelectorAll('.auto-year').forEach(span=>{span.textContent=new Date().getFullYear();});}})();
+document.addEventListener('DOMContentLoaded', () => {
+  initLenis();
+
+  // Make "Back to Services" buttons smart across all pages
+  document.querySelectorAll('a').forEach(link => {
+    if (link.textContent.includes('Back to Services') || link.innerText.includes('Back to Services')) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Check if the previous page was the blog directory or any blog HTML file
+        if (document.referrer.includes('/blog') || document.referrer.includes('blog/index.html')) {
+          window.location.href = '../blog/#services';
+        } else {
+          window.location.href = '../#services';
+        }
+      });
+    }
+  });
+});
+new PureCounter();
+const yearSpan = document.querySelector('.auto-year');
+if (yearSpan) {
+  yearSpan.textContent = new Date().getFullYear();
+} else {
+  document.querySelectorAll('.auto-year').forEach(span => { span.textContent = new Date().getFullYear(); });
+}
+})();
