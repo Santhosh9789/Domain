@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -44,7 +44,7 @@
 <h1 class="sitename">Blueidealteck</h1>
 </a>
 <nav class="navmenu" id="navmenu">
-<ul data-lenis-prevent="true">
+<ul>
 <li><a class="active" href="../blog/">Blog</a></li>
 </ul>
 </nav>
@@ -196,7 +196,7 @@
 </div>
 </div>
 <div class="mt-5 text-center">
-<a class="btn btn-primary px-4 py-2" href="../blog/#services" style="background-color: var(--accent-color); border: none">
+<a class="btn btn-primary px-4 py-2" href="javascript:void(0)" onclick="if(document.referrer.includes('/blog/')) { window.location.href='../blog/#services'; } else { window.location.href='../#services'; }" style="background-color: var(--accent-color); border: none">
 <i class="bi bi-arrow-left me-2"></i>Back to Services
           </a>
 </div>
@@ -242,7 +242,7 @@
 </div>
 </footer>
 <script defer="" src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+
 <script defer="" src="../assets/js/main.js?v=1766914716"></script>
 <script defer="" src="../assets/season/smart-seasonal.js"></script>
 </body>
