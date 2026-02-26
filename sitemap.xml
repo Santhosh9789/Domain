@@ -1,575 +1,1212 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-  <!-- CORE PAGES (High Priority) -->
+﻿<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:html="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blueidealteck.com/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://blueidealteck.com/" />
-    <xhtml:link rel="alternate" hreflang="en-us" href="https://blueidealteck.com/" />
-    <xhtml:link rel="alternate" hreflang="en-ca" href="https://blueidealteck.com/" />
-    <xhtml:link rel="alternate" hreflang="en-ae" href="https://blueidealteck.com/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blueidealteck.com/" />
+    <html:link rel="alternate" hreflang="en-gb" href="https://blueidealteck.com/" />
+    <html:link rel="alternate" hreflang="en-us" href="https://blueidealteck.com/" />
+    <html:link rel="alternate" hreflang="en-ca" href="https://blueidealteck.com/" />
+    <html:link rel="alternate" hreflang="en-ae" href="https://blueidealteck.com/" />
+    <html:link rel="alternate" hreflang="x-default" href="https://blueidealteck.com/" />
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/about/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/index.html</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- MAIN SECTIONS -->
   <url>
     <loc>https://blueidealteck.com/careers/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/blog/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <!-- BLOG POSTS -->
   <url>
     <loc>https://blueidealteck.com/blog-details/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/blog-details-cloud/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/blog-details-software/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/blog-details-trends-2026/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/blog-details-react-vs-vue-angular/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/blog-details-cloud-migration-strategies/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/blog-details-mobile-app-guide/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/blog-details-ai-chatbots/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/blog-details-ui-ux-design/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/blog-details-cybersecurity-essentials/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/blog-details-digital-marketing/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/case-study-ai-customer-service/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/resource-developer-tools-2026/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- SERVICE PAGES (High Priority - Primary Revenue Pages) -->
   <url>
     <loc>https://blueidealteck.com/service-custom-software/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
-    <xhtml:link rel="alternate" hreflang="en-gb"
-      href="https://blueidealteck.com/service-custom-software/" />
-    <xhtml:link rel="alternate" hreflang="en-us"
-      href="https://blueidealteck.com/service-custom-software/" />
-    <xhtml:link rel="alternate" hreflang="en-ae"
-      href="https://blueidealteck.com/service-custom-software/" />
-    <xhtml:link rel="alternate" hreflang="x-default"
-      href="https://blueidealteck.com/service-custom-software/" />
+    <html:link rel="alternate" hreflang="en-gb" href="https://blueidealteck.com/service-custom-software/" />
+    <html:link rel="alternate" hreflang="en-us" href="https://blueidealteck.com/service-custom-software/" />
+    <html:link rel="alternate" hreflang="en-ae" href="https://blueidealteck.com/service-custom-software/" />
+    <html:link rel="alternate" hreflang="x-default" href="https://blueidealteck.com/service-custom-software/" />
   </url>
   <url>
     <loc>https://blueidealteck.com/service-web-app/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://blueidealteck.com/service-web-app/" />
-    <xhtml:link rel="alternate" hreflang="en-us" href="https://blueidealteck.com/service-web-app/" />
-    <xhtml:link rel="alternate" hreflang="x-default"
-      href="https://blueidealteck.com/service-web-app/" />
+    <html:link rel="alternate" hreflang="en-gb" href="https://blueidealteck.com/service-web-app/" />
+    <html:link rel="alternate" hreflang="en-us" href="https://blueidealteck.com/service-web-app/" />
+    <html:link rel="alternate" hreflang="x-default" href="https://blueidealteck.com/service-web-app/" />
   </url>
   <url>
     <loc>https://blueidealteck.com/service-mobile-app/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
-    <xhtml:link rel="alternate" hreflang="en-gb"
-      href="https://blueidealteck.com/service-mobile-app/" />
-    <xhtml:link rel="alternate" hreflang="en-us"
-      href="https://blueidealteck.com/service-mobile-app/" />
-    <xhtml:link rel="alternate" hreflang="en-ae"
-      href="https://blueidealteck.com/service-mobile-app/" />
-    <xhtml:link rel="alternate" hreflang="x-default"
-      href="https://blueidealteck.com/service-mobile-app/" />
+    <html:link rel="alternate" hreflang="en-gb" href="https://blueidealteck.com/service-mobile-app/" />
+    <html:link rel="alternate" hreflang="en-us" href="https://blueidealteck.com/service-mobile-app/" />
+    <html:link rel="alternate" hreflang="en-ae" href="https://blueidealteck.com/service-mobile-app/" />
+    <html:link rel="alternate" hreflang="x-default" href="https://blueidealteck.com/service-mobile-app/" />
   </url>
   <url>
     <loc>https://blueidealteck.com/service-ai-ml/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://blueidealteck.com/service-ai-ml/" />
-    <xhtml:link rel="alternate" hreflang="en-us" href="https://blueidealteck.com/service-ai-ml/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blueidealteck.com/service-ai-ml/" />
+    <html:link rel="alternate" hreflang="en-gb" href="https://blueidealteck.com/service-ai-ml/" />
+    <html:link rel="alternate" hreflang="en-us" href="https://blueidealteck.com/service-ai-ml/" />
+    <html:link rel="alternate" hreflang="x-default" href="https://blueidealteck.com/service-ai-ml/" />
   </url>
   <url>
     <loc>https://blueidealteck.com/service-devops/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/service-ui-ux/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/service-ecommerce/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/service-cloud-migration/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/service-api-integration/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/service-data-analytics/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-
-  <!-- PROCESS PAGES -->
   <url>
     <loc>https://blueidealteck.com/process-discovery/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/process-design/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/process-development/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/process-launch/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
-  <!-- FUTURE PAGES -->
   <url>
     <loc>https://blueidealteck.com/future-blockchain/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/future-cyber-security/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/future-game-design/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
-  <!-- CAREER PAGES -->
   <url>
     <loc>https://blueidealteck.com/careers/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/career-fsd/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/career-uiux/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/career-devops/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/career-dm/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/career-bde/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/career-qa/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/career-social/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/career-writer/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/career-get/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- INDUSTRY PAGES -->
   <url>
     <loc>https://blueidealteck.com/industry/healthcare/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/industry/fintech/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/industry/ecommerce/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/industry/edtech/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/industry/real-estate/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/industry/logistics/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/industry/manufacturing/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/industry/agritech/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/industry/travel/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/industry/automotive/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/industry/energy/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/industry/government/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/industry/retail/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/industry/media/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/industry/sports/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/industry/food-delivery/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/industry/fitness/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/industry/social-media/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/industry/dating/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/industry/gaming/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
-  <!-- TARGET MARKET LOCATION PAGES (UK, US, Canada, Gulf - HIGH PRIORITY) -->
   <url>
     <loc>https://blueidealteck.com/location/uk/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://blueidealteck.com/location/uk/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blueidealteck.com/location/uk/" />
+    <html:link rel="alternate" hreflang="en-gb" href="https://blueidealteck.com/location/uk/" />
+    <html:link rel="alternate" hreflang="x-default" href="https://blueidealteck.com/location/uk/" />
   </url>
   <url>
     <loc>https://blueidealteck.com/location/usa/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en-us" href="https://blueidealteck.com/location/usa/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blueidealteck.com/location/usa/" />
+    <html:link rel="alternate" hreflang="en-us" href="https://blueidealteck.com/location/usa/" />
+    <html:link rel="alternate" hreflang="x-default" href="https://blueidealteck.com/location/usa/" />
   </url>
   <url>
     <loc>https://blueidealteck.com/location/canada/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en-ca" href="https://blueidealteck.com/location/canada/" />
-    <xhtml:link rel="alternate" hreflang="x-default"
-      href="https://blueidealteck.com/location/canada/" />
+    <html:link rel="alternate" hreflang="en-ca" href="https://blueidealteck.com/location/canada/" />
+    <html:link rel="alternate" hreflang="x-default" href="https://blueidealteck.com/location/canada/" />
   </url>
   <url>
     <loc>https://blueidealteck.com/location/uae/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en-ae" href="https://blueidealteck.com/location/uae/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://blueidealteck.com/location/uae/" />
+    <html:link rel="alternate" hreflang="en-ae" href="https://blueidealteck.com/location/uae/" />
+    <html:link rel="alternate" hreflang="x-default" href="https://blueidealteck.com/location/uae/" />
   </url>
-
-  <!-- OTHER LOCATION PAGES -->
   <url>
     <loc>https://blueidealteck.com/location/australia/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/location/singapore/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/location/germany/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/location/france/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/location/netherlands/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/location/japan/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/location/chennai/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/location/bangalore/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/location/mumbai/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/location/delhi/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/location/hyderabad/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/location/pune/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/location/kolkata/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/location/ahmedabad/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/location/tamil-nadu/</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- LEGAL -->
   <url>
     <loc>https://blueidealteck.com/privacy-policy.html</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://blueidealteck.com/terms-conditions.html</loc>
-    <lastmod>2026-02-25</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-
+  <url>
+    <loc>https://blueidealteck.com/service-erp-development/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-saas-development/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-pwa-development/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-frontend-development/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-ios-development/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-android-development/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-nlp-solutions/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-computer-vision/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-predictive-analytics/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-business-intelligence/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-ci-cd-automation/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-devsecops/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-user-research/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-ui-prototyping/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-shopify-development/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-magento-development/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-aws-migration/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-azure-migration/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-third-party-api/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-custom-api-development/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-ai-automation-solutions/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-ai-based-automation-for-startups/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-ai-development-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-ai-development-service/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-ai-integration-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-ai-powered-business-solutions/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-ai-solutions-for-small-businesses/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-bi-dashboard-development-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-big-data-consulting-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-business-intelligence-solutions/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-computer-vision-development-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-containerization-services-docker-kubernetes/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-data-analytics-services/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-data-visualization-services/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-enterprise-data-analytics-consulting/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-machine-learning-development-services/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-machine-learning-services-for-enterprises/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-predictive-analytics-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-affordable-custom-software-development-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-bespoke-software-development-services/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-business-process-automation-software/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-business-software-development-solutions/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-crm-software-development-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-custom-software-development-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-custom-software-development-for-startups/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-custom-software-development-services/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-cyber-security-service-provider/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-dedicated-development-team/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-digital-transformation-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-enterprise-cyber-security-solutions/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-enterprise-software-development/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-enterprise-software-solutions/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-erp-software-development-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-front-end-development-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-it-services-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-offshore-software-development-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-penetration-testing-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-remote-software-developers/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-scalable-software-solution-providers/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-software-development-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-software-modernization-services/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-technology-consulting-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-backend-development-services/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-business-web-application-design/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-custom-web-portal-development/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-ecommerce-website-developers/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-ecommerce-website-development-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-enterprise-web-application-development/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-full-stack-web-development-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-modern-web-application-ui-design/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-outsourced-web-development-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-responsive-web-application-developers/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-saas-application-development-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-scalable-web-application-development-services/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-ux-design-services-for-saas-products/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-web-app-development-services/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-web-application-development-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-website-ui-design-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-affordable-mobile-app-development/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-app-development-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-app-development-for-startups/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-custom-mobile-application-development/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-ecommerce-app-development-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-flutter-app-development-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-hybrid-mobile-app-development/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-ios-and-android-app-development/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-mobile-app-development-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-mobile-app-ui-design/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-mobile-app-ui-ux-designers/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-aws-cloud-consulting-services/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-azure-cloud-migration-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-ci-cd-pipeline-services/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-cloud-consulting-services/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-cloud-cost-optimization-services/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-cloud-infrastructure-management/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-cloud-migration-services/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-cloud-service-provider/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-cloud-service-provider-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-cloud-transformation-services-for-smbs/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-devops-automation-services-for-enterprises/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-devops-consulting-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-devops-service-provider/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-modern-ui-ux-trends-2026/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-product-ui-design-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-ui-design-company-for-enterprise-apps/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-ui-ux-design-company/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-user-interface-design-agency/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-ux-design-services/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-custom-ecommerce-portal-developers/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-ecommerce-integration-services/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blueidealteck.com/service-scalable-ecommerce-platform-developers/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
