@@ -206,7 +206,8 @@ html {
   z-index: 1;
 }
 .trending-timeline-swiper .swiper-slide {
-  width: 200px;
+  width: auto;
+  max-width: 280px;
   height: auto;
   position: relative;
   transition: transform 0.3s ease;
@@ -217,10 +218,12 @@ html {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
-  margin: 0 15px;
+  margin: 0 10px;
   position: relative;
   z-index: 2;
-  height: 140px;
+  height: auto;
+  min-height: 120px;
+  padding: 15px;
 }
 .trending-timeline-swiper .swiper-slide:hover .blog-card {
   transform: translateY(-5px);
@@ -245,10 +248,10 @@ html {
   transform: translateX(-50%) scale(1.2);
 }
 .trending-timeline-swiper .swiper-slide.top {
-  margin-bottom: 160px;
+  margin-bottom: 120px;
 }
 .trending-timeline-swiper .swiper-slide.bottom {
-  margin-top: 160px;
+  margin-top: 120px;
 }
 .trending-timeline-swiper .swiper-slide.top .timeline-node {
   bottom: -48px;
@@ -274,16 +277,17 @@ html {
 }
 @media (max-width: 768px) {
   .trending-timeline-swiper .swiper-slide {
-    width: 160px;
+    max-width: 220px;
   }
   .trending-timeline-swiper .swiper-slide .blog-card {
-    height: 120px;
+    min-height: 100px;
+    padding: 10px;
   }
   .trending-timeline-swiper .swiper-slide.top {
-    margin-bottom: 130px;
+    margin-bottom: 100px;
   }
   .trending-timeline-swiper .swiper-slide.bottom {
-    margin-top: 130px;
+    margin-top: 100px;
   }
 }
 /* Desktop Custom Dropdown Scroll & Overlap Fix */

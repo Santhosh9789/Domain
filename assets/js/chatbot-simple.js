@@ -41,7 +41,7 @@ render(){const btn=document.createElement('div');btn.className='chat-btn';btn.in
         <button id="chat-send"><i class="bi bi-send-fill"></i></button>
       </div>
       <div class="chat-footer">
-        <small>Powered by Blueidealteck AI • <a href="../privacy-policy.html" target="_blank">Privacy</a></small>
+        <small>Powered by Blueidealteck AI • <a href="${window.chatbotBasePath || './'}privacy-policy.html" target="_blank">Privacy</a></small>
       </div>
     `;document.body.appendChild(win);this.ui={btn:btn,window:win,body:win.querySelector('#chat-body'),input:win.querySelector('#chat-input'),send:win.querySelector('#chat-send'),close:win.querySelector('#chat-close'),whatsapp:win.querySelector('#whatsapp-redirect'),notification:btn.querySelector('.chat-notification')};this.attachEvents();setTimeout(()=>this.pulseNotification(),5000);}
 attachEvents(){const toggle=()=>{this.isOpen=!this.isOpen;this.ui.window.className=this.isOpen?'chat-window open':'chat-window';if(this.isOpen){this.ui.input.focus();this.hideNotification();}};this.ui.btn.addEventListener('click',toggle);this.ui.close.addEventListener('click',toggle);this.ui.whatsapp.addEventListener('click',()=>{const msg='Hello! I visited Blueidealteck\'s website and would like to discuss a project.';window.open(`https://wa.me/919789836077?text=${encodeURIComponent(msg)}`,'_blank');});const sendMessage=()=>{const text=this.ui.input.value.trim();if(!text)return;this.appendMessage('user',text);this.conversationHistory.push({role:'user',message:text});this.ui.input.value='';if(!this.hasProvidedEmail&&this.shouldAskForEmail(text)){this.showTyping();setTimeout(()=>{this.hideTyping();this.askForEmail();},600);return;}
