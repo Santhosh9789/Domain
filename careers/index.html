@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -42,72 +42,80 @@
 
         .job-card {
             background: #fff;
-            border-radius: 8px; /* Slightly sharper corners */
+            border-radius: 12px;
             padding: 30px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Softer shadow */
-            margin-bottom: 0; /* Let grid handle spacing */
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.07);
+            margin-bottom: 0;
             transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid #eaeaea; /* Light border */
-            height: 100%; /* Fill column height */
+            border: 1px solid #e8edf3;
+            height: 100%;
+            width: 100%;
             display: flex;
             flex-direction: column;
+            min-height: 260px;
         }
 
         .job-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 64, 0.12);
         }
 
         .job-card h3 {
-            color: #0d3c61; /* Dark Blue Title */
+            color: #0d3c61;
             font-weight: 700;
-            margin-bottom: 10px;
-            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+            line-height: 1.4;
         }
 
         .job-card .job-meta {
             color: #666;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
+            margin-bottom: 16px;
+            font-size: 0.88rem;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
         .job-card .job-meta i {
-            color: #0d3c61; /* Dark Blue Icon */
-            margin-right: 5px;
+            color: #0d3c61;
+            margin-right: 4px;
         }
 
         .job-card .job-meta span {
-            margin-right: 0; /* Handled by gap */
+            margin-right: 0;
         }
 
         .job-card p {
             color: #444;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            flex-grow: 1; /* Push button to bottom */
+            line-height: 1.65;
+            margin-bottom: 20px;
+            flex-grow: 1;
+            font-size: 0.95rem;
         }
 
         .btn-apply {
             display: inline-block;
-            padding: 12px 30px;
-            background: #00406b; /* Dark Blue Button */
+            padding: 11px 28px;
+            background: #00406b;
             color: #fff;
-            border-radius: 5px;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            transition: 0.3s;
-            font-size: 1rem;
-            margin-top: auto; /* Align to bottom */
-            align-self: flex-start; /* Ensure left alignment */
+            transition: background 0.3s;
+            font-size: 0.95rem;
+            margin-top: auto;
+            align-self: flex-start;
         }
 
         .btn-apply:hover {
-            background: #002a47; /* Darker Blue on Hover */
+            background: #002a47;
             color: #fff;
+        }
+
+        .job-list {
+            align-items: stretch;
         }
     </style>
 <script type="application/ld+json">{
@@ -135,13 +143,13 @@
 <h1 class="sitename">Blueidealteck</h1>
 </a>
 <nav class="navmenu" id="navmenu">
-<ul data-lenis-prevent="true">
+<ul>
 <li><a href="../#Home">Home</a></li>
-<li><a href="../../../../../bout/">About</a></li>
+<li><a href="/#about">About</a></li>
 <li class="dropdown"><a href="#"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-<ul data-lenis-prevent="true">
+<ul>
 <li class="dropdown"><a href="#"><span>AI &amp; Data Analytics</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-<ul data-lenis-prevent="true">
+<ul>
 <li><a href="../service-ai-automation-solutions/">Ai Automation Solutions</a></li>
 <li><a href="../service-ai-based-automation-for-startups/">Ai Based Automation For Startups</a></li>
 <li><a href="../service-ai-development-company/">Ai Development Company</a></li>
@@ -163,7 +171,7 @@
 </ul>
 </li>
 <li class="dropdown"><a href="#"><span>Software Development</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-<ul data-lenis-prevent="true">
+<ul>
 <li><a href="../service-affordable-custom-software-development-company/">Affordable Custom Software Development Company</a></li>
 <li><a href="../service-bespoke-software-development-services/">Bespoke Software Development Services</a></li>
 <li><a href="../service-business-process-automation-software/">Business Process Automation Software</a></li>
@@ -191,7 +199,7 @@
 </ul>
 </li>
 <li class="dropdown"><a href="#"><span>Web Development</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-<ul data-lenis-prevent="true">
+<ul>
 <li><a href="../service-backend-development-services/">Backend Development Services</a></li>
 <li><a href="../service-business-web-application-design/">Business Web Application Design</a></li>
 <li><a href="../service-custom-web-portal-development/">Custom Web Portal Development</a></li>
@@ -211,7 +219,7 @@
 </ul>
 </li>
 <li class="dropdown"><a href="#"><span>Mobile Apps</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-<ul data-lenis-prevent="true">
+<ul>
 <li><a href="../service-affordable-mobile-app-development/">Affordable Mobile App Development</a></li>
 <li><a href="../service-app-development-company/">App Development Company</a></li>
 <li><a href="../service-app-development-for-startups/">App Development For Startups</a></li>
@@ -226,7 +234,7 @@
 </ul>
 </li>
 <li class="dropdown"><a href="#"><span>Cloud &amp; DevOps</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-<ul data-lenis-prevent="true">
+<ul>
 <li><a href="../service-aws-cloud-consulting-services/">Aws Cloud Consulting Services</a></li>
 <li><a href="../service-azure-cloud-migration-company/">Azure Cloud Migration Company</a></li>
 <li><a href="../service-ci-cd-pipeline-services/">Ci Cd Pipeline Services</a></li>
@@ -243,7 +251,7 @@
 </ul>
 </li>
 <li class="dropdown"><a href="#"><span>UI/UX Design</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-<ul data-lenis-prevent="true">
+<ul>
 <li><a href="../service-modern-ui-ux-trends-2026/">Modern Ui Ux Trends 2026</a></li>
 <li><a href="../service-product-ui-design-company/">Product Ui Design Company</a></li>
 <li><a href="../service-ui-design-company-for-enterprise-apps/">Ui Design Company For Enterprise Apps</a></li>
@@ -253,7 +261,7 @@
 </ul>
 </li>
 <li class="dropdown"><a href="#"><span>eCommerce</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-<ul data-lenis-prevent="true">
+<ul>
 <li><a href="../service-custom-ecommerce-portal-developers/">Custom Ecommerce Portal Developers</a></li>
 <li><a href="../service-ecommerce-integration-services/">Ecommerce Integration Services</a></li>
 <li><a href="../service-scalable-ecommerce-platform-developers/">Scalable Ecommerce Platform Developers</a></li>
@@ -318,7 +326,7 @@
 </div>
 <div class="row gy-4 job-list">
 <!-- On-Premises Jobs -->
-<div class="col-lg-4 col-md-6 job-item filter-onprem" data-aos="fade-up">
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch job-item filter-onprem" data-aos="fade-up">
 <div class="job-card">
 <h3>Business Development Executive</h3>
 <div class="job-meta">
@@ -330,7 +338,7 @@
 <a class="btn-apply" href="../career-bde/">View Details</a>
 </div>
 </div>
-<div class="col-lg-4 col-md-6 job-item filter-onprem" data-aos="fade-up">
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch job-item filter-onprem" data-aos="fade-up">
 <div class="job-card">
 <h3>Graduate Engineer Trainee (Freshers)</h3>
 <div class="job-meta">
@@ -342,7 +350,7 @@
 <a class="btn-apply" href="../career-get/">View Details</a>
 </div>
 </div>
-<div class="col-lg-4 col-md-6 job-item filter-onprem" data-aos="fade-up">
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch job-item filter-onprem" data-aos="fade-up">
 <div class="job-card">
 <h3>Senior Full Stack Developer</h3>
 <div class="job-meta">
@@ -353,7 +361,7 @@
 <a class="btn-apply" href="../career-fsd/">View Details</a>
 </div>
 </div>
-<div class="col-lg-4 col-md-6 job-item filter-onprem" data-aos="fade-up">
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch job-item filter-onprem" data-aos="fade-up">
 <div class="job-card">
 <h3>Digital Marketing &amp; Growth Lead</h3>
 <div class="job-meta">
@@ -364,7 +372,7 @@
 <a class="btn-apply" href="../career-dm/">View Details</a>
 </div>
 </div>
-<div class="col-lg-4 job-item filter-onprem" data-aos="fade-up">
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch job-item filter-onprem" data-aos="fade-up">
 <div class="job-card">
 <h3>Cloud &amp; DevOps Engineer</h3>
 <div class="job-meta">
@@ -376,7 +384,7 @@
 </div>
 </div>
 <!-- Freelancing Jobs -->
-<div class="col-lg-4 col-md-6 job-item filter-freelance" data-aos="fade-up" style="display: none;">
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch job-item filter-freelance" data-aos="fade-up" style="display: none;">
 <div class="job-card">
 <h3>UI/UX Designer</h3>
 <div class="job-meta">
@@ -387,7 +395,7 @@
 <a class="btn-apply" href="../career-uiux/">View Details</a>
 </div>
 </div>
-<div class="col-lg-4 col-md-6 job-item filter-freelance" data-aos="fade-up" style="display: none;">
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch job-item filter-freelance" data-aos="fade-up" style="display: none;">
 <div class="job-card">
 <h3>Tech Content Writer</h3>
 <div class="job-meta">
@@ -398,7 +406,7 @@
 <a class="btn-apply" href="../career-writer/">View Details</a>
 </div>
 </div>
-<div class="col-lg-4 col-md-6 job-item filter-freelance" data-aos="fade-up" style="display: none;">
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch job-item filter-freelance" data-aos="fade-up" style="display: none;">
 <div class="job-card">
 <h3>Social Media Intern</h3>
 <div class="job-meta">
@@ -409,7 +417,7 @@
 <a class="btn-apply" href="../career-social/">View Details</a>
 </div>
 </div>
-<div class="col-lg-4 col-md-6 job-item filter-freelance" data-aos="fade-up" style="display: none;">
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch job-item filter-freelance" data-aos="fade-up" style="display: none;">
 <div class="job-card">
 <h3>QA Tester</h3>
 <div class="job-meta">
@@ -418,6 +426,84 @@
 </div>
 <p>Ensure software quality by identifying bugs and ensuring a seamless <a class="text-primary fw-medium fw-bold" href="/service-ui-ux/">user experience</a>.</p>
 <a class="btn-apply" href="../career-qa/">View Details</a>
+</div>
+</div>
+<!-- Internship Cards (under Freelancing tab) -->
+<div class="col-12 job-item filter-freelance" data-aos="fade-up" style="display: none;">
+<div class="text-center py-3">
+<span class="badge bg-primary fs-6 px-4 py-2"><i class="bi bi-mortarboard me-2"></i>Only for Interns — Certificate Only · Part-Time / Learning</span>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch job-item filter-freelance" data-aos="fade-up" style="display: none;">
+<div class="job-card">
+<h3>Software Development Intern</h3>
+<div class="job-meta">
+<span><i class="bi bi-mortarboard"></i> Final Year / Fresher</span>
+<span><i class="bi bi-clock"></i> Part-Time / Learning</span>
+<span><i class="bi bi-award"></i> Certificate Only</span>
+</div>
+<p>Work on real client projects using <a class="text-primary fw-medium fw-bold" href="../service-custom-software-development-services/">custom software development</a>. Learn React, Node.js, and Python under senior mentorship. No salary — gain experience &amp; certification.</p>
+<a class="btn-apply" href="../intern-software-dev/">View Details</a>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch job-item filter-freelance" data-aos="fade-up" style="display: none;">
+<div class="job-card">
+<h3>AI / Machine Learning Intern</h3>
+<div class="job-meta">
+<span><i class="bi bi-mortarboard"></i> Final Year / Fresher</span>
+<span><i class="bi bi-clock"></i> Part-Time / Learning</span>
+<span><i class="bi bi-award"></i> Certificate Only</span>
+</div>
+<p>Build <a class="text-primary fw-medium fw-bold" href="../service-ai-powered-business-solutions/">AI-powered solutions</a> using TensorFlow and PyTorch. Work on real ML pipelines and <a class="text-primary fw-medium fw-bold" href="../service-machine-learning-development-services/">predictive models</a>. No salary — gain experience &amp; certification.</p>
+<a class="btn-apply" href="../intern-ai-ml/">View Details</a>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch job-item filter-freelance" data-aos="fade-up" style="display: none;">
+<div class="job-card">
+<h3>UI/UX Design Intern</h3>
+<div class="job-meta">
+<span><i class="bi bi-mortarboard"></i> Final Year / Fresher</span>
+<span><i class="bi bi-clock"></i> Part-Time / Learning</span>
+<span><i class="bi bi-award"></i> Certificate Only</span>
+</div>
+<p>Design beautiful <a class="text-primary fw-medium fw-bold" href="../service-ui-ux-design-company/">user interfaces</a> using Figma and Adobe XD. Create wireframes, prototypes, and <a class="text-primary fw-medium fw-bold" href="../service-ux-design-services/">user experiences</a> for live projects. No salary — gain experience &amp; certification.</p>
+<a class="btn-apply" href="../intern-ui-ux/">View Details</a>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch job-item filter-freelance" data-aos="fade-up" style="display: none;">
+<div class="job-card">
+<h3>Cloud &amp; DevOps Intern</h3>
+<div class="job-meta">
+<span><i class="bi bi-mortarboard"></i> Final Year / Fresher</span>
+<span><i class="bi bi-clock"></i> Part-Time / Learning</span>
+<span><i class="bi bi-award"></i> Certificate Only</span>
+</div>
+<p>Learn hands-on <a class="text-primary fw-medium fw-bold" href="../service-devops-automation-services-for-enterprises/">CI/CD automation</a>, Docker, Kubernetes, and <a class="text-primary fw-medium fw-bold" href="../service-cloud-migration-services/">cloud deployment on AWS &amp; Azure</a>. No salary — gain experience &amp; certification.</p>
+<a class="btn-apply" href="../intern-cloud-devops/">View Details</a>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch job-item filter-freelance" data-aos="fade-up" style="display: none;">
+<div class="job-card">
+<h3>Digital Marketing Intern</h3>
+<div class="job-meta">
+<span><i class="bi bi-mortarboard"></i> Any Year / Fresher</span>
+<span><i class="bi bi-clock"></i> Part-Time / Learning</span>
+<span><i class="bi bi-award"></i> Certificate Only</span>
+</div>
+<p>Execute SEO, social media campaigns, content creation, and Google Ads for a real tech company. Gain practical digital growth skills. No salary — gain experience &amp; certification.</p>
+<a class="btn-apply" href="../intern-digital-marketing/">View Details</a>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch job-item filter-freelance" data-aos="fade-up" style="display: none;">
+<div class="job-card">
+<h3>Full Stack Development Intern</h3>
+<div class="job-meta">
+<span><i class="bi bi-mortarboard"></i> Final Year / Fresher</span>
+<span><i class="bi bi-clock"></i> Part-Time / Learning</span>
+<span><i class="bi bi-award"></i> Certificate Only</span>
+</div>
+<p>Build end-to-end <a class="text-primary fw-medium fw-bold" href="../service-scalable-web-application-development-services/">web applications</a> using MERN stack. Contribute to <a class="text-primary fw-medium fw-bold" href="../service-custom-software-development-for-startups/">startup projects</a> and deploy to production under guidance. No salary — gain experience &amp; certification.</p>
+<a class="btn-apply" href="../intern-fullstack/">View Details</a>
 </div>
 </div>
 </div>
@@ -463,7 +549,7 @@
 <h4>Useful Links</h4>
 <ul>
 <li><i class="bi bi-chevron-right"></i> <a href="../">Home</a></li>
-<li><i class="bi bi-chevron-right"></i> <a href="../../../../../bout/">About us</a></li>
+<li><i class="bi bi-chevron-right"></i> <a href="/#about">About us</a></li>
 <li><i class="bi bi-chevron-right"></i> <a href="../#services">Services</a></li>
 <li><i class="bi bi-chevron-right"></i> <a href="../blog/">Blogs</a></li>
 <li><i class="bi bi-chevron-right"></i> <a href="./">Careers</a></li>
@@ -495,7 +581,7 @@
 <script defer="" src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
 <script defer="" src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
 <script defer="" src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+
 <script defer="" src="../assets/js/main.js?v=1766914716"></script>
 <script defer="" src="../assets/season/smart-seasonal.js"></script>
 </body>
