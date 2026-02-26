@@ -1,4 +1,4 @@
-﻿﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -216,7 +216,7 @@
 <div class="container">
 <!-- Section: Trending Knowledge -->
 <div class="section-title" data-aos="fade-up">
-<h2>Trending Knowledge</h2>
+<h2 id="trending">Trending Knowledge</h2>
 <p>Expert insights into the technologies shaping our world.</p>
 </div>
 <div class="row gy-4 mb-5">
@@ -1037,14 +1037,7 @@
     });
   </script>
 <script>
-  // When a Read More link inside #services is clicked, remember to scroll back to #services on return
-  document.querySelectorAll('#services .read-more').forEach(function(link) {
-    link.addEventListener('click', function() {
-      sessionStorage.setItem('blogReturnSection', 'services');
-    });
-  });
-
-  // On page show (handles both normal load and browser Back via bfcache)
+  // Scroll restoration for the blog page (Our Services section)
   window.addEventListener('pageshow', function(e) {
     var section = sessionStorage.getItem('blogReturnSection');
     if (section === 'services') {
