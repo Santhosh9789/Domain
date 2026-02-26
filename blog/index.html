@@ -1,872 +1,999 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Tech Insights & AI News | Blueidealteck Blog</title>
-    <meta name="description"
-        content="Stay updated with the latest trends in AI, Cloud Computing, and Software Development. Read expert insights from Blueidealteck.">
-    <meta name="keywords"
-        content="Tech Blog, AI News, Software Development Trends, Cloud Computing Insights, Blueidealteck Blog">
-    <meta name="author" content="Blueidealteck">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Tech Insights & AI News | Blueidealteck Blog">
-    <meta property="og:description" content="Stay updated with the latest trends in AI, Cloud Computing, and Software Development. Read expert insights from Blueidealteck.">
-    <meta property="og:image" content="https://blueidealteck.com/assets/img/hero-img.png">
-    <meta property="og:url" content="https://blueidealteck.com/blog/">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Tech Insights & AI News | Blueidealteck Blog">
-    <meta property="twitter:description" content="Stay updated with the latest trends in AI, Cloud Computing, and Software Development.">
-    <meta property="twitter:image" content="https://blueidealteck.com/assets/img/hero-img.png">
-
-    <!-- Favicon -->
-  <link href="../assets/img/favicon.png" rel="icon" type="image/png">
-  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-    <!-- Fonts (Optimized) -->
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-    <!-- Main CSS File -->
-    <link href="../assets/css/main.css?v=1766914716" rel="stylesheet">
-  <link href="../assets/css/microanimations.css" rel="stylesheet">
-
-  <link href="../assets/css/blog-enhancements.css?v=3" rel="stylesheet">
-    <link href="../assets/css/custom_sections.css" rel="stylesheet">
-
-</head>
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tech Insights &amp; AI News | Blueidealteck Blog</title>
+<meta content="Stay updated with the latest trends in AI, Cloud Computing, and Software Development. Read expert insights from Blueidealteck." name="description"/>
+<meta content="Tech Blog, AI News, Software Development Trends, Cloud Computing Insights, Blueidealteck Blog" name="keywords"/>
+<meta content="Blueidealteck" name="author"/>
+<meta content="index, follow" name="robots"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="Tech Insights &amp; AI News | Blueidealteck Blog" property="og:title"/>
+<meta content="Stay updated with the latest trends in AI, Cloud Computing, and Software Development. Read expert insights from Blueidealteck." property="og:description"/>
+<meta content="https://blueidealteck.com/assets/img/hero-img.png" property="og:image"/>
+<meta content="https://blueidealteck.com/blog/" property="og:url"/>
+<!-- Twitter -->
+<meta content="summary_large_image" property="twitter:card"/>
+<meta content="Tech Insights &amp; AI News | Blueidealteck Blog" property="twitter:title"/>
+<meta content="Stay updated with the latest trends in AI, Cloud Computing, and Software Development." property="twitter:description"/>
+<meta content="https://blueidealteck.com/assets/img/hero-img.png" property="twitter:image"/>
+<!-- Favicon -->
+<link href="../assets/img/favicon.png" rel="icon" type="image/png"/>
+<link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
+<!-- Fonts (Optimized) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=Open+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Vendor CSS Files -->
+<link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
+<link href="../assets/vendor/aos/aos.css" rel="stylesheet"/>
+<link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"/>
+<link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+<!-- Main CSS File -->
+<link href="../assets/css/main.css?v=1766914716" rel="stylesheet"/>
+<link href="../assets/css/microanimations.css" rel="stylesheet"/>
+<link href="../assets/css/blog-enhancements.css?v=3" rel="stylesheet"/>
+<link href="../assets/css/custom_sections.css" rel="stylesheet"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://blueidealteck.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://blueidealteck.com/blog/index.html"
+    }
+  ]
+}</script></head>
 <body class="starter-page-page">
+<header class="header d-flex align-items-center fixed-top" id="header">
+<div class="container-fluid container-xl position-relative d-flex align-items-center">
+<a class="logo d-flex align-items-center me-auto" href="../">
+<h1 class="sitename">Blueidealteck</h1>
+</a>
+<nav class="navmenu" id="navmenu">
+<ul data-lenis-prevent="true">
+<li><a href="../#Home">Home</a></li>
+<li><a href="../../../../../bout/">About</a></li>
+<li class="dropdown"><a href="#"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+<ul data-lenis-prevent="true">
+<li class="dropdown"><a href="#"><span>AI &amp; Data Analytics</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+<ul data-lenis-prevent="true">
+<li><a href="../service-ai-automation-solutions/">Ai Automation Solutions</a></li>
+<li><a href="../service-ai-based-automation-for-startups/">Ai Based Automation For Startups</a></li>
+<li><a href="../service-ai-development-company/">Ai Development Company</a></li>
+<li><a href="../service-ai-development-service/">Ai Development Service</a></li>
+<li><a href="../service-ai-integration-company/">Ai Integration Company</a></li>
+<li><a href="../service-ai-powered-business-solutions/">Ai Powered Business Solutions</a></li>
+<li><a href="../service-ai-solutions-for-small-businesses/">Ai Solutions For Small Businesses</a></li>
+<li><a href="../service-bi-dashboard-development-company/">Bi Dashboard Development Company</a></li>
+<li><a href="../service-big-data-consulting-company/">Big Data Consulting Company</a></li>
+<li><a href="../service-business-intelligence-solutions/">Business Intelligence Solutions</a></li>
+<li><a href="../service-computer-vision-development-company/">Computer Vision Development Company</a></li>
+<li><a href="../service-containerization-services-docker-kubernetes/">Containerization Services Docker Kubernetes</a></li>
+<li><a href="../service-data-analytics-services/">Data Analytics Services</a></li>
+<li><a href="../service-data-visualization-services/">Data Visualization Services</a></li>
+<li><a href="../service-enterprise-data-analytics-consulting/">Enterprise Data Analytics Consulting</a></li>
+<li><a href="../service-machine-learning-development-services/">Machine Learning Development Services</a></li>
+<li><a href="../service-machine-learning-services-for-enterprises/">Machine Learning Services For Enterprises</a></li>
+<li><a href="../service-predictive-analytics-company/">Predictive Analytics Company</a></li>
+</ul>
+</li>
+<li class="dropdown"><a href="#"><span>Software Development</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+<ul data-lenis-prevent="true">
+<li><a href="../service-affordable-custom-software-development-company/">Affordable Custom Software Development Company</a></li>
+<li><a href="../service-bespoke-software-development-services/">Bespoke Software Development Services</a></li>
+<li><a href="../service-business-process-automation-software/">Business Process Automation Software</a></li>
+<li><a href="../service-business-software-development-solutions/">Business Software Development Solutions</a></li>
+<li><a href="../service-crm-software-development-company/">Crm Software Development Company</a></li>
+<li><a href="../service-custom-software-development-company/">Custom Software Development Company</a></li>
+<li><a href="../service-custom-software-development-for-startups/">Custom Software Development For Startups</a></li>
+<li><a href="../service-custom-software-development-services/">Custom Software Development Services</a></li>
+<li><a href="../service-cyber-security-service-provider/">Cyber Security Service Provider</a></li>
+<li><a href="../service-dedicated-development-team/">Dedicated Development Team</a></li>
+<li><a href="../service-digital-transformation-company/">Digital Transformation Company</a></li>
+<li><a href="../service-enterprise-cyber-security-solutions/">Enterprise Cyber Security Solutions</a></li>
+<li><a href="../service-enterprise-software-development/">Enterprise Software Development</a></li>
+<li><a href="../service-enterprise-software-solutions/">Enterprise Software Solutions</a></li>
+<li><a href="../service-erp-software-development-company/">Erp Software Development Company</a></li>
+<li><a href="../service-front-end-development-company/">Front End Development Company</a></li>
+<li><a href="../service-it-services-company/">It Services Company</a></li>
+<li><a href="../service-offshore-software-development-company/">Offshore Software Development Company</a></li>
+<li><a href="../service-penetration-testing-company/">Penetration Testing Company</a></li>
+<li><a href="../service-remote-software-developers/">Remote Software Developers</a></li>
+<li><a href="../service-scalable-software-solution-providers/">Scalable Software Solution Providers</a></li>
+<li><a href="../service-software-development-company/">Software Development Company</a></li>
+<li><a href="../service-software-modernization-services/">Software Modernization Services</a></li>
+<li><a href="../service-technology-consulting-company/">Technology Consulting Company</a></li>
+</ul>
+</li>
+<li class="dropdown"><a href="#"><span>Web Development</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+<ul data-lenis-prevent="true">
+<li><a href="../service-backend-development-services/">Backend Development Services</a></li>
+<li><a href="../service-business-web-application-design/">Business Web Application Design</a></li>
+<li><a href="../service-custom-web-portal-development/">Custom Web Portal Development</a></li>
+<li><a href="../service-ecommerce-website-developers/">Ecommerce Website Developers</a></li>
+<li><a href="../service-ecommerce-website-development-company/">Ecommerce Website Development Company</a></li>
+<li><a href="../service-enterprise-web-application-development/">Enterprise Web Application Development</a></li>
+<li><a href="../service-full-stack-web-development-company/">Full Stack Web Development Company</a></li>
+<li><a href="../service-modern-web-application-ui-design/">Modern Web Application Ui Design</a></li>
+<li><a href="../service-outsourced-web-development-company/">Outsourced Web Development Company</a></li>
+<li><a href="../service-responsive-web-application-developers/">Responsive Web Application Developers</a></li>
+<li><a href="../service-saas-application-development-company/">Saas Application Development Company</a></li>
+<li><a href="../service-scalable-web-application-development-services/">Scalable Web Application Development Services</a></li>
+<li><a href="../service-ux-design-services-for-saas-products/">Ux Design Services For Saas Products</a></li>
+<li><a href="../service-web-app-development-services/">Web App Development Services</a></li>
+<li><a href="../service-web-application-development-company/">Web Application Development Company</a></li>
+<li><a href="../service-website-ui-design-company/">Website Ui Design Company</a></li>
+</ul>
+</li>
+<li class="dropdown"><a href="#"><span>Mobile Apps</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+<ul data-lenis-prevent="true">
+<li><a href="../service-affordable-mobile-app-development/">Affordable Mobile App Development</a></li>
+<li><a href="../service-app-development-company/">App Development Company</a></li>
+<li><a href="../service-app-development-for-startups/">App Development For Startups</a></li>
+<li><a href="../service-custom-mobile-application-development/">Custom Mobile Application Development</a></li>
+<li><a href="../service-ecommerce-app-development-company/">Ecommerce App Development Company</a></li>
+<li><a href="../service-flutter-app-development-company/">Flutter App Development Company</a></li>
+<li><a href="../service-hybrid-mobile-app-development/">Hybrid Mobile App Development</a></li>
+<li><a href="../service-ios-and-android-app-development/">Ios &amp; Android App Development</a></li>
+<li><a href="../service-mobile-app-development-company/">Mobile App Development Company</a></li>
+<li><a href="../service-mobile-app-ui-design/">Mobile App Ui Design</a></li>
+<li><a href="../service-mobile-app-ui-ux-designers/">Mobile App Ui Ux Designers</a></li>
+</ul>
+</li>
+<li class="dropdown"><a href="#"><span>Cloud &amp; DevOps</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+<ul data-lenis-prevent="true">
+<li><a href="../service-aws-cloud-consulting-services/">Aws Cloud Consulting Services</a></li>
+<li><a href="../service-azure-cloud-migration-company/">Azure Cloud Migration Company</a></li>
+<li><a href="../service-ci-cd-pipeline-services/">Ci Cd Pipeline Services</a></li>
+<li><a href="../service-cloud-consulting-services/">Cloud Consulting Services</a></li>
+<li><a href="../service-cloud-cost-optimization-services/">Cloud Cost Optimization Services</a></li>
+<li><a href="../service-cloud-infrastructure-management/">Cloud Infrastructure Management</a></li>
+<li><a href="../service-cloud-migration-services/">Cloud Migration Services</a></li>
+<li><a href="../service-cloud-service-provider/">Cloud Service Provider</a></li>
+<li><a href="../service-cloud-service-provider-company/">Cloud Service Provider Company</a></li>
+<li><a href="../service-cloud-transformation-services-for-smbs/">Cloud Transformation Services For Smbs</a></li>
+<li><a href="../service-devops-automation-services-for-enterprises/">Devops Automation Services For Enterprises</a></li>
+<li><a href="../service-devops-consulting-company/">Devops Consulting Company</a></li>
+<li><a href="../service-devops-service-provider/">Devops Service Provider</a></li>
+</ul>
+</li>
+<li class="dropdown"><a href="#"><span>UI/UX Design</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+<ul data-lenis-prevent="true">
+<li><a href="../service-modern-ui-ux-trends-2026/">Modern Ui Ux Trends 2026</a></li>
+<li><a href="../service-product-ui-design-company/">Product Ui Design Company</a></li>
+<li><a href="../service-ui-design-company-for-enterprise-apps/">Ui Design Company For Enterprise Apps</a></li>
+<li><a href="../service-ui-ux-design-company/">Ui Ux Design Company</a></li>
+<li><a href="../service-user-interface-design-agency/">User Interface Design Agency</a></li>
+<li><a href="../service-ux-design-services/">Ux Design Services</a></li>
+</ul>
+</li>
+<li class="dropdown"><a href="#"><span>eCommerce</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+<ul data-lenis-prevent="true">
+<li><a href="../service-custom-ecommerce-portal-developers/">Custom Ecommerce Portal Developers</a></li>
+<li><a href="../service-ecommerce-integration-services/">Ecommerce Integration Services</a></li>
+<li><a href="../service-scalable-ecommerce-platform-developers/">Scalable Ecommerce Platform Developers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="active" href="./">Blog</a></li>
+<li><a href="../careers/">Careers</a></li>
+</ul>
+</nav>
+<a class="btn-getstarted" href="../#contact">Get Started</a>
+<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+</div>
+</header>
+<main class="main">
+<!-- Page Title -->
+<div class="page-title dark-background">
+<div class="container position-relative">
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../">Home</a></li>
+<li aria-current="page" class="breadcrumb-item active">Blog</li>
+</ol>
+</nav>
+<h1>Insights &amp; News</h1>
+<p>Expert perspectives on Technology, AI, and Digital Transformation.</p>
+</div>
+</div><!-- End Page Title -->
+<!-- Blog Section -->
+<section class="blog-posts section" id="blog-posts">
+<div class="container">
+<!-- Section: Trending Knowledge -->
+<div class="section-title" data-aos="fade-up">
+<h2>Trending Knowledge</h2>
+<p>Expert insights into the technologies shaping our world.</p>
+</div>
+<div class="row gy-4 mb-5">
+<!-- New Generated Blog Post A -->
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+<article class="blog-card w-100 h-100 d-flex flex-column">
+<div class="blog-img" style="background: linear-gradient(135deg, #1e3a8a, #64748b); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+<i class="bi bi-robot"></i>
+</div>
+<div class="blog-content d-flex flex-column flex-grow-1">
 
-    <header id="header" class="header d-flex align-items-center fixed-top">
-        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+<h2 class="blog-title">Top AI Innovations Transforming Businesses in 2026</h2>
+<p class="blog-excerpt">
+                    Explore the top <a class="text-primary fw-medium fw-bold" href="/service-ai-ml/">artificial intelligence</a> innovations defining 2026. From generative models to predictive analytics.
+                </p>
+<a class="read-more-btn mt-auto align-self-start" href="../blog-details-ai-innovations-2026/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</article>
+</div>
+<!-- New Generated Blog Post B -->
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+<article class="blog-card w-100 h-100 d-flex flex-column">
+<div class="blog-img" style="background: linear-gradient(135deg, #0284c7, #38bdf8); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+<i class="bi bi-cloud-arrow-up"></i>
+</div>
+<div class="blog-content d-flex flex-column flex-grow-1">
 
-            <a href="../" class="logo d-flex align-items-center me-auto">
-                <h1 class="sitename">Blueidealteck</h1>
-            </a>
+<h2 class="blog-title">Cloud Cost Optimization: Maximize Your AWS/Azure ROI</h2>
+<p class="blog-excerpt">
+                    Stop overpaying for cloud infrastructure. Learn actionable strategies to optimize your AWS and Azure costs securely.
+                </p>
+<a class="read-more-btn mt-auto align-self-start" href="../blog-details-cloud-optimization/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</article>
+</div>
+<!-- New Generated Blog Post C -->
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+<article class="blog-card w-100 h-100 d-flex flex-column">
+<div class="blog-img" style="background: linear-gradient(135deg, #b91c1c, #f87171); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+<i class="bi bi-gear-wide-connected"></i>
+</div>
+<div class="blog-content d-flex flex-column flex-grow-1">
 
-            <nav id="navmenu" class="navmenu">
-                <ul>
-                    <li><a href="../#Home">Home</a></li>
-                    <li><a href="../#about">About</a></li>
-                    <li><a href="../#services">Services</a></li>
-                    <li><a href="./" class="active">Blog</a></li>
-                    <li><a href="../careers/">Careers</a></li>
-                </ul>
+<h2 class="blog-title">Why CI/CD DevOps Automation is Crucial in 2026</h2>
+<p class="blog-excerpt">
+                    Discover why Continuous Integration and Continuous Deployment (<a class="text-primary fw-medium fw-bold" href="/service-devops/">CI/CD</a>) pipelines are essential for agile software development.
+                </p>
+<a class="read-more-btn mt-auto align-self-start" href="../blog-details-devops-automation/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</article>
+</div>
+<!-- New Generated Blog Post D -->
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+<article class="blog-card w-100 h-100 d-flex flex-column">
+<div class="blog-img" style="background: linear-gradient(135deg, #047857, #10b981); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+<i class="bi bi-braces"></i>
+</div>
+<div class="blog-content d-flex flex-column flex-grow-1">
 
-            </nav>
+<h2 class="blog-title">Monolith vs Microservices: Choosing Your Architecture</h2>
+<p class="blog-excerpt">
+                    Struggling to scale your legacy application? Learn the differences between Monolith and Microservices architectures.
+                </p>
+<a class="read-more-btn mt-auto align-self-start" href="../blog-details-software-architecture/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</article>
+</div>
+<!-- Blog Post 1 (New) -->
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+<article class="blog-card w-100 h-100 d-flex flex-column">
+<div class="blog-img" style="background: linear-gradient(135deg, #0f172a, #64748b); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+<i class="bi bi-rocket-takeoff"></i>
+</div>
+<div class="blog-content d-flex flex-column flex-grow-1">
 
-            <a class="btn-getstarted" href="../#contact">Get Started</a>
-      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-
-        </div>
-    </header>
-
-    <main class="main">
-
-        <!-- Page Title -->
-        <div class="page-title dark-background">
-            <div class="container position-relative">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="../">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Blog</li>
-                    </ol>
-                </nav>
-                <h1>Insights & News</h1>
-                <p>Expert perspectives on Technology, AI, and Digital Transformation.</p>
-            </div>
-        </div><!-- End Page Title -->
-
-        <!-- Blog Section -->
-        <section id="blog-posts" class="blog-posts section">
-            <div class="container">
-
-                <!-- Section: Trending Knowledge -->
-                <div class="section-title" data-aos="fade-up">
-                    <h2>Trending Knowledge</h2>
-                    <p>Expert insights into the technologies shaping our world.</p>
-                </div>
-                <div class="row gy-4 mb-5">
-                    <!-- Blog Post 1 (New) -->
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                        <article class="blog-card w-100 h-100 d-flex flex-column">
-                            <div class="blog-img"
-                                style="background: linear-gradient(135deg, #0f172a, #64748b); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
-                                <i class="bi bi-rocket-takeoff"></i>
-                            </div>
-                            <div class="blog-content d-flex flex-column flex-grow-1">
-                                <div class="blog-date">February 16, 2026</div>
-                                <h2 class="blog-title">Top 5 Custom Software Trends in 2026</h2>
-                                <p class="blog-excerpt">
+<h2 class="blog-title">Top 5 Custom Software Trends in 2026</h2>
+<p class="blog-excerpt">
                                     From AI-First Engineering to Green Computing, discover the 5 critical trends defining the
                                     future of digital transformation.
                                 </p>
-                                <a href="../blog-details-trends-2026/" class="read-more-btn mt-auto align-self-start">Read More <i
-                                        class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </article>
-                    </div>
+<a class="read-more-btn mt-auto align-self-start" href="../blog-details-trends-2026/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</article>
+</div>
+<!-- New Blog Post 2 -->
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+<article class="blog-card w-100 h-100 d-flex flex-column">
+<div class="blog-img" style="background: linear-gradient(135deg, #6366f1, #8b5cf6); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+<i class="bi bi-code-slash"></i>
+</div>
+<div class="blog-content d-flex flex-column flex-grow-1">
 
-                    <!-- New Blog Post 2 -->
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                        <article class="blog-card w-100 h-100 d-flex flex-column">
-                            <div class="blog-img"
-                                style="background: linear-gradient(135deg, #6366f1, #8b5cf6); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
-                                <i class="bi bi-code-slash"></i>
-                            </div>
-                            <div class="blog-content d-flex flex-column flex-grow-1">
-                                <div class="blog-date">February 20, 2026</div>
-                                <h2 class="blog-title">React vs Vue vs Angular: 2026 Comparison</h2>
-                                <p class="blog-excerpt">
+<h2 class="blog-title">React vs Vue vs Angular: 2026 Comparison</h2>
+<p class="blog-excerpt">
                                     The battle of the frontend frameworks continues. Which one offers the best performance and scalability for your next project?
                                 </p>
-                                <a href="../blog-details-react-vs-vue-angular/" class="read-more-btn mt-auto align-self-start">Read More <i
-                                        class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </article>
-                    </div>
+<a class="read-more-btn mt-auto align-self-start" href="../blog-details-react-vs-vue-angular/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</article>
+</div>
+<!-- New Blog Post 3 -->
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+<article class="blog-card w-100 h-100 d-flex flex-column">
+<div class="blog-img" style="background: linear-gradient(135deg, #0ea5e9, #38bdf8); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+<i class="bi bi-cloud-arrow-up"></i>
+</div>
+<div class="blog-content d-flex flex-column flex-grow-1">
 
-                    <!-- New Blog Post 3 -->
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-                        <article class="blog-card w-100 h-100 d-flex flex-column">
-                            <div class="blog-img"
-                                style="background: linear-gradient(135deg, #0ea5e9, #38bdf8); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
-                                <i class="bi bi-cloud-arrow-up"></i>
-                            </div>
-                            <div class="blog-content d-flex flex-column flex-grow-1">
-                                <div class="blog-date">March 05, 2026</div>
-                                <h2 class="blog-title">5 Strategies for Seamless Cloud Migration</h2>
-                                <p class="blog-excerpt">
+<h2 class="blog-title">5 Strategies for Seamless Cloud Migration</h2>
+<p class="blog-excerpt">
                                     Move to AWS or Azure without downtime. Learn the "Rehost, Replatform, Refactor" strategies used by top enterprises.
                                 </p>
-                                <a href="../blog-details-cloud-migration-strategies/" class="read-more-btn mt-auto align-self-start">Read More <i
-                                        class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </article>
-                    </div>
+<a class="read-more-btn mt-auto align-self-start" href="../blog-details-cloud-migration-strategies/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</article>
+</div>
+<!-- New Blog Post 4 -->
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+<article class="blog-card w-100 h-100 d-flex flex-column">
+<div class="blog-img" style="background: linear-gradient(135deg, #10b981, #34d399); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+<i class="bi bi-phone"></i>
+</div>
+<div class="blog-content d-flex flex-column flex-grow-1">
 
-                    <!-- New Blog Post 4 -->
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-                        <article class="blog-card w-100 h-100 d-flex flex-column">
-                            <div class="blog-img"
-                                style="background: linear-gradient(135deg, #10b981, #34d399); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
-                                <i class="bi bi-phone"></i>
-                            </div>
-                            <div class="blog-content d-flex flex-column flex-grow-1">
-                                <div class="blog-date">March 15, 2026</div>
-                                <h2 class="blog-title">Why Your Business Needs a Native Mobile App</h2>
-                                <p class="blog-excerpt">
-                                    Boost customer retention and sales with a dedicated iOS and Android app. Unlock the power of push notifications.
+<h2 class="blog-title">Why Your Business Needs a Native Mobile App</h2>
+<p class="blog-excerpt">
+                                    Boost customer retention and sales with a dedicated <a class="text-primary fw-medium fw-bold" href="/service-mobile-app/">iOS and Android</a> app. Unlock the power of push notifications.
                                 </p>
-                                <a href="../blog-details-mobile-app-guide/" class="read-more-btn mt-auto align-self-start">Read More <i
-                                        class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </article>
-                    </div>
+<a class="read-more-btn mt-auto align-self-start" href="../blog-details-mobile-app-guide/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</article>
+</div>
+<!-- New Blog Post 5 -->
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="500">
+<article class="blog-card w-100 h-100 d-flex flex-column">
+<div class="blog-img" style="background: linear-gradient(135deg, #f59e0b, #fbbf24); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+<i class="bi bi-chat-dots-fill"></i>
+</div>
+<div class="blog-content d-flex flex-column flex-grow-1">
 
-                    <!-- New Blog Post 5 -->
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="500">
-                        <article class="blog-card w-100 h-100 d-flex flex-column">
-                            <div class="blog-img"
-                                style="background: linear-gradient(135deg, #f59e0b, #fbbf24); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
-                                <i class="bi bi-chat-dots-fill"></i>
-                            </div>
-                            <div class="blog-content d-flex flex-column flex-grow-1">
-                                <div class="blog-date">March 20, 2026</div>
-                                <h2 class="blog-title">How AI Chatbots Are Revolutionizing Customer Service</h2>
-                                <p class="blog-excerpt">
+<h2 class="blog-title">How AI Chatbots Are Revolutionizing Customer Service</h2>
+<p class="blog-excerpt">
                                     Automate 70% of support queries and provide 24/7 instant responses with custom AI-powered chatbots.
                                 </p>
-                                <a href="../blog-details-ai-chatbots/" class="read-more-btn mt-auto align-self-start">Read More <i
-                                        class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </article>
-                    </div>
+<a class="read-more-btn mt-auto align-self-start" href="../blog-details-ai-chatbots/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</article>
+</div>
+<!-- New Blog Post 6 -->
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+<article class="blog-card w-100 h-100 d-flex flex-column">
+<div class="blog-img" style="background: linear-gradient(135deg, #ec4899, #f472b6); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+<i class="bi bi-palette-fill"></i>
+</div>
+<div class="blog-content d-flex flex-column flex-grow-1">
 
-                    <!-- New Blog Post 6 -->
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                        <article class="blog-card w-100 h-100 d-flex flex-column">
-                            <div class="blog-img"
-                                style="background: linear-gradient(135deg, #ec4899, #f472b6); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
-                                <i class="bi bi-palette-fill"></i>
-                            </div>
-                            <div class="blog-content d-flex flex-column flex-grow-1">
-                                <div class="blog-date">March 25, 2026</div>
-                                <h2 class="blog-title">The Importance of UI/UX Design in Modern App Development</h2>
-                                <p class="blog-excerpt">
-                                    Great code fails with bad design. Learn how superior UI/UX drives retention and increases conversion rates.
+<h2 class="blog-title">The Importance of UI/UX Design in Modern App Development</h2>
+<p class="blog-excerpt">
+                                    Great code fails with bad design. Learn how superior <a class="text-primary fw-medium fw-bold" href="/service-ui-ux/">UI/UX</a> drives retention and increases conversion rates.
                                 </p>
-                                <a href="../blog-details-ui-ux-design/" class="read-more-btn mt-auto align-self-start">Read More <i
-                                        class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </article>
-                    </div>
+<a class="read-more-btn mt-auto align-self-start" href="../blog-details-ui-ux-design/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</article>
+</div>
+<!-- New Blog Post 7 -->
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+<article class="blog-card w-100 h-100 d-flex flex-column">
+<div class="blog-img" style="background: linear-gradient(135deg, #dc2626, #ef4444); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+<i class="bi bi-shield-lock-fill"></i>
+</div>
+<div class="blog-content d-flex flex-column flex-grow-1">
 
-                    <!-- New Blog Post 7 -->
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                        <article class="blog-card w-100 h-100 d-flex flex-column">
-                            <div class="blog-img"
-                                style="background: linear-gradient(135deg, #dc2626, #ef4444); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
-                                <i class="bi bi-shield-lock-fill"></i>
-                            </div>
-                            <div class="blog-content d-flex flex-column flex-grow-1">
-                                <div class="blog-date">March 30, 2026</div>
-                                <h2 class="blog-title">Cybersecurity Essentials for Small Businesses in 2026</h2>
-                                <p class="blog-excerpt">
+<h2 class="blog-title">Cybersecurity Essentials for Small Businesses in 2026</h2>
+<p class="blog-excerpt">
                                     43% of cyberattacks target small businesses. Discover the essential steps to protect your data and reputation.
                                 </p>
-                                <a href="../blog-details-cybersecurity-essentials/" class="read-more-btn mt-auto align-self-start">Read More <i
-                                        class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </article>
-                    </div>
+<a class="read-more-btn mt-auto align-self-start" href="../blog-details-cybersecurity-essentials/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</article>
+</div>
+<!-- New Blog Post 8 -->
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+<article class="blog-card w-100 h-100 d-flex flex-column">
+<div class="blog-img" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+<i class="bi bi-megaphone-fill"></i>
+</div>
+<div class="blog-content d-flex flex-column flex-grow-1">
 
-                    <!-- New Blog Post 8 -->
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-                        <article class="blog-card w-100 h-100 d-flex flex-column">
-                            <div class="blog-img"
-                                style="background: linear-gradient(135deg, #8b5cf6, #a78bfa); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
-                                <i class="bi bi-megaphone-fill"></i>
-                            </div>
-                            <div class="blog-content d-flex flex-column flex-grow-1">
-                                <div class="blog-date">April 05, 2026</div>
-                                <h2 class="blog-title">Digital Marketing vs Traditional Marketing: What Works Best?</h2>
-                                <p class="blog-excerpt">
+<h2 class="blog-title">Digital Marketing vs Traditional Marketing: What Works Best?</h2>
+<p class="blog-excerpt">
                                     Stop wasting money on billboards. Learn why Digital Marketing offers superior targeting, ROI, and engagement.
                                 </p>
-                                <a href="../blog-details-digital-marketing/" class="read-more-btn mt-auto align-self-start">Read More <i
-                                        class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </article>
-                    </div>
+<a class="read-more-btn mt-auto align-self-start" href="../blog-details-digital-marketing/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</article>
+</div>
+<!-- Blog Post 2 (Was 1) -->
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+<article class="blog-card w-100 h-100 d-flex flex-column">
+<div class="blog-img" style="background: linear-gradient(45deg, #1e3a8a, #3b82f6); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+<i class="bi bi-robot"></i>
+</div>
+<div class="blog-content d-flex flex-column flex-grow-1">
 
-                    <!-- Blog Post 2 (Was 1) -->
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                        <article class="blog-card w-100 h-100 d-flex flex-column">
-                            <div class="blog-img"
-                                style="background: linear-gradient(45deg, #1e3a8a, #3b82f6); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
-                                <i class="bi bi-robot"></i>
-                            </div>
-                            <div class="blog-content d-flex flex-column flex-grow-1">
-                                <div class="blog-date">December 12, 2025</div>
-                                <h2 class="blog-title">Why AI is the Future of Business Scaling</h2>
-                                <p class="blog-excerpt">
-                                    Artificial Intelligence isn't just a buzzword; it's the engine of modern growth.
+<h2 class="blog-title">Why AI is the Future of Business Scaling</h2>
+<p class="blog-excerpt">
+<a class="text-primary fw-medium fw-bold" href="/service-ai-ml/">Artificial Intelligence</a> isn't just a buzzword; it's the engine of modern growth.
                                     Discover how automated workflows and predictive analytics can 10x your efficiency.
                                 </p>
-                                <a href="../blog-details/" class="read-more-btn mt-auto align-self-start">Read More <i
-                                        class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </article>
-                    </div>
-                    <!-- Blog Post 2 -->
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                        <article class="blog-card w-100 h-100 d-flex flex-column">
-                            <div class="blog-img"
-                                style="background: linear-gradient(45deg, #0f172a, #334155); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
-                                <i class="bi bi-cloud-check"></i>
-                            </div>
-                            <div class="blog-content d-flex flex-column flex-grow-1">
-                                <div class="blog-date">December 10, 2025</div>
-                                <h2 class="blog-title">The Strategic Advantage of Cloud Migration</h2>
-                                <p class="blog-excerpt">
+<a class="read-more-btn mt-auto align-self-start" href="../blog-details/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</article>
+</div>
+<!-- Blog Post 2 -->
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+<article class="blog-card w-100 h-100 d-flex flex-column">
+<div class="blog-img" style="background: linear-gradient(45deg, #0f172a, #334155); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+<i class="bi bi-cloud-check"></i>
+</div>
+<div class="blog-content d-flex flex-column flex-grow-1">
+
+<h2 class="blog-title">The Strategic Advantage of Cloud Migration</h2>
+<p class="blog-excerpt">
                                     Moving legacy systems to the cloud reduces costs and improves security. Learn the
                                     top 5 strategies for a seamless transition to AWS or Azure.
                                 </p>
-                                <a href="../blog-details-cloud/" class="read-more-btn mt-auto align-self-start">Read More <i
-                                        class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </article>
-                    </div>
-                    <!-- Blog Post 3 -->
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-                        <article class="blog-card w-100 h-100 d-flex flex-column">
-                            <div class="blog-img"
-                                style="background: linear-gradient(45deg, #047857, #10b981); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
-                                <i class="bi bi-laptop"></i>
-                            </div>
-                            <div class="blog-content d-flex flex-column flex-grow-1">
-                                <div class="blog-date">December 05, 2025</div>
-                                <h2 class="blog-title">Top Custom Software Trends for 2025</h2>
-                                <p class="blog-excerpt">
+<a class="read-more-btn mt-auto align-self-start" href="../blog-details-cloud/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</article>
+</div>
+<!-- Blog Post 3 -->
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+<article class="blog-card w-100 h-100 d-flex flex-column">
+<div class="blog-img" style="background: linear-gradient(45deg, #047857, #10b981); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+<i class="bi bi-laptop"></i>
+</div>
+<div class="blog-content d-flex flex-column flex-grow-1">
+
+<h2 class="blog-title">Top Custom Software Trends for 2025</h2>
+<p class="blog-excerpt">
                                     From low-code platforms to microservices architecture, stay ahead of the curve with
                                     these critical software development trends dominating the industry.
                                 </p>
-                                <a href="../blog-details-software/" class="read-more-btn mt-auto align-self-start">Read More <i
-                                        class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-
-                <!-- Section: Our Services -->
-                <section id="services" class="services section light-background">
-                    <div class="container section-title" data-aos="fade-up">
-                        <h2>Our Services</h2>
-                        <p>At Blueidealteck, we offer a complete suite of technology services to help your business
+<a class="read-more-btn mt-auto align-self-start" href="../blog-details-software/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</article>
+</div>
+</div>
+<!-- Section: Our Services -->
+<section class="services section light-background" id="services">
+<div class="container section-title" data-aos="fade-up">
+<h2>Our Services</h2>
+<p>At Blueidealteck, we offer a complete suite of technology services to help your business
                             thrive in the
                             digital era. Whether you're launching a new product, scaling operations, or modernizing
                             legacy systems — we
                             have the expertise to make it happen.</p>
-                    </div>
-                    <div class="container">
-                        <div class="row gy-4">
-                            <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-                                <div class="service-single-main-wrapper-five" data-tilt>
-                                    <div class="icon">
-                                        <i class="bi bi-code-slash icon"></i>
-                                    </div>
-                                    <div class="inner-content">
-                                        <h5 class="title">Custom Software Development</h5>
-                                        <p class="disc">
+</div>
+<div class="container">
+<div class="row gy-4">
+<div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+<div class="service-single-main-wrapper-five" data-tilt="">
+<div class="icon">
+<i class="bi bi-code-slash icon"></i>
+</div>
+<div class="inner-content">
+<h5 class="title">Custom Software Development</h5>
+<p class="disc">
                                             Bespoke digital ecosystems designed to outperform off-the-shelf limitations.
                                             We build software that
                                             scales with your ambition.
                                         </p>
-                                        <a href="../service-custom-software/" class="read-more mt-3">Read More <i class="bi bi-arrow-right"></i></a>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-                                <div class="service-single-main-wrapper-five" data-tilt>
-                                    <div class="icon">
-                                        <i class="bi bi-diagram-3 icon"></i>
-                                    </div>
-                                    <div class="inner-content">
-                                        <h5 class="title">DevOps & Cloud Services</h5>
-                                        <p class="disc">
-                                            Optimize your infrastructure with CI/CD pipelines, containerization
+<a class="read-more mt-3" href="../service-custom-software/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+<div class="service-single-main-wrapper-five" data-tilt="">
+<div class="icon">
+<i class="bi bi-diagram-3 icon"></i>
+</div>
+<div class="inner-content">
+<h5 class="title">DevOps &amp; Cloud Services</h5>
+<p class="disc">
+                                            Optimize your infrastructure with <a class="text-primary fw-medium fw-bold" href="/service-devops/">CI/CD</a> pipelines, containerization
                                             (Jenkins, Docker and Kubernetes),
                                             cloud deployment (AWS, Azure, GCP), and real-time monitoring.
                                         </p>
-                                        <a href="../service-devops/" class="read-more mt-3">Read More <i class="bi bi-arrow-right"></i></a>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-                                <div class="service-single-main-wrapper-five" data-tilt>
-                                    <div class="icon">
-                                        <i class="bi bi-browser-chrome icon"></i>
-                                    </div>
-                                    <div class="inner-content">
-                                        <h5 class="title">Web Application Development</h5>
-                                        <p class="disc">
+<a class="read-more mt-3" href="../service-devops/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+<div class="service-single-main-wrapper-five" data-tilt="">
+<div class="icon">
+<i class="bi bi-browser-chrome icon"></i>
+</div>
+<div class="inner-content">
+<h5 class="title">Web Application Development</h5>
+<p class="disc">
                                             We build secure, fast, and responsive web applications tailored to your
                                             specific business needs — from
                                             internal tools to customer-facing platforms.
                                         </p>
-                                        <a href="../service-web-app/" class="read-more mt-3">Read More <i class="bi bi-arrow-right"></i></a>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
-                                <div class="service-single-main-wrapper-five" data-tilt>
-                                    <div class="icon">
-                                        <i class="bi bi-pencil-square icon"></i>
-                                    </div>
-                                    <div class="inner-content">
-                                        <h5 class="title">UI/UX Design</h5>
-                                        <p class="disc">
+<a class="read-more mt-3" href="../service-web-app/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+<div class="service-single-main-wrapper-five" data-tilt="">
+<div class="icon">
+<i class="bi bi-pencil-square icon"></i>
+</div>
+<div class="inner-content">
+<h5 class="title">UI/UX Design</h5>
+<p class="disc">
                                             We design interfaces that are not only visually appealing but also intuitive
                                             and conversion-focused,
                                             providing users with a smooth and delightful experience.
                                         </p>
-                                        <a href="../service-ui-ux/" class="read-more mt-3">Read More <i class="bi bi-arrow-right"></i></a>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="500">
-                                <div class="service-single-main-wrapper-five" data-tilt>
-                                    <div class="icon">
-                                        <i class="bi bi-robot icon"></i>
-                                    </div>
-                                    <div class="inner-content">
-                                        <h5 class="title">AI & Machine Learning</h5>
-                                        <p class="disc">
+<a class="read-more mt-3" href="../service-ui-ux/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="500">
+<div class="service-single-main-wrapper-five" data-tilt="">
+<div class="icon">
+<i class="bi bi-robot icon"></i>
+</div>
+<div class="inner-content">
+<h5 class="title">AI &amp; Machine Learning</h5>
+<p class="disc">
                                             Predictive intelligence and automation that puts your business years ahead.
                                             Unlock insights and build
                                             smarter applications.
                                         </p>
-                                        <a href="../service-ai-ml/" class="read-more mt-3">Read More <i class="bi bi-arrow-right"></i></a>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Future Horizons Section -->
-                <section id="future-horizons" class="future-horizons section">
-                    <div class="container section-title" data-aos="fade-up">
-                        <h2>Future Horizons: The Next Frontier</h2>
-                        <p>Innovation never stops. We are building the capabilities of tomorrow, today.</p>
-                    </div>
-                    <div class="container">
-                        <div class="row gy-4 justify-content-center">
-                            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                                <div class="future-card game-design">
-                                    <div class="card-content">
-                                        <span class="badge-coming-soon">Coming Soon</span>
-                                        <i class="bi bi-controller icon-large"></i>
-                                        <h3>Next-Gen Game Design</h3>
-                                        <p>Immersive, hyper-realistic gaming experiences powered by <strong>Unreal Engine 5</strong> & <strong>Unity</strong>. We are crafting worlds that blur the line between reality and digital.</p>
-                                        <a href="../future-game-design/" class="read-more mt-3">Read More <i class="bi bi-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                                <div class="future-card cyber-security">
-                                    <div class="card-content">
-                                        <span class="badge-coming-soon">Coming Soon</span>
-                                        <i class="bi bi-shield-lock-fill icon-large"></i>
-                                        <h3>Elite Cyber Security</h3>
-                                        <p>Military-grade penetration testing and <strong>Zero Trust architecture</strong> to bulletproof your infrastructure against evolving threats.</p>
-                                        <a href="../future-cyber-security/" class="read-more mt-3">Read More <i class="bi bi-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-                                <div class="future-card blockchain">
-                                    <div class="card-content">
-                                        <span class="badge-coming-soon">Coming Soon</span>
-                                        <i class="bi bi-link-45deg icon-large"></i>
-                                        <h3>Blockchain Revolution</h3>
-                                        <p>Decentralized innovation with <strong>Smart Contracts</strong> and <strong>Web3 Integration</strong>. Building transparent, immutable systems for the next era of the internet.</p>
-                                        <a href="../future-blockchain/" class="read-more mt-3">Read More <i class="bi bi-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Process Section -->
-                <section id="process" class="services section">
-                    <div class="container section-title" data-aos="fade-up">
-                        <h2>Our Process</h2>
-                        <p>How we turn your ideas into reality</p>
-                    </div>
-                    <div class="container">
-                        <div class="row gy-4">
-                            <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-                                <div class="service-single-main-wrapper-five text-center" style="width: 100%;">
-                                    <div class="icon">
-                                        <i class="bi bi-search" style="font-style: normal;"></i>
-                                    </div>
-                                    <div class="inner-content">
-                                        <h5 class="title">Discovery</h5>
-                                        <p class="disc">We start by understanding your business goals and requirements.
-                                        </p>
-                                        <a href="../process-discovery/" class="read-more justify-content-center">Read More <i class="bi bi-arrow-right"></i></a>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-                                <div class="service-single-main-wrapper-five text-center" style="width: 100%;">
-                                    <div class="icon">
-                                        <i class="bi bi-palette" style="font-style: normal;"></i>
-                                    </div>
-                                    <div class="inner-content">
-                                        <h5 class="title">Design</h5>
-                                        <p class="disc">Creating intuitive and engaging designs/prototypes.</p>
-                                        <a href="../process-design/" class="read-more justify-content-center">Read More <i class="bi bi-arrow-right"></i></a>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-                                <div class="service-single-main-wrapper-five text-center" style="width: 100%;">
-                                    <div class="icon">
-                                        <i class="bi bi-code-square" style="font-style: normal;"></i>
-                                    </div>
-                                    <div class="inner-content">
-                                        <h5 class="title">Development</h5>
-                                        <p class="disc">Building the solution with clean and scalable code.</p>
-                                        <a href="../process-development/" class="read-more justify-content-center">Read More <i class="bi bi-arrow-right"></i></a>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
-                                <div class="service-single-main-wrapper-five text-center" style="width: 100%;">
-                                    <div class="icon">
-                                        <i class="bi bi-rocket" style="font-style: normal;"></i>
-                                    </div>
-                                    <div class="inner-content">
-                                        <h5 class="title">Launch</h5>
-                                        <p class="disc">Deploying to live servers and providing ongoing support.</p>
-                                        <a href="../process-launch/" class="read-more justify-content-center">Read More <i class="bi bi-arrow-right"></i></a>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Section: Trending Tools -->
-                <div id="trending-tools" class="section-title mt-5" data-aos="fade-up">
-                    <h2>Trending Tools & Tech</h2>
-                    <p>The stack that powers the modern web.</p>
-                </div>
-                <div class="trending-timeline-container" data-aos="fade-up">
-    <div class="timeline-path">
-        <!-- SVG for wavy path -->
-        <svg viewBox="0 0 1000 100" preserveAspectRatio="none">
-            <path d="M0,50 Q250,5 500,50 T1000,50" fill="none" class="path-line" />
-        </svg>
-    </div>
-    <div class="swiper trending-timeline-swiper">
-        <div class="swiper-wrapper">
-            <!-- React.js -->
-            <div class="swiper-slide bottom">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-filetype-jsx text-primary fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">React.js</h4>
-                    <p class="small text-muted mb-2">Frontend Powerhouse</p>
-                </div>
-            </div>
-            <!-- Python -->
-            <div class="swiper-slide top">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-filetype-py text-warning fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">Python</h4>
-                    <p class="small text-muted mb-2">AI & Backend King</p>
-                </div>
-            </div>
-            <!-- Docker -->
-            <div class="swiper-slide bottom">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-box-seam text-info fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">Docker</h4>
-                    <p class="small text-muted mb-2">Containerization</p>
-                </div>
-            </div>
-            <!-- AWS -->
-            <div class="swiper-slide top">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-cloud-fill text-warning fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">AWS</h4>
-                    <p class="small text-muted mb-2">Cloud Infrastructure</p>
-                </div>
-            </div>
-            <!-- Node.js -->
-            <div class="swiper-slide bottom">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-server text-success fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">Node.js</h4>
-                    <p class="small text-muted mb-2">Backend Runtime</p>
-                </div>
-            </div>
-            <!-- Next.js -->
-            <div class="swiper-slide top">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-file-earmark-code text-dark fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">Next.js</h4>
-                    <p class="small text-muted mb-2">React Framework</p>
-                </div>
-            </div>
-            <!-- Flutter -->
-            <div class="swiper-slide bottom">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-phone text-primary fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">Flutter</h4>
-                    <p class="small text-muted mb-2">Cross-Platform Apps</p>
-                </div>
-            </div>
-            <!-- MongoDB -->
-            <div class="swiper-slide top">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-database text-success fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">MongoDB</h4>
-                    <p class="small text-muted mb-2">NoSQL Database</p>
-                </div>
-            </div>
-            <!-- FastAPI -->
-            <div class="swiper-slide bottom">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-lightning-charge text-warning fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">FastAPI</h4>
-                    <p class="small text-muted mb-2">High Performance API</p>
-                </div>
-            </div>
-            <!-- Java -->
-            <div class="swiper-slide top">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-cup-hot-fill text-danger fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">Java</h4>
-                    <p class="small text-muted mb-2">Enterprise Power</p>
-                </div>
-            </div>
-            <!-- .NET Core -->
-            <div class="swiper-slide bottom">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-microsoft text-primary fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">.NET Core</h4>
-                    <p class="small text-muted mb-2">Cross-Platform</p>
-                </div>
-            </div>
-            <!-- Cloud Migration Tools -->
-            <div class="swiper-slide top">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-cloud-arrow-up text-info fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">Cloud Migration Tools</h4>
-                    <p class="small text-muted mb-2">AWS, Azure, GCP Migration</p>
-                </div>
-            </div>
-            <!-- Kubernetes -->
-            <div class="swiper-slide bottom">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-gear-wide-connected text-primary fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">Kubernetes</h4>
-                    <p class="small text-muted mb-2">Orchestration</p>
-                </div>
-            </div>
-            <!-- Azure -->
-            <div class="swiper-slide top">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-cloud-check text-info fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">Azure</h4>
-                    <p class="small text-muted mb-2">Microsoft Cloud</p>
-                </div>
-            </div>
-            <!-- Prometheus -->
-            <div class="swiper-slide bottom">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-activity text-danger fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">Prometheus</h4>
-                    <p class="small text-muted mb-2">Metrics Monitoring</p>
-                </div>
-            </div>
-            <!-- Grafana -->
-            <div class="swiper-slide top">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-graph-up text-warning fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">Grafana</h4>
-                    <p class="small text-muted mb-2">Visualization</p>
-                </div>
-            </div>
-            <!-- GCP -->
-            <div class="swiper-slide bottom">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-google text-danger fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">GCP</h4>
-                    <p class="small text-muted mb-2">Google Cloud</p>
-                </div>
-            </div>
-            <!-- Jenkins -->
-            <div class="swiper-slide top">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-arrow-repeat text-secondary fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">Jenkins</h4>
-                    <p class="small text-muted mb-2">CI/CD Automation</p>
-                </div>
-            </div>
-            <!-- Terraform -->
-            <div class="swiper-slide bottom">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-hdd-stack text-primary fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">Terraform</h4>
-                    <p class="small text-muted mb-2">Infrastructure Code</p>
-                </div>
-            </div>
-            <!-- Figma -->
-            <div class="swiper-slide top">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-bezier2 text-dark fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">Figma</h4>
-                    <p class="small text-muted mb-2">Design Tool</p>
-                </div>
-            </div>
-            <!-- Adobe XD -->
-            <div class="swiper-slide bottom">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-vector-pen text-danger fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">Adobe XD</h4>
-                    <p class="small text-muted mb-2">Prototyping</p>
-                </div>
-            </div>
-            <!-- Selenium -->
-            <div class="swiper-slide top">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-browser-chrome text-success fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">Selenium</h4>
-                    <p class="small text-muted mb-2">Browser Testing</p>
-                </div>
-            </div>
-            <!-- Jest -->
-            <div class="swiper-slide bottom">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-check2-circle text-danger fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">Jest</h4>
-                    <p class="small text-muted mb-2">JS Testing</p>
-                </div>
-            </div>
-            <!-- TensorFlow -->
-            <div class="swiper-slide top">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-cpu-fill text-warning fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">TensorFlow</h4>
-                    <p class="small text-muted mb-2">Machine Learning</p>
-                </div>
-            </div>
-            <!-- PyTorch -->
-            <div class="swiper-slide bottom">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-lightning-fill text-danger fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">PyTorch</h4>
-                    <p class="small text-muted mb-2">Deep Learning</p>
-                </div>
-            </div>
-            <!-- n8n -->
-            <div class="swiper-slide top">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-diagram-3-fill text-primary fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">n8n</h4>
-                    <p class="small text-muted mb-2">Workflow Automation</p>
-                </div>
-            </div>
-            <!-- Zapier -->
-            <div class="swiper-slide bottom">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-lightning-charge-fill text-warning fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">Zapier</h4>
-                    <p class="small text-muted mb-2">Easy Integrations</p>
-                </div>
-            </div>
-            <!-- Make -->
-            <div class="swiper-slide top">
-                <div class="timeline-node"></div>
-                <div class="blog-card p-1 text-center d-flex flex-column justify-content-center">
-                    <i class="bi bi-infinity text-info fs-3 mb-1"></i>
-                    <h4 class="mb-1 fs-6">Make</h4>
-                    <p class="small text-muted mb-2">Visual Automation</p>
-                </div>
-            </div>
-        </div>
-        <div class="swiper-scrollbar"></div>
-    </div>
+<a class="read-more mt-3" href="../service-ai-ml/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section>
-
-    </main>
-
-    <footer id="footer" class="footer">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-5 col-md-12 footer-about">
-          <a href="../" class="logo d-flex align-items-center">
-            <span class="sitename">Blueidealteck</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p>SF/NO.139/1, ANNA NAGAR, MANGALAMPET,</p>
-            <p>Karnatham, Vriddhachalam, Cuddalore,</p>
-            <p>Tamil Nadu, India - 606104</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+91 9789836077</span></p>
-            <p><strong>Email:</strong> <span>info@blueidealteck.com</span></p>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="../">Home</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="../#about">About us</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="../#services">Services</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="../blog/">Blogs</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="../careers/">Careers</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="../privacy-policy.html">Privacy Policy</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="../terms-conditions.html">Terms & Conditions</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4 col-md-6 footer-links">
-          <h4>Follow Us</h4>
-          <div class="social-links d-flex mt-4">
-            <a href="https://x.com/blueidealteck" target="_blank"><i class="bi bi-twitter-x"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=61576888345818" target="_blank"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.instagram.com/blueidealteck/" target="_blank"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/blueidealteck-software-solution" target="_blank"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="container copyright text-center mt-4">
-      <p>&copy; <span class="auto-year"></span> Copyright <strong class="px-1 sitename">Blueidealteck</strong> <span>All Rights Reserved</span></p>
-    </div>
-
-  </footer>
-
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
-
-    <!-- Vendor JS Files -->
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-    <script src="../assets/vendor/php-email-form/validate.js" defer></script>
-    <script src="../assets/vendor/aos/aos.js" defer></script>
-    <script src="../assets/vendor/glightbox/js/glightbox.min.js" defer></script>
-    <script src="../assets/vendor/swiper/swiper-bundle.min.js" defer></script>
-    <script src="../assets/vendor/waypoints/noframework.waypoints.js" defer></script>
-    <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
-    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
-    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
-    <script src="../assets/js/main.js?v=1766914716" defer></script>
-
-  <script src="../assets/season/smart-seasonal.js" defer></script>
-  <script>
+<!-- Future Horizons Section -->
+<section class="future-horizons section" id="future-horizons">
+<div class="container section-title" data-aos="fade-up">
+<h2>Future Horizons: The Next Frontier</h2>
+<p>Innovation never stops. We are building the capabilities of tomorrow, today.</p>
+</div>
+<div class="container">
+<div class="row gy-4 justify-content-center">
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+<div class="future-card game-design">
+<div class="card-content">
+<span class="badge-coming-soon">Coming Soon</span>
+<i class="bi bi-controller icon-large"></i>
+<h3>Next-Gen Game Design</h3>
+<p>Immersive, hyper-realistic gaming experiences powered by <strong>Unreal Engine 5</strong> &amp; <strong>Unity</strong>. We are crafting worlds that blur the line between reality and digital.</p>
+<a class="read-more mt-3" href="../future-game-design/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+<div class="future-card cyber-security">
+<div class="card-content">
+<span class="badge-coming-soon">Coming Soon</span>
+<i class="bi bi-shield-lock-fill icon-large"></i>
+<h3>Elite Cyber Security</h3>
+<p>Military-grade penetration testing and <strong>Zero Trust architecture</strong> to bulletproof your infrastructure against evolving threats.</p>
+<a class="read-more mt-3" href="../future-cyber-security/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+<div class="future-card blockchain">
+<div class="card-content">
+<span class="badge-coming-soon">Coming Soon</span>
+<i class="bi bi-link-45deg icon-large"></i>
+<h3>Blockchain Revolution</h3>
+<p>Decentralized innovation with <strong>Smart Contracts</strong> and <strong>Web3 Integration</strong>. Building transparent, immutable systems for the next era of the internet.</p>
+<a class="read-more mt-3" href="../future-blockchain/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="services section" id="process">
+<div class="container section-title" data-aos="fade-up">
+<h2>Our Process</h2>
+<p>How we turn your ideas into reality</p>
+</div>
+<div class="container">
+<div class="row gy-4">
+<div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+<div class="service-single-main-wrapper-five text-center" style="width: 100%;">
+<div class="icon">
+<i class="bi bi-search" style="font-style: normal;"></i>
+</div>
+<div class="inner-content">
+<h5 class="title">Discovery</h5>
+<p class="disc">We start by understanding your business goals and requirements.
+                                        </p>
+<a class="read-more justify-content-center" href="../process-discovery/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+<div class="service-single-main-wrapper-five text-center" style="width: 100%;">
+<div class="icon">
+<i class="bi bi-palette" style="font-style: normal;"></i>
+</div>
+<div class="inner-content">
+<h5 class="title">Design</h5>
+<p class="disc">Creating intuitive and engaging designs/prototypes.</p>
+<a class="read-more justify-content-center" href="../process-design/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+<div class="service-single-main-wrapper-five text-center" style="width: 100%;">
+<div class="icon">
+<i class="bi bi-code-square" style="font-style: normal;"></i>
+</div>
+<div class="inner-content">
+<h5 class="title">Development</h5>
+<p class="disc">Building the solution with clean and scalable code.</p>
+<a class="read-more justify-content-center" href="../process-development/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+<div class="service-single-main-wrapper-five text-center" style="width: 100%;">
+<div class="icon">
+<i class="bi bi-rocket" style="font-style: normal;"></i>
+</div>
+<div class="inner-content">
+<h5 class="title">Launch</h5>
+<p class="disc">Deploying to live servers and providing ongoing support.</p>
+<a class="read-more justify-content-center" href="../process-launch/">Read More <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Trending Tools -->
+<div class="section-title mt-5" data-aos="fade-up" id="trending-tools">
+<h2>Trending Tools &amp; Tech</h2>
+<p>The stack that powers the modern web.</p>
+</div>
+<div class="trending-timeline-container" data-aos="fade-up">
+<div class="timeline-path">
+<!-- SVG for wavy path -->
+<svg preserveaspectratio="none" viewbox="0 0 1000 100">
+<path class="path-line" d="M0,50 Q250,5 500,50 T1000,50" fill="none"></path>
+</svg>
+</div>
+<div class="swiper trending-timeline-swiper">
+<div class="swiper-wrapper">
+<!-- React.js -->
+<div class="swiper-slide bottom">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-filetype-jsx text-primary fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">React.js</h4>
+<p class="small text-muted mb-2">Frontend Powerhouse</p>
+</div>
+</div>
+<!-- Python -->
+<div class="swiper-slide top">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-filetype-py text-warning fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">Python</h4>
+<p class="small text-muted mb-2">AI &amp; Backend King</p>
+</div>
+</div>
+<!-- Docker -->
+<div class="swiper-slide bottom">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-box-seam text-info fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">Docker</h4>
+<p class="small text-muted mb-2">Containerization</p>
+</div>
+</div>
+<!-- AWS -->
+<div class="swiper-slide top">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-cloud-fill text-warning fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">AWS</h4>
+<p class="small text-muted mb-2">Cloud Infrastructure</p>
+</div>
+</div>
+<!-- Node.js -->
+<div class="swiper-slide bottom">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-server text-success fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">Node.js</h4>
+<p class="small text-muted mb-2">Backend Runtime</p>
+</div>
+</div>
+<!-- Next.js -->
+<div class="swiper-slide top">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-file-earmark-code text-dark fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">Next.js</h4>
+<p class="small text-muted mb-2">React Framework</p>
+</div>
+</div>
+<!-- Flutter -->
+<div class="swiper-slide bottom">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-phone text-primary fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">Flutter</h4>
+<p class="small text-muted mb-2">Cross-Platform Apps</p>
+</div>
+</div>
+<!-- MongoDB -->
+<div class="swiper-slide top">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-database text-success fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">MongoDB</h4>
+<p class="small text-muted mb-2">NoSQL Database</p>
+</div>
+</div>
+<!-- FastAPI -->
+<div class="swiper-slide bottom">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-lightning-charge text-warning fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">FastAPI</h4>
+<p class="small text-muted mb-2">High Performance API</p>
+</div>
+</div>
+<!-- Java -->
+<div class="swiper-slide top">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-cup-hot-fill text-danger fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">Java</h4>
+<p class="small text-muted mb-2">Enterprise Power</p>
+</div>
+</div>
+<!-- .NET Core -->
+<div class="swiper-slide bottom">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-microsoft text-primary fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">.NET Core</h4>
+<p class="small text-muted mb-2">Cross-Platform</p>
+</div>
+</div>
+<!-- Cloud Migration Tools -->
+<div class="swiper-slide top">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-cloud-arrow-up text-info fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">Cloud Migration Tools</h4>
+<p class="small text-muted mb-2">AWS, Azure, GCP Migration</p>
+</div>
+</div>
+<!-- Kubernetes -->
+<div class="swiper-slide bottom">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-gear-wide-connected text-primary fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">Kubernetes</h4>
+<p class="small text-muted mb-2">Orchestration</p>
+</div>
+</div>
+<!-- Azure -->
+<div class="swiper-slide top">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-cloud-check text-info fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">Azure</h4>
+<p class="small text-muted mb-2">Microsoft Cloud</p>
+</div>
+</div>
+<!-- Prometheus -->
+<div class="swiper-slide bottom">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-activity text-danger fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">Prometheus</h4>
+<p class="small text-muted mb-2">Metrics Monitoring</p>
+</div>
+</div>
+<!-- Grafana -->
+<div class="swiper-slide top">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-graph-up text-warning fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">Grafana</h4>
+<p class="small text-muted mb-2">Visualization</p>
+</div>
+</div>
+<!-- GCP -->
+<div class="swiper-slide bottom">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-google text-danger fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">GCP</h4>
+<p class="small text-muted mb-2">Google Cloud</p>
+</div>
+</div>
+<!-- Jenkins -->
+<div class="swiper-slide top">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-arrow-repeat text-secondary fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">Jenkins</h4>
+<p class="small text-muted mb-2">CI/CD Automation</p>
+</div>
+</div>
+<!-- Terraform -->
+<div class="swiper-slide bottom">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-hdd-stack text-primary fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">Terraform</h4>
+<p class="small text-muted mb-2">Infrastructure Code</p>
+</div>
+</div>
+<!-- Figma -->
+<div class="swiper-slide top">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-bezier2 text-dark fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">Figma</h4>
+<p class="small text-muted mb-2">Design Tool</p>
+</div>
+</div>
+<!-- Adobe XD -->
+<div class="swiper-slide bottom">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-vector-pen text-danger fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">Adobe XD</h4>
+<p class="small text-muted mb-2">Prototyping</p>
+</div>
+</div>
+<!-- Selenium -->
+<div class="swiper-slide top">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-browser-chrome text-success fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">Selenium</h4>
+<p class="small text-muted mb-2">Browser Testing</p>
+</div>
+</div>
+<!-- Jest -->
+<div class="swiper-slide bottom">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-check2-circle text-danger fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">Jest</h4>
+<p class="small text-muted mb-2">JS Testing</p>
+</div>
+</div>
+<!-- TensorFlow -->
+<div class="swiper-slide top">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-cpu-fill text-warning fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">TensorFlow</h4>
+<p class="small text-muted mb-2"><a class="text-primary fw-medium fw-bold" href="/service-ai-ml/">Machine Learning</a></p>
+</div>
+</div>
+<!-- PyTorch -->
+<div class="swiper-slide bottom">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-lightning-fill text-danger fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">PyTorch</h4>
+<p class="small text-muted mb-2">Deep Learning</p>
+</div>
+</div>
+<!-- n8n -->
+<div class="swiper-slide top">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-diagram-3-fill text-primary fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">n8n</h4>
+<p class="small text-muted mb-2">Workflow Automation</p>
+</div>
+</div>
+<!-- Zapier -->
+<div class="swiper-slide bottom">
+<div class="timeline-node"></div>
+<div class="blog-card p-3 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-lightning-charge-fill text-warning fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">Zapier</h4>
+<p class="small text-muted mb-2">Easy Integrations</p>
+</div>
+</div>
+<!-- Make -->
+<div class="swiper-slide top">
+<div class="timeline-node"></div>
+<div class="blog-card p-1 text-center d-flex flex-column justify-content-center">
+<i class="bi bi-infinity text-info fs-3 mb-1"></i>
+<h4 class="mb-1 fs-6">Make</h4>
+<p class="small text-muted mb-2">Visual Automation</p>
+</div>
+</div>
+</div>
+<div class="swiper-scrollbar"></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer" id="footer">
+<div class="container footer-top">
+<div class="row gy-4">
+<div class="col-lg-5 col-md-12 footer-about">
+<a class="logo d-flex align-items-center" href="../">
+<span class="sitename">Blueidealteck</span>
+</a>
+<div class="footer-contact pt-3">
+<p>SF/NO.139/1, ANNA NAGAR, MANGALAMPET,</p>
+<p>Karnatham, Vriddhachalam, Cuddalore,</p>
+<p>Tamil Nadu, India - 606104</p>
+<p class="mt-3"><strong>Phone:</strong> <span>+91 9789836077</span></p>
+<p><strong>Email:</strong> <span>info@blueidealteck.com</span></p>
+</div>
+</div>
+<div class="col-lg-3 col-md-6 footer-links">
+<h4>Useful Links</h4>
+<ul>
+<li><i class="bi bi-chevron-right"></i> <a href="../">Home</a></li>
+<li><i class="bi bi-chevron-right"></i> <a href="../../../../../bout/">About us</a></li>
+<li><i class="bi bi-chevron-right"></i> <a href="../#services">Services</a></li>
+<li><i class="bi bi-chevron-right"></i> <a href="../blog/">Blogs</a></li>
+<li><i class="bi bi-chevron-right"></i> <a href="../careers/">Careers</a></li>
+<li><i class="bi bi-chevron-right"></i> <a href="../privacy-policy.html">Privacy Policy</a></li>
+<li><i class="bi bi-chevron-right"></i> <a href="../terms-conditions.html">Terms &amp; Conditions</a></li>
+</ul>
+</div>
+<div class="col-lg-4 col-md-6 footer-links">
+<h4>Follow Us</h4>
+<div class="social-links d-flex mt-4">
+<a href="https://x.com/blueidealteck" target="_blank"><i class="bi bi-twitter-x"></i></a>
+<a href="https://www.facebook.com/profile.php?id=61576888345818" target="_blank"><i class="bi bi-facebook"></i></a>
+<a href="https://www.instagram.com/blueidealteck/" target="_blank"><i class="bi bi-instagram"></i></a>
+<a href="https://www.linkedin.com/company/blueidealteck-software-solution" target="_blank"><i class="bi bi-linkedin"></i></a>
+<a href="https://www.youtube.com/@Blueidealteck" target="_blank"><i class="bi bi-youtube"></i></a></div>
+</div>
+</div>
+</div>
+<div class="container copyright text-center mt-4">
+<p>© <span class="auto-year"></span> Copyright <strong class="px-1 sitename">Blueidealteck</strong> <span>All Rights Reserved</span></p>
+</div>
+</footer>
+<a class="scroll-top d-flex align-items-center justify-content-center" href="#" id="scroll-top"><i class="bi bi-arrow-up-short"></i></a>
+<!-- Vendor JS Files -->
+<script defer="" src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script defer="" src="../assets/vendor/php-email-form/validate.js"></script>
+<script defer="" src="../assets/vendor/aos/aos.js"></script>
+<script defer="" src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script defer="" src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script defer="" src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+<script defer="" src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script defer="" src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+<script defer="" src="../assets/js/main.js?v=1766914716"></script>
+<script defer="" src="../assets/season/smart-seasonal.js"></script>
+<script>
     document.addEventListener("DOMContentLoaded", function() {
         if (typeof Swiper !== 'undefined') {
             new Swiper(".trending-timeline-swiper", {
@@ -883,7 +1010,5 @@
         }
     });
   </script>
-
 </body>
-
 </html>
