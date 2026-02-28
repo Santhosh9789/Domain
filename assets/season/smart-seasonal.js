@@ -1,4 +1,4 @@
-class SmartSeasonalEffects{constructor(){this.userLocation=null;this.currentDate=new Date();this.activeTheme=null;this.basePath='assets/season/';const currentScript=document.currentScript||document.querySelector('script[src*="smart-seasonal.js"]');if(currentScript){const src=currentScript.getAttribute('src');this.basePath=src.substring(0,src.lastIndexOf('/')+1);}
+﻿class SmartSeasonalEffects{constructor(){this.userLocation=null;this.currentDate=new Date();this.activeTheme=null;this.basePath='assets/season/';const currentScript=document.currentScript||document.querySelector('script[src*="smart-seasonal.js"]');if(currentScript){const src=currentScript.getAttribute('src');this.basePath=src.substring(0,src.lastIndexOf('/')+1);}
 this.init();}
 async init(){const initialTheme=this.determineTheme();this.applyTheme(initialTheme);this.getUserLocation().then(()=>{const refinedTheme=this.determineTheme();if(refinedTheme!==this.activeTheme){console.log(`Refining theme based on location: ${refinedTheme}`);this.applyTheme(refinedTheme);}});setInterval(()=>{const newTheme=this.determineTheme();if(newTheme!==this.activeTheme){this.applyTheme(newTheme);}},3600000);}
 async getUserLocation(){try{const response=await fetch('https://ipapi.co/json/');const data=await response.json();this.userLocation={country:data.country_code,countryName:data.country_name,region:data.region,city:data.city,latitude:data.latitude,longitude:data.longitude,timezone:data.timezone};console.log('User location detected:',this.userLocation);}catch(error){this.userLocation={country:'IN',countryName:'India',region:'Tamil Nadu',timezone:'Asia/Kolkata'};console.log('Using default location (India)');}}
@@ -64,15 +64,15 @@ createFallingLeaves(){setInterval(()=>{const leaf=document.createElement('div');
         pointer-events:none;
       `;document.body.appendChild(leaf);setTimeout(()=>leaf.remove(),10000);},1000);}
 createFlowers(){console.log('🌸 Flowers disabled for design consistency');}
-createButterflies(){setInterval(()=>{const butterfly=document.createElement('div');butterfly.innerHTML='🦋';butterfly.style.cssText=`
-        position:fixed;
-        left:${Math.random() * 100}%;
-        top:${Math.random() * 100}%;
-        font-size:30px;
-        animation:butterfly-fly ${10 + Math.random() * 10}s linear;
-        z-index:9999;
-        pointer-events:none;
-      `;document.body.appendChild(butterfly);setTimeout(()=>butterfly.remove(),20000);},5000);}
+    createButterflies() { 
+      if (!window.activeButterflies) { 
+        window.activeButterflies = [];
+        for (let i = 0; i < 4; i++) {
+          window.activeButterflies.push(new ButterflyController()); 
+        }
+      } 
+      return; 
+    }
 createSunshine(){document.body.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)';}
 createSpookyEffects(){const ghosts=['👻','🎃','🦇','🕷️'];setInterval(()=>{const ghost=document.createElement('div');ghost.innerHTML=ghosts[Math.floor(Math.random()*ghosts.length)];ghost.style.cssText=`
         position:fixed;
@@ -112,3 +112,96 @@ document.addEventListener('DOMContentLoaded',()=>{window.seasonalEffects=new Sma
     50% { opacity: 0.7; }
   }
 `;document.head.appendChild(style);
+class ButterflyController {
+    constructor() {
+      this.init();
+    }
+    init() {
+      this.el = document.createElement('div');
+      this.el.className = 'butterfly-wrapper';
+      this.el.innerHTML = `
+        <div class="butterfly">
+          <div class="wing wing-left"></div>
+          <div class="butterfly-body"></div>
+          <div class="wing wing-right"></div>
+        </div>
+      `;
+      document.body.appendChild(this.el);
+
+      this.x = Math.random() * window.innerWidth;
+      this.y = Math.random() * window.innerHeight;
+      this.vx = (Math.random() - 0.5) * 4;
+      this.vy = (Math.random() - 0.5) * 4;
+      this.tx = Math.random() * window.innerWidth;
+      this.ty = Math.random() * window.innerHeight;
+      this.angle = 0;
+      this.speedLimit = 3.5;
+      
+      this.resting = false;
+      this.restTimer = 0;
+
+      this.update = this.update.bind(this);
+      requestAnimationFrame(this.update);
+      setInterval(() => this.setNewTarget(), 3000 + Math.random() * 4000);
+    }
+    
+    setNewTarget() {
+      if (Math.random() < 0.15 && this.y > 100) { 
+        this.resting = true;
+        this.restTimer = 60 + Math.random() * 100;
+        this.el.classList.add('resting');
+        this.tx = this.x; this.ty = this.y;
+      } else {
+        this.resting = false;
+        this.el.classList.remove('resting');
+        this.tx = Math.random() * (window.innerWidth - 100) + 50;
+        this.ty = Math.random() * (window.innerHeight - 100) + 50;
+      }
+    }
+
+    update() {
+      if (this.resting) {
+        this.restTimer--;
+        if (this.restTimer <= 0) this.setNewTarget();
+        this.x += Math.sin(Date.now() / 200) * 0.3;
+        this.y += Math.cos(Date.now() / 250) * 0.3;
+      } else {
+        let dx = this.tx - this.x;
+        let dy = this.ty - this.y;
+        let dist = Math.sqrt(dx*dx + dy*dy);
+        
+        if (dist > 10) {
+          this.vx += (dx / dist) * 0.05;
+          this.vy += (dy / dist) * 0.05;
+        }
+
+        let speed = Math.sqrt(this.vx*this.vx + this.vy*this.vy);
+        if (speed > this.speedLimit) {
+          this.vx = (this.vx / speed) * this.speedLimit;
+          this.vy = (this.vy / speed) * this.speedLimit;
+        }
+
+        this.vx += (Math.random() - 0.5) * 0.8;
+        this.vy += (Math.random() - 0.5) * 0.8;
+
+        this.x += this.vx;
+        this.y += this.vy;
+
+        let targetAngle = Math.atan2(this.vy, this.vx) * (180 / Math.PI) + 90;
+        let angleDiff = targetAngle - this.angle;
+        let pAngle = (angleDiff % 360 + 360) % 360;
+        angleDiff = pAngle > 180 ? pAngle - 360 : pAngle;
+        
+        this.angle += angleDiff * 0.08; 
+      }
+
+      if (this.x < -100) this.x = window.innerWidth + 50;
+      if (this.x > window.innerWidth + 100) this.x = -50;
+      if (this.y < -100) this.y = window.innerHeight + 50;
+      if (this.y > window.innerHeight + 100) this.y = -50;
+
+      this.el.style.transform = `translate3d(${this.x}px, ${this.y}px, 0) rotateZ(${this.angle}deg)`;
+      
+      requestAnimationFrame(this.update);
+    }
+  }

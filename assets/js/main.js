@@ -91,13 +91,6 @@
     });
     navmenuScrollspy();
 
-    // Hide Services dropdown from mobile navigation
-    document.querySelectorAll('.navmenu > ul > li.dropdown').forEach(function(item) {
-      var span = item.querySelector('a > span');
-      if (span && span.textContent.trim() === 'Services') {
-        item.classList.add('desktop-nav-only');
-      }
-    });
   });
 
   const optimizedScroll = throttle(() => {
