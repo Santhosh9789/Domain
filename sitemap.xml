@@ -11,12 +11,7 @@
     <html:link rel="alternate" hreflang="en-ae" href="https://blueidealteck.com/" />
     <html:link rel="alternate" hreflang="x-default" href="https://blueidealteck.com/" />
   </url>
-  <url>
-    <loc>https://blueidealteck.com/index.html</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
   <url>
     <loc>https://blueidealteck.com/about/</loc>
     <lastmod>2026-02-28</lastmod>
@@ -36,13 +31,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/privacy-policy.html</loc>
+    <loc>https://blueidealteck.com/privacy-policy/</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://blueidealteck.com/terms-conditions.html</loc>
+    <loc>https://blueidealteck.com/terms-conditions/</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
@@ -59,12 +54,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://blueidealteck.com/dropdown_menu.html</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
   <url>
     <loc>https://blueidealteck.com/blog-details/</loc>
     <lastmod>2026-02-28</lastmod>
