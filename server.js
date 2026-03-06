@@ -3,14 +3,25 @@ const fs = require('fs');
 const path = require('path');
 const port = 8000;
 
+const rootDir = __dirname;
+
 http.createServer((req, res) => {
     let reqUrl = req.url.split('?')[0]; // remove query strings
-    let filePath = '.' + reqUrl;
-    if (filePath === './') filePath = './index.html';
     
-    // Serve directory indexes
-    if (!path.extname(filePath) && !filePath.endsWith('index.html')) {
+    // Normalize path to prevent directory traversal and handle root-relative links
+    // If request is /privacy-policy.html, it should look in the rootDir
+    let filePath = path.join(rootDir, reqUrl);
+
+    // If it's a directory or missing extension, try index.html
+    if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
         filePath = path.join(filePath, 'index.html');
+    } else if (!path.extname(filePath)) {
+        // Handle clean URLs like /careers by checking /careers.html or /careers/index.html
+        if (fs.existsSync(filePath + '.html')) {
+            filePath += '.html';
+        } else {
+            filePath = path.join(filePath, 'index.html');
+        }
     }
 
     const extname = String(path.extname(filePath)).toLowerCase();
@@ -28,7 +39,8 @@ http.createServer((req, res) => {
         if (error) {
             if(error.code == 'ENOENT'){
                 res.writeHead(404);
-                res.end('404 Not Found');
+                res.end('404 Not Found: ' + reqUrl);
+                console.log(`404: ${reqUrl} -> ${filePath}`);
             } else {
                 res.writeHead(500);
                 res.end('500 Server Error: ' + error.code);
