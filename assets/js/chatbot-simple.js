@@ -198,7 +198,7 @@ We're looking for passionate tech professionals:
 📍 **Location:** Remote / Hybrid (Virudhachalam, Tamil Nadu)
 💼 **Perks:** Competitive salary, flexible hours, learning budget, growth
 
-👉 Visit our <a href="careers/" style="color:#4154f1;font-weight:bold;">Careers Page</a> to apply!`;}
+👉 Visit our <a href="${window.chatbotBasePath || './'}careers/" style="color:#4154f1;font-weight:bold;">Careers Page</a> to apply!`;}
 
 // About / Company
 if(q.includes('about')||q.includes('company')||q.includes('who are you')||q.includes('blueidealteck')){return`🏢 **About Blueidealteck:**
@@ -216,7 +216,7 @@ We are a full-service digital technology company. We don't just write code — *
 
 Our mission: **Empower businesses with technology that works.**
 
-👉 <a href="about/" style="color:#4154f1;font-weight:bold;">Read Our Full Story</a>`;}
+👉 <a href="${window.chatbotBasePath || './'}about/" style="color:#4154f1;font-weight:bold;">Read Our Full Story</a>`;}
 
 // Contact
 if(q.includes('contact')||q.includes('email')||q.includes('phone')||q.includes('call')||q.includes('reach')||q.includes('whatsapp')){return`📞 **Get in Touch with Blueidealteck:**
