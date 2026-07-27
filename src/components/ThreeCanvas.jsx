@@ -8,25 +8,26 @@ export default function ThreeCanvas({ page = 'home' }) {
     const container = mountRef.current;
     if (!container) return;
 
+    const isMobile = window.innerWidth < 768;
     const width = container.clientWidth || window.innerWidth;
     const height = container.clientHeight || window.innerHeight;
 
-    // 1. Scene & Renderer Setup
+    // 1. Scene & Mobile-Optimized WebGL Renderer
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
-    camera.position.z = 15;
+    camera.position.z = isMobile ? 18 : 15;
 
     const renderer = new THREE.WebGLRenderer({
-      antialias: true,
+      antialias: !isMobile,
       alpha: true,
       powerPreference: 'high-performance',
-      precision: 'highp',
+      precision: isMobile ? 'mediump' : 'highp',
       stencil: false,
       depth: true
     });
 
     renderer.setSize(width, height);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(isMobile ? 1.0 : Math.min(window.devicePixelRatio, 2));
     container.appendChild(renderer.domElement);
 
     const mainGroup = new THREE.Group();
@@ -40,8 +41,8 @@ export default function ThreeCanvas({ page = 'home' }) {
       texture.generateMipmaps = true;
       texture.minFilter = THREE.LinearMipmapLinearFilter;
 
-      // 3D Emblem Mesh
-      const planeGeo = new THREE.PlaneGeometry(6.5, 6.5);
+      const logoSize = isMobile ? 5.0 : 6.5;
+      const planeGeo = new THREE.PlaneGeometry(logoSize, logoSize);
       const planeMat = new THREE.MeshPhongMaterial({
         map: texture,
         transparent: true,
@@ -55,8 +56,7 @@ export default function ThreeCanvas({ page = 'home' }) {
       logoMesh.position.z = 0.5;
       mainGroup.add(logoMesh);
 
-      // Backing Glow Plate
-      const backGeo = new THREE.CircleGeometry(3.6, 32);
+      const backGeo = new THREE.CircleGeometry(isMobile ? 2.8 : 3.6, 32);
       const backMat = new THREE.MeshBasicMaterial({
         color: 0x00a3ff,
         transparent: true,
@@ -71,7 +71,8 @@ export default function ThreeCanvas({ page = 'home' }) {
     // 3. 3D Circuit Nodes & Ring Architecture
     logoNodesGroup = new THREE.Group();
 
-    const torusGeo1 = new THREE.TorusGeometry(6.2, 0.05, 16, 120);
+    const ringRadius = isMobile ? 4.8 : 6.2;
+    const torusGeo1 = new THREE.TorusGeometry(ringRadius, 0.05, 16, isMobile ? 60 : 120);
     const torusMat1 = new THREE.MeshBasicMaterial({
       color: 0x00a3ff,
       transparent: true,
@@ -81,7 +82,7 @@ export default function ThreeCanvas({ page = 'home' }) {
     logoRing.rotation.x = Math.PI / 3;
     logoNodesGroup.add(logoRing);
 
-    const torusGeo2 = new THREE.TorusGeometry(7.5, 0.03, 16, 100);
+    const torusGeo2 = new THREE.TorusGeometry(ringRadius + 1.2, 0.03, 16, isMobile ? 50 : 100);
     const torusMat2 = new THREE.MeshBasicMaterial({
       color: 0x0284c7,
       transparent: true,
@@ -91,19 +92,19 @@ export default function ThreeCanvas({ page = 'home' }) {
     ring2.rotation.y = Math.PI / 4;
     logoNodesGroup.add(ring2);
 
-    const nodeGeo = new THREE.SphereGeometry(0.18, 16, 16);
+    const nodeGeo = new THREE.SphereGeometry(0.16, 12, 12);
     const nodeMat = new THREE.MeshBasicMaterial({ color: 0x00a3ff });
 
-    for (let i = 0; i < 8; i++) {
-      const angle = (i / 8) * Math.PI * 2;
+    for (let i = 0; i < 6; i++) {
+      const angle = (i / 6) * Math.PI * 2;
       const node = new THREE.Mesh(nodeGeo, nodeMat);
-      node.position.set(Math.cos(angle) * 6.2, Math.sin(angle) * 6.2, (i % 2 === 0 ? 0.8 : -0.8));
+      node.position.set(Math.cos(angle) * ringRadius, Math.sin(angle) * ringRadius, (i % 2 === 0 ? 0.8 : -0.8));
       logoNodesGroup.add(node);
     }
     mainGroup.add(logoNodesGroup);
 
-    // 4. 3D Particles Stream
-    const pCount = page === 'techstack' ? 1200 : (page === 'blog' ? 1000 : 900);
+    // 4. 3D Particles Stream (Mobile Lightened)
+    const pCount = isMobile ? 450 : (page === 'techstack' ? 1200 : (page === 'blog' ? 1000 : 900));
     const pGeo = new THREE.BufferGeometry();
     const pPos = new Float32Array(pCount * 3);
     const pColors = new Float32Array(pCount * 3);
@@ -113,7 +114,7 @@ export default function ThreeCanvas({ page = 'home' }) {
     const cWhite = new THREE.Color(0xffffff);
 
     for (let i = 0; i < pCount * 3; i += 3) {
-      const radius = 8 + Math.random() * 18;
+      const radius = (isMobile ? 6 : 8) + Math.random() * (isMobile ? 12 : 18);
       const theta = Math.random() * Math.PI * 2;
       const phi = Math.acos((Math.random() * 2) - 1);
 
@@ -131,7 +132,7 @@ export default function ThreeCanvas({ page = 'home' }) {
     pGeo.setAttribute('color', new THREE.BufferAttribute(pColors, 3));
 
     const pMat = new THREE.PointsMaterial({
-      size: 0.16,
+      size: isMobile ? 0.2 : 0.16,
       vertexColors: true,
       transparent: true,
       opacity: 0.75,
@@ -148,31 +149,20 @@ export default function ThreeCanvas({ page = 'home' }) {
     pointLight1.position.set(12, 12, 12);
     scene.add(pointLight1);
 
-    const pointLight2 = new THREE.PointLight(0x38bdf8, 2, 60);
-    pointLight2.position.set(-12, -12, -12);
-    scene.add(pointLight2);
-
-    // 6. Smooth Mouse Parallax Tracking
+    // 6. Touch & Mouse Parallax Tracking
     let mouseX = 0;
     let mouseY = 0;
     let targetX = 0;
     let targetY = 0;
 
-    const handleMouseMove = (event) => {
-      mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-      mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+    const handlePointerMove = (event) => {
+      const clientX = event.touches ? event.touches[0].clientX : event.clientX;
+      const clientY = event.touches ? event.touches[0].clientY : event.clientY;
+      mouseX = (clientX / window.innerWidth) * 2 - 1;
+      mouseY = -(clientY / window.innerHeight) * 2 + 1;
     };
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
-
-    const handleClick = () => {
-      if (mainGroup) {
-        mainGroup.scale.set(1.15, 1.15, 1.15);
-        setTimeout(() => {
-          mainGroup.scale.set(1, 1, 1);
-        }, 250);
-      }
-    };
-    window.addEventListener('click', handleClick, { passive: true });
+    window.addEventListener('mousemove', handlePointerMove, { passive: true });
+    window.addEventListener('touchmove', handlePointerMove, { passive: true });
 
     const handleResize = () => {
       if (!container) return;
@@ -197,18 +187,15 @@ export default function ThreeCanvas({ page = 'home' }) {
       targetX += (mouseX - targetX) * lerpSpeed;
       targetY += (mouseY - targetY) * lerpSpeed;
 
-      mainGroup.rotation.y = elapsedTime * 0.1 + targetX * 0.45;
-      mainGroup.rotation.x = Math.sin(elapsedTime * 0.1) * 0.12 + targetY * 0.45;
+      mainGroup.rotation.y = elapsedTime * 0.1 + targetX * 0.35;
+      mainGroup.rotation.x = Math.sin(elapsedTime * 0.1) * 0.1 + targetY * 0.35;
 
       if (logoMesh) {
-        logoMesh.rotation.z = Math.sin(elapsedTime * 0.5) * 0.05;
-        const pulse = 1 + Math.sin(elapsedTime * 2) * 0.03;
-        logoMesh.scale.set(pulse, pulse, pulse);
+        logoMesh.rotation.z = Math.sin(elapsedTime * 0.5) * 0.04;
       }
 
-      if (logoRing) logoRing.rotation.z += delta * 0.25;
-      if (ring2) ring2.rotation.z -= delta * 0.3;
-      if (particleSystem) particleSystem.rotation.y -= delta * 0.08;
+      if (logoRing) logoRing.rotation.z += delta * 0.2;
+      if (particleSystem) particleSystem.rotation.y -= delta * 0.06;
 
       renderer.render(scene, camera);
     };
@@ -216,8 +203,8 @@ export default function ThreeCanvas({ page = 'home' }) {
     animate();
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('click', handleClick);
+      window.removeEventListener('mousemove', handlePointerMove);
+      window.removeEventListener('touchmove', handlePointerMove);
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationFrameId);
       if (container.contains(renderer.domElement)) {
