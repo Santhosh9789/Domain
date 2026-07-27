@@ -61,14 +61,14 @@ export default function AIChatbot() {
   };
 
   return (
-    <div style={{ position: 'fixed', bottom: '24px', right: '24px', zIndex: 9999 }}>
+    <div style={{ position: 'fixed', bottom: '16px', right: '16px', zIndex: 9999 }}>
       {/* Floating Trigger Button */}
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
           style={{
-            width: '60px',
-            height: '60px',
+            width: '54px',
+            height: '54px',
             borderRadius: '50%',
             background: 'linear-gradient(135deg, #0284C7 0%, #00A3FF 100%)',
             border: '2px solid #FFFFFF',
@@ -82,14 +82,14 @@ export default function AIChatbot() {
             position: 'relative'
           }}
         >
-          <Bot size={28} />
+          <Bot size={26} />
           {/* Notification Glow Dot */}
           <span style={{
             position: 'absolute',
-            top: '4px',
-            right: '4px',
-            width: '14px',
-            height: '14px',
+            top: '2px',
+            right: '2px',
+            width: '12px',
+            height: '12px',
             borderRadius: '50%',
             background: '#22C55E',
             border: '2px solid #FFFFFF'
@@ -100,9 +100,10 @@ export default function AIChatbot() {
       {/* AI Chatbot Window Drawer */}
       {isOpen && (
         <div style={{
-          width: '360px',
-          maxHeight: '520px',
-          height: '80vh',
+          width: 'calc(100vw - 32px)',
+          maxWidth: '360px',
+          maxHeight: '480px',
+          height: '75vh',
           background: '#FFFFFF',
           borderRadius: '20px',
           boxShadow: '0 20px 50px rgba(2, 132, 199, 0.25)',
@@ -114,30 +115,30 @@ export default function AIChatbot() {
         }}>
           {/* Chat Header */}
           <div style={{
-            padding: '16px 20px',
+            padding: '14px 18px',
             background: 'linear-gradient(135deg, #0284C7 0%, #00A3FF 100%)',
             color: '#FFFFFF',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between'
           }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <div style={{
-                width: '38px',
-                height: '38px',
+                width: '34px',
+                height: '34px',
                 borderRadius: '50%',
                 background: 'rgba(255, 255, 255, 0.2)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center'
               }}>
-                <Bot size={22} color="#FFF" />
+                <Bot size={20} color="#FFF" />
               </div>
               <div>
-                <div style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, fontSize: '1rem' }}>
+                <div style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, fontSize: '0.95rem' }}>
                   Blueidealteck AI
                 </div>
-                <div style={{ fontSize: '0.72rem', opacity: 0.9, display: 'flex', alignItems: 'center', gap: '4px' }}>
+                <div style={{ fontSize: '0.7rem', opacity: 0.9, display: 'flex', alignItems: 'center', gap: '4px' }}>
                   <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#22C55E' }} />
                   <span>Online 24/7</span>
                 </div>
@@ -159,11 +160,11 @@ export default function AIChatbot() {
 
           {/* Quick Option Chips */}
           <div style={{
-            padding: '10px 14px',
+            padding: '8px 12px',
             background: '#F0F9FF',
             borderBottom: '1px solid rgba(56, 189, 248, 0.2)',
             display: 'flex',
-            gap: '8px',
+            gap: '6px',
             overflowX: 'auto',
             whiteSpace: 'nowrap'
           }}>
@@ -176,11 +177,11 @@ export default function AIChatbot() {
           {/* Messages Body */}
           <div style={{
             flex: 1,
-            padding: '16px',
+            padding: '14px',
             overflowY: 'auto',
             display: 'flex',
             flexDirection: 'column',
-            gap: '12px',
+            gap: '10px',
             background: '#F8FAFC'
           }}>
             {messages.map((msg, index) => (
@@ -189,33 +190,33 @@ export default function AIChatbot() {
                 style={{
                   display: 'flex',
                   justifyContent: msg.sender === 'user' ? 'flex-end' : 'flex-start',
-                  gap: '8px'
+                  gap: '6px'
                 }}
               >
                 {msg.sender === 'bot' && (
                   <div style={{
-                    width: '28px',
-                    height: '28px',
+                    width: '26px',
+                    height: '26px',
                     borderRadius: '50%',
                     background: '#00A3FF',
                     color: '#FFF',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontSize: '0.75rem',
+                    fontSize: '0.7rem',
                     flexShrink: 0
                   }}>
                     AI
                   </div>
                 )}
                 <div style={{
-                  maxWidth: '78%',
-                  padding: '10px 14px',
-                  borderRadius: msg.sender === 'user' ? '16px 16px 2px 16px' : '16px 16px 16px 2px',
+                  maxWidth: '82%',
+                  padding: '9px 13px',
+                  borderRadius: msg.sender === 'user' ? '14px 14px 2px 14px' : '14px 14px 14px 2px',
                   background: msg.sender === 'user' ? '#00A3FF' : '#FFFFFF',
                   color: msg.sender === 'user' ? '#FFFFFF' : '#0F172A',
-                  fontSize: '0.86rem',
-                  lineHeight: 1.5,
+                  fontSize: '0.84rem',
+                  lineHeight: 1.45,
                   boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
                   border: msg.sender === 'bot' ? '1px solid rgba(56, 189, 248, 0.2)' : 'none'
                 }}>
@@ -225,7 +226,7 @@ export default function AIChatbot() {
             ))}
 
             {isTyping && (
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#0284C7', fontSize: '0.8rem', fontWeight: 600 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#0284C7', fontSize: '0.78rem', fontWeight: 600 }}>
                 <span>AI is typing...</span>
               </div>
             )}
@@ -239,11 +240,11 @@ export default function AIChatbot() {
               handleSend();
             }}
             style={{
-              padding: '12px 16px',
+              padding: '10px 12px',
               background: '#FFFFFF',
               borderTop: '1px solid rgba(56, 189, 248, 0.2)',
               display: 'flex',
-              gap: '8px',
+              gap: '6px',
               alignItems: 'center'
             }}
           >
@@ -254,10 +255,10 @@ export default function AIChatbot() {
               placeholder="Ask AI anything..."
               style={{
                 flex: 1,
-                padding: '10px 14px',
+                padding: '9px 12px',
                 borderRadius: '20px',
                 border: '1px solid rgba(56, 189, 248, 0.3)',
-                fontSize: '0.86rem',
+                fontSize: '0.84rem',
                 outline: 'none',
                 color: '#0F172A'
               }}
@@ -265,8 +266,8 @@ export default function AIChatbot() {
             <button
               type="submit"
               style={{
-                width: '36px',
-                height: '36px',
+                width: '34px',
+                height: '34px',
                 borderRadius: '50%',
                 background: '#00A3FF',
                 color: '#FFFFFF',
@@ -274,10 +275,11 @@ export default function AIChatbot() {
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                flexShrink: 0
               }}
             >
-              <Send size={16} />
+              <Send size={15} />
             </button>
           </form>
         </div>
@@ -290,7 +292,7 @@ export default function AIChatbot() {
           background: #FFFFFF;
           border: 1px solid rgba(0, 163, 255, 0.3);
           color: #0284C7;
-          font-size: 0.75rem;
+          font-size: 0.72rem;
           font-weight: 700;
           cursor: pointer;
           transition: all 0.2s ease;
@@ -302,7 +304,7 @@ export default function AIChatbot() {
         @keyframes fadeInUp {
           from {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(15px);
           }
           to {
             opacity: 1;
