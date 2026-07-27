@@ -11,10 +11,10 @@ permissions:
   pages: write
   id-token: write
 
-# Prevent race conditions by cancelling in-progress runs
+# Queue deployments sequentially without cancelling finished deployments
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -26,7 +26,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Upload Pages Artifact (Ultra Fast 5s Deploy)
+      - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
