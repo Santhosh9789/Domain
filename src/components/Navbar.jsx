@@ -34,12 +34,12 @@ export default function Navbar({ currentPage, onNavigate }) {
         left: 0,
         right: 0,
         zIndex: 100,
-        padding: scrolled ? '12px 24px' : '18px 24px',
+        padding: scrolled ? '10px 16px' : '14px 16px',
         transition: 'all 0.3s ease',
-        background: scrolled ? 'rgba(255, 255, 255, 0.94)' : 'rgba(255, 255, 255, 0.85)',
+        background: scrolled ? 'rgba(255, 255, 255, 0.96)' : 'rgba(255, 255, 255, 0.90)',
         backdropFilter: 'blur(16px)',
         borderBottom: scrolled ? '1px solid rgba(56, 189, 248, 0.3)' : '1px solid rgba(56, 189, 248, 0.15)',
-        boxShadow: scrolled ? '0 10px 30px rgba(2, 132, 199, 0.08)' : 'none'
+        boxShadow: scrolled ? '0 8px 25px rgba(2, 132, 199, 0.08)' : 'none'
       }}
     >
       <div style={{
@@ -47,51 +47,57 @@ export default function Navbar({ currentPage, onNavigate }) {
         margin: '0 auto',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        gap: '10px'
       }}>
         {/* Brand Logo & Name */}
         <div 
           onClick={() => handleNavClick('home')} 
-          style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '14px' }}
+          style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px', minWidth: 0 }}
         >
           <div style={{
-            padding: '4px',
-            borderRadius: '12px',
+            padding: '3px',
+            borderRadius: '10px',
             background: '#FFFFFF',
             border: '1px solid rgba(0, 163, 255, 0.3)',
-            boxShadow: '0 4px 15px rgba(0, 163, 255, 0.2)',
+            boxShadow: '0 4px 12px rgba(0, 163, 255, 0.15)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            height: '46px'
+            height: '38px',
+            flexShrink: 0
           }}>
             <img 
               src="./logo.png" 
               alt="Blueidealteck Logo" 
               style={{
-                height: '38px',
+                height: '30px',
                 width: 'auto',
                 objectFit: 'contain'
               }}
             />
           </div>
-          <div>
+          <div style={{ overflow: 'hidden' }}>
             <div style={{
               fontFamily: 'var(--font-heading)',
               fontWeight: 800,
-              fontSize: '1.4rem',
+              fontSize: 'clamp(1.05rem, 3.8vw, 1.4rem)',
               letterSpacing: '-0.5px',
-              color: '#0F172A'
+              color: '#0F172A',
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis'
             }}>
               BLUEIDEAL<span style={{ color: '#00A3FF' }}>TECK</span>
             </div>
             <div style={{
-              fontSize: '0.65rem',
+              fontSize: '0.6rem',
               color: '#0284C7',
-              letterSpacing: '1.5px',
+              letterSpacing: '1px',
               textTransform: 'uppercase',
-              fontWeight: 700
-            }}>
+              fontWeight: 700,
+              display: 'block'
+            }} className="mobile-subtitle">
               Software Solutions
             </div>
           </div>
@@ -141,15 +147,15 @@ export default function Navbar({ currentPage, onNavigate }) {
           </button>
         </nav>
 
-        {/* Right CTA */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+        {/* Right Action CTA & Mobile Toggle */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
           <button 
             onClick={() => handleNavClick('home', 'contact')} 
-            className="glow-btn-primary" 
-            style={{ padding: '10px 22px', fontSize: '0.9rem' }}
+            className="glow-btn-primary header-cta-btn" 
+            style={{ padding: '8px 14px', fontSize: '0.82rem', gap: '6px' }}
           >
-            <span>Get Started</span>
-            <ArrowRight size={16} />
+            <span className="cta-text">Get Started</span>
+            <ArrowRight size={14} />
           </button>
 
           {/* Mobile Menu Toggle Button */}
@@ -160,7 +166,7 @@ export default function Navbar({ currentPage, onNavigate }) {
               border: '1px solid rgba(0, 163, 255, 0.3)',
               color: '#0284C7',
               borderRadius: '10px',
-              padding: '8px',
+              padding: '6px',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
@@ -168,7 +174,7 @@ export default function Navbar({ currentPage, onNavigate }) {
               boxShadow: '0 2px 8px rgba(0, 163, 255, 0.1)'
             }}
           >
-            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
@@ -176,11 +182,11 @@ export default function Navbar({ currentPage, onNavigate }) {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="glass-panel" style={{
-          marginTop: '16px',
-          padding: '24px',
+          marginTop: '12px',
+          padding: '20px',
           display: 'flex',
           flexDirection: 'column',
-          gap: '16px',
+          gap: '14px',
           background: '#FFFFFF'
         }}>
           <button onClick={() => handleNavClick('home')} className="nav-btn-mobile">Home</button>
@@ -222,6 +228,14 @@ export default function Navbar({ currentPage, onNavigate }) {
         @media (min-width: 900px) {
           .desktop-nav {
             display: flex !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .cta-text {
+            display: none;
+          }
+          .mobile-subtitle {
+            display: none !important;
           }
         }
       `}</style>
