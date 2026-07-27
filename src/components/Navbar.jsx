@@ -66,7 +66,7 @@ export default function Navbar({ currentPage, onNavigate }) {
             height: '46px'
           }}>
             <img 
-              src="/logo.png" 
+              src="./logo.png" 
               alt="Blueidealteck Logo" 
               style={{
                 height: '38px',
