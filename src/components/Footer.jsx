@@ -74,7 +74,7 @@ export default function Footer({ onNavigate }) {
                 height: '40px'
               }}>
                 <img 
-                  src="/logo.png" 
+                  src="./logo.png" 
                   alt="Blueidealteck Logo" 
                   style={{
                     height: '32px',
