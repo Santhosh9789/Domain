@@ -32,16 +32,15 @@ export default function ThreeCanvas({ page = 'home' }) {
     const mainGroup = new THREE.Group();
     scene.add(mainGroup);
 
-    // 2. Texture Loader for Official Blueidealteck Logo
+    // 2. Texture Loader for Official Blueidealteck Logo using Relative Path
     const textureLoader = new THREE.TextureLoader();
     let logoMesh, logoRing, logoNodesGroup;
 
-    // Load official logo image into 3D space
-    textureLoader.load('/logo.png', (texture) => {
+    textureLoader.load('./logo.png', (texture) => {
       texture.generateMipmaps = true;
       texture.minFilter = THREE.LinearMipmapLinearFilter;
 
-      // 3D Emblem Mesh (Floating 3D Logo Disc with Emissive Glow)
+      // 3D Emblem Mesh
       const planeGeo = new THREE.PlaneGeometry(6.5, 6.5);
       const planeMat = new THREE.MeshPhongMaterial({
         map: texture,
@@ -69,10 +68,9 @@ export default function ThreeCanvas({ page = 'home' }) {
       mainGroup.add(backPlate);
     });
 
-    // 3. 3D Circuit Nodes & Ring Architecture surrounding the Logo
+    // 3. 3D Circuit Nodes & Ring Architecture
     logoNodesGroup = new THREE.Group();
 
-    // Outer 3D Holographic Orbit Ring
     const torusGeo1 = new THREE.TorusGeometry(6.2, 0.05, 16, 120);
     const torusMat1 = new THREE.MeshBasicMaterial({
       color: 0x00a3ff,
@@ -83,7 +81,6 @@ export default function ThreeCanvas({ page = 'home' }) {
     logoRing.rotation.x = Math.PI / 3;
     logoNodesGroup.add(logoRing);
 
-    // Secondary Circuit Node Orbit Ring
     const torusGeo2 = new THREE.TorusGeometry(7.5, 0.03, 16, 100);
     const torusMat2 = new THREE.MeshBasicMaterial({
       color: 0x0284c7,
@@ -94,7 +91,6 @@ export default function ThreeCanvas({ page = 'home' }) {
     ring2.rotation.y = Math.PI / 4;
     logoNodesGroup.add(ring2);
 
-    // Circuit Connection Nodes (Floating Spheres at key points)
     const nodeGeo = new THREE.SphereGeometry(0.18, 16, 16);
     const nodeMat = new THREE.MeshBasicMaterial({ color: 0x00a3ff });
 
@@ -106,7 +102,7 @@ export default function ThreeCanvas({ page = 'home' }) {
     }
     mainGroup.add(logoNodesGroup);
 
-    // 4. 3D Particles Stream (Tailored per page)
+    // 4. 3D Particles Stream
     const pCount = page === 'techstack' ? 1200 : (page === 'blog' ? 1000 : 900);
     const pGeo = new THREE.BufferGeometry();
     const pPos = new Float32Array(pCount * 3);
@@ -168,7 +164,6 @@ export default function ThreeCanvas({ page = 'home' }) {
     };
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
 
-    // Click pulse effect
     const handleClick = () => {
       if (mainGroup) {
         mainGroup.scale.set(1.15, 1.15, 1.15);
@@ -179,7 +174,6 @@ export default function ThreeCanvas({ page = 'home' }) {
     };
     window.addEventListener('click', handleClick, { passive: true });
 
-    // Resize Handler
     const handleResize = () => {
       if (!container) return;
       const newW = container.clientWidth || window.innerWidth;
@@ -203,18 +197,15 @@ export default function ThreeCanvas({ page = 'home' }) {
       targetX += (mouseX - targetX) * lerpSpeed;
       targetY += (mouseY - targetY) * lerpSpeed;
 
-      // Group rotation with mouse parallax
       mainGroup.rotation.y = elapsedTime * 0.1 + targetX * 0.45;
       mainGroup.rotation.x = Math.sin(elapsedTime * 0.1) * 0.12 + targetY * 0.45;
 
-      // Floating Logo subtle pulse & tilt
       if (logoMesh) {
         logoMesh.rotation.z = Math.sin(elapsedTime * 0.5) * 0.05;
         const pulse = 1 + Math.sin(elapsedTime * 2) * 0.03;
         logoMesh.scale.set(pulse, pulse, pulse);
       }
 
-      // Circuit Rings Counter Rotation
       if (logoRing) logoRing.rotation.z += delta * 0.25;
       if (ring2) ring2.rotation.z -= delta * 0.3;
       if (particleSystem) particleSystem.rotation.y -= delta * 0.08;
