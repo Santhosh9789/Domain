@@ -11,13 +11,11 @@ import {
   Layers, 
   Lock, 
   Sparkles,
-  Zap,
-  PlusCircle
+  Zap
 } from 'lucide-react';
 
 export default function CryptoPage({ onNavigateHome }) {
   const [copied, setCopied] = useState(false);
-  const [addedToWallet, setAddedToWallet] = useState(false);
   const contractAddress = '0x37f7EA1144036E49A2F00e318Ad3C82219BD72c3';
 
   // Copy Contract Address
@@ -25,34 +23,6 @@ export default function CryptoPage({ onNavigateHome }) {
     navigator.clipboard.writeText(contractAddress);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
-  };
-
-  // Add BIT Token to MetaMask / Web3 Wallet
-  const addTokenToWallet = async () => {
-    if (typeof window !== 'undefined' && window.ethereum) {
-      try {
-        const wasAdded = await window.ethereum.request({
-          method: 'wallet_watchAsset',
-          params: {
-            type: 'ERC20',
-            options: {
-              address: contractAddress,
-              symbol: 'BIT',
-              decimals: 18,
-              image: 'https://blueidealteck.com/logo.png'
-            }
-          }
-        });
-        if (wasAdded) {
-          setAddedToWallet(true);
-          setTimeout(() => setAddedToWallet(false), 3000);
-        }
-      } catch (err) {
-        console.error('Error adding token:', err);
-      }
-    } else {
-      window.open('https://metamask.io/download/', '_blank');
-    }
   };
 
   return (
@@ -142,15 +112,6 @@ export default function CryptoPage({ onNavigateHome }) {
               <span>Buy BIT on PancakeSwap 🚀</span>
               <ExternalLink size={16} />
             </a>
-
-            <button
-              onClick={addTokenToWallet}
-              className="glow-btn-secondary"
-              style={{ gap: '8px', padding: '14px 22px' }}
-            >
-              <PlusCircle size={18} color="#0284C7" />
-              <span>{addedToWallet ? 'BIT Added to Wallet! ✓' : 'Add BIT to MetaMask'}</span>
-            </button>
 
             <a
               href="https://dexscreener.com/bsc/0x92e6bdf0de4f19c3ebad07b385b5b9171028c6bc"
