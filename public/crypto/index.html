@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>blueidealteck (BIT) — Official Ultra-Scarce Digital Asset</title>
+  <meta name="description" content="Official cryptocurrency and corporate reserve asset of blueidealteck with a hard-capped supply of strictly 1,000 tokens on BNB Smart Chain.">
+  <link rel="icon" type="image/png" href="assets/logo_32.png">
+  
+  <style>
+    :root {
+      --bg-dark: #0a0e17;
+      --bg-card: #111827;
+      --bg-card-hover: #162032;
+      --primary: #0284c7;
+      --primary-light: #38bdf8;
+      --accent: #0ea5e9;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #1e293b;
+      --success: #10b981;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Glow Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 8%;
+      border-bottom: 1px solid var(--border);
+      background: rgba(10, 14, 23, 0.85);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
+    }
+
+    .brand span {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--primary-light); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(14, 165, 233, 0.4);
+      color: white;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary-light);
+      color: var(--primary-light);
+      box-shadow: none;
+    }
+
+    .btn-success {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+    }
+    .btn-success:hover {
+      background: rgba(16, 185, 129, 0.25);
+      color: #6ee7b7;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 80px 20px 50px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(14, 165, 233, 0.1);
+      border: 1px solid rgba(14, 165, 233, 0.3);
+      color: var(--primary-light);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: 50px;
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 18px;
+      background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* Contract Box */
+    .contract-bar {
+      margin: 36px auto 0;
+      max-width: 680px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .contract-bar code {
+      color: var(--primary-light);
+      font-family: monospace;
+      font-size: 13px;
+      word-break: break-all;
+    }
+
+    /* Stats Grid */
+    .stats-section {
+      padding: 40px 8%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .stat-card:hover {
+      border-color: rgba(14, 165, 233, 0.4);
+      background: var(--bg-card-hover);
+    }
+    .stat-title { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .stat-value { font-size: 32px; font-weight: 800; color: white; margin-bottom: 6px; }
+    .stat-badge { font-size: 13px; color: var(--success); }
+
+    /* Allocation */
+    .allocation-section {
+      padding: 60px 8%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+    }
+
+    .alloc-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .alloc-item {
+      padding: 22px;
+      border-radius: 10px;
+      background: rgba(15, 23, 42, 0.6);
+      border-left: 4px solid var(--primary);
+    }
+
+    .alloc-item h3 { font-size: 19px; margin-bottom: 8px; color: white; }
+    .alloc-item p { color: var(--text-muted); font-size: 14px; }
+
+    /* Verification Box */
+    .trust-section {
+      padding: 30px 8%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .trust-card {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(14, 165, 233, 0.25);
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      text-align: center;
+    }
+    .trust-item strong { display: block; font-size: 16px; color: white; margin-bottom: 4px; }
+    .trust-item span { font-size: 13px; color: var(--text-muted); }
+
+    /* Roadmap */
+    .roadmap-section {
+      padding: 60px 8%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .timeline-dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: bold;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .timeline-content h4 { font-size: 17px; margin-bottom: 4px; color: white; }
+    .timeline-content p { color: var(--text-muted); font-size: 14px; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 8%;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      background: rgba(10, 14, 23, 0.95);
+    }
+
+    footer a { color: var(--primary-light); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 34px; }
+      .alloc-card { grid-template-columns: 1fr; }
+      header { flex-direction: column; gap: 14px; }
+      .nav-links { flex-wrap: wrap; justify-content: center; }
+      .contract-bar { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="#" class="brand">
+      <img src="assets/logo_256.png" alt="blueidealteck logo">
+      <span>blueidealteck</span>
+    </a>
+    <div class="nav-links">
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="WHITEPAPER.html" target="_blank">Whitepaper</a>
+      <a href="https://dexscreener.com/bsc/0x92e6bdf0de4f19c3ebad07b385b5b9171028c6bc" target="_blank" class="btn btn-outline">📈 Live Chart</a>
+      <a href="https://bscscan.com/token/0x37f7EA1144036E49A2F00e318Ad3C82219BD72c3" target="_blank" class="btn btn-success">Verified BscScan ✅</a>
+      <a href="https://pancakeswap.finance/swap?outputCurrency=0x37f7EA1144036E49A2F00e318Ad3C82219BD72c3" target="_blank" class="btn">Trade on PancakeSwap 🚀</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="tag">⚡ ULTRA-SCARCE DIGITAL ASSET • STRICTLY 1,000 HARD-CAPPED SUPPLY</div>
+    <h1>The Sovereign Asset of blueidealteck</h1>
+    <p>A mathematically capped, non-inflationary cryptocurrency designed to power the corporate valuation, ecosystem utility, and enterprise technological services of blueidealteck on the BNB Smart Chain.</p>
+    
+    <div class="hero-actions">
+      <a href="https://pancakeswap.finance/swap?outputCurrency=0x37f7EA1144036E49A2F00e318Ad3C82219BD72c3" target="_blank" class="btn">Buy BIT on PancakeSwap</a>
+      <a href="https://dexscreener.com/bsc/0x92e6bdf0de4f19c3ebad07b385b5b9171028c6bc" target="_blank" class="btn btn-outline">📈 View Live Chart</a>
+      <a href="WHITEPAPER.html" target="_blank" class="btn btn-outline">Read Official Whitepaper</a>
+    </div>
+
+    <!-- Contract Bar -->
+    <div class="contract-bar">
+      <span>Contract Address:</span>
+      <code id="contractAddr">0x37f7EA1144036E49A2F00e318Ad3C82219BD72c3</code>
+      <button id="copyBtn" class="btn btn-outline" style="padding: 6px 14px; font-size: 12px;" onclick="copyContract()">Copy Address</button>
+    </div>
+  </section>
+
+  <!-- Trust & Verification Highlights -->
+  <section class="trust-section">
+    <div class="trust-card">
+      <div class="trust-item">
+        <strong>BNB Smart Chain Mainnet</strong>
+        <span>Chain ID: 56 • BEP-20 Standard</span>
+      </div>
+      <div class="trust-item">
+        <strong>Open-Source Verified ✅</strong>
+        <span>Solidity 0.8.34 • BscScan Match</span>
+      </div>
+      <div class="trust-item">
+        <strong>PancakeSwap V2 Pool Live</strong>
+        <span>Automated 24/7 Liquidity</span>
+      </div>
+      <div class="trust-item">
+        <strong>0 High Risk Security Score</strong>
+        <span>HashDit & Web3 Audited</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Metrics -->
+  <section class="stats-section" id="tokenomics">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-title">Total Max Supply</div>
+        <div class="stat-value">1,000 BIT</div>
+        <div class="stat-badge">🔒 100% Capped Forever</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Company Reserve Vault</div>
+        <div class="stat-value">900 BIT</div>
+        <div class="stat-badge">🏛️ 90% Strategic Treasury</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Public DEX Circulation</div>
+        <div class="stat-value">100 BIT</div>
+        <div class="stat-badge">🌊 10% PancakeSwap Liquidity</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Precision Decimals</div>
+        <div class="stat-value">18</div>
+        <div class="stat-badge">🔬 Micro-fractional Trading</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Allocation Breakdown -->
+  <section class="allocation-section">
+    <h2 class="section-title">Strict Scarcity Tokenomics</h2>
+    <p class="section-subtitle">Unlike hyper-inflationary meme coins, BIT is engineered with absolute mathematical scarcity mirroring the Bitcoin standard.</p>
+
+    <div class="alloc-card">
+      <div class="alloc-item">
+        <h3>🏛️ 900 BIT (90%) — Company Reserve</h3>
+        <p>Permanently allocated to the blueidealteck corporate vault to serve as a transparent cryptographic balance-sheet asset for strategic investments, expansion, client rewards, and corporate strength.</p>
+      </div>
+      <div class="alloc-item" style="border-left-color: var(--accent);">
+        <h3>🌊 100 BIT (10%) — Public DEX Trading</h3>
+        <p>Directly dedicated to decentralized automated market maker liquidity pools on PancakeSwap, allowing worldwide users to trade micro-fractions (0.01 BIT, 0.001 BIT) autonomously 24/7.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap -->
+  <section class="roadmap-section" id="roadmap">
+    <h2 class="section-title">Project Roadmap</h2>
+    <p class="section-subtitle">Execution trajectory for blueidealteck (BIT)</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot" style="background: var(--success);">✓</div>
+        <div class="timeline-content">
+          <h4>Phase 1: Genesis & Deployment</h4>
+          <p>Solidity 0.8.34 smart contract architecture developed, audited, deployed on BNB Smart Chain Mainnet, and verified on BscScan with Open-Source MIT License.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot" style="background: var(--success);">✓</div>
+        <div class="timeline-content">
+          <h4>Phase 2: Liquidity & DEX Activation</h4>
+          <p>PancakeSwap decentralized liquidity pool established. 900 BIT secured in Company Vault. Live candlestick trading enabled on DexScreener and GeckoTerminal.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot" style="background: var(--primary-light);">3</div>
+        <div class="timeline-content">
+          <h4>Phase 3: Global Tracking & Aggregator Listings</h4>
+          <p>Official token logo and metadata indexing on BscScan. Application for listings on CoinGecko, CoinMarketCap, and Trust Wallet Asset registry.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">4</div>
+        <div class="timeline-content">
+          <h4>Phase 4: Corporate Ecosystem Utility</h4>
+          <p>Acceptance of BIT across blueidealteck technological services, client loyalty discounts, and potential centralized exchange (CEX) tier listings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 <strong>blueidealteck</strong>. All Rights Reserved.</p>
+    <p style="margin-top: 10px;">
+      Official Email: <a href="mailto:blueidealteck@gmail.com">blueidealteck@gmail.com</a>
+    </p>
+    <p style="margin-top: 8px;">
+      Verified Contract: <a href="https://bscscan.com/token/0x37f7EA1144036E49A2F00e318Ad3C82219BD72c3" target="_blank">0x37f7EA1144036E49A2F00e318Ad3C82219BD72c3</a> | 
+      <a href="https://dexscreener.com/bsc/0x92e6bdf0de4f19c3ebad07b385b5b9171028c6bc" target="_blank">DexScreener Chart</a> | 
+      <a href="WHITEPAPER.html" target="_blank">Whitepaper</a> | 
+      <a href="https://pancakeswap.finance/swap?outputCurrency=0x37f7EA1144036E49A2F00e318Ad3C82219BD72c3" target="_blank">PancakeSwap</a>
+    </p>
+  </footer>
+
+  <script>
+    function copyContract() {
+      const addr = '0x37f7EA1144036E49A2F00e318Ad3C82219BD72c3';
+      navigator.clipboard.writeText(addr).then(() => {
+        const btn = document.getElementById('copyBtn');
+        btn.innerText = 'Copied! ✓';
+        btn.style.color = '#10b981';
+        btn.style.borderColor = '#10b981';
+        setTimeout(() => {
+          btn.innerText = 'Copy Address';
+          btn.style.color = '';
+          btn.style.borderColor = '';
+        }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>

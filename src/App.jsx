@@ -10,6 +10,7 @@ import PhilosophySection from './components/PhilosophySection';
 import ContactSection from './components/ContactSection';
 import BlogPage from './components/BlogPage';
 import TechStackPage from './components/TechStackPage';
+import CryptoPage from './components/CryptoPage';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import AIChatbot from './components/AIChatbot';
 import Footer from './components/Footer';
@@ -53,6 +54,10 @@ export default function App() {
 
           {currentPage === 'techstack' && (
             <TechStackPage onNavigateHome={() => handleNavigate('home')} />
+          )}
+
+          {currentPage === 'crypto' && (
+            <CryptoPage onNavigateHome={() => handleNavigate('home')} />
           )}
 
           {currentPage === 'privacy' && (

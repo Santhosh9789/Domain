@@ -108,6 +108,7 @@ export default function Footer({ onNavigate }) {
               <li><button onClick={() => handleLinkClick('home', 'about')} className="footer-btn">About us</button></li>
               <li><button onClick={() => handleLinkClick('home', 'services')} className="footer-btn">Services</button></li>
               <li><button onClick={() => handleLinkClick('techstack')} className="footer-btn">Tech Stack</button></li>
+              <li><button onClick={() => handleLinkClick('crypto')} className="footer-btn" style={{ color: '#00A3FF', fontWeight: 700 }}>Crypto Currency (BIT)</button></li>
               <li><button onClick={() => handleLinkClick('blog')} className="footer-btn">Blog</button></li>
               <li><button onClick={() => handleLinkClick('privacy')} className="footer-btn">Privacy Policy</button></li>
             </ul>

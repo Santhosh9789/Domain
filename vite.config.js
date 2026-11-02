@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   base: './', // Universal relative base path for GitHub Pages & custom domain blueidealteck.com
   server: {
-    port: 4000,
+    port: 8080,
     open: true
   }
 });

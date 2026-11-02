@@ -134,6 +134,23 @@ export default function Navbar({ currentPage, onNavigate }) {
             Tech Stack
           </button>
           <button 
+            onClick={() => handleNavClick('crypto')} 
+            className={`nav-btn ${currentPage === 'crypto' ? 'active' : ''}`}
+            style={{ position: 'relative' }}
+          >
+            <span>Crypto Currency</span>
+            <span style={{
+              position: 'absolute',
+              top: '1px',
+              right: '2px',
+              width: '6px',
+              height: '6px',
+              borderRadius: '50%',
+              background: '#10B981',
+              boxShadow: '0 0 6px #10B981'
+            }} />
+          </button>
+          <button 
             onClick={() => handleNavClick('blog')} 
             className={`nav-btn ${currentPage === 'blog' ? 'active' : ''}`}
           >
@@ -161,6 +178,7 @@ export default function Navbar({ currentPage, onNavigate }) {
           {/* Mobile Menu Toggle Button */}
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="mobile-toggle-btn"
             style={{
               background: '#FFFFFF',
               border: '1px solid rgba(0, 163, 255, 0.3)',
@@ -193,6 +211,7 @@ export default function Navbar({ currentPage, onNavigate }) {
           <button onClick={() => handleNavClick('home', 'about')} className="nav-btn-mobile">About</button>
           <button onClick={() => handleNavClick('home', 'services')} className="nav-btn-mobile">Services</button>
           <button onClick={() => handleNavClick('techstack')} className="nav-btn-mobile">Tech Stack</button>
+          <button onClick={() => handleNavClick('crypto')} className="nav-btn-mobile">Crypto Currency</button>
           <button onClick={() => handleNavClick('blog')} className="nav-btn-mobile">Blog</button>
           <button onClick={() => handleNavClick('home', 'contact')} className="nav-btn-mobile">Contact</button>
         </div>
@@ -228,6 +247,9 @@ export default function Navbar({ currentPage, onNavigate }) {
         @media (min-width: 900px) {
           .desktop-nav {
             display: flex !important;
+          }
+          .mobile-toggle-btn {
+            display: none !important;
           }
         }
         @media (max-width: 480px) {
